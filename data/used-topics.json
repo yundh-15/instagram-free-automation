@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-24T08:50:48.500Z",
+  "updatedAt": "2026-05-24T14:06:54.655Z",
   "used": [
     {
       "category": "posture",
@@ -11,6 +11,11 @@
       "category": "massage",
       "topic": "숙면을 돕는 저녁 마사지 체크리스트",
       "usedAt": "2026-05-24T08:50:48.500Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "usedAt": "2026-05-24T14:06:54.655Z"
     }
   ]
 }

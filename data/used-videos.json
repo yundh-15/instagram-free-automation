@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-24T08:51:24.999Z",
+  "updatedAt": "2026-05-24T14:07:23.566Z",
   "used": [
     {
       "source": "Pexels",
@@ -24,6 +24,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/woman-receiving-facial-massage-6187077/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7250220",
+      "usedAt": "2026-05-24T14:07:23.561Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Sarah  Chai",
+      "creatorUrl": "https://www.pexels.com/@sarah-chai",
+      "videoUrl": "https://www.pexels.com/video/a-young-woman-brushing-a-soap-7250220/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
