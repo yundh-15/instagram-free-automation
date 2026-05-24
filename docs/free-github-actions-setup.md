@@ -24,6 +24,10 @@ feed post, it exits without publishing. If either format is missing, it
 generates a post, runs legal review, uploads to Cloudinary, publishes the
 missing format, and verifies the slot again.
 
+Manual `workflow_dispatch` runs default to `dry_run=true`, which runs preflight
+without publishing. Set `dry_run=false` only when intentionally publishing a
+manual one-off post.
+
 ## GitHub Secrets
 
 Add these repository secrets:
