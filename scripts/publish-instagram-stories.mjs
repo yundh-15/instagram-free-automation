@@ -18,21 +18,22 @@ const accessToken = requireEnv('META_ACCESS_TOKEN');
 const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
 const baseUrl = `https://graph.facebook.com/${graphVersion}`;
 
-const imageUrls = payload.storyImageUrls || payload.imageUrls || [];
-if (!imageUrls.length) throw new Error('No image URLs found in payload');
+const storyImages = orderedStoryImages(payload);
+if (!storyImages.length) throw new Error('No image URLs found in payload');
 
 const stories = [];
-for (let index = 0; index < imageUrls.length; index += 1) {
+for (const image of storyImages) {
   const story = await postGraph(`/${igUserId}/media`, {
     media_type: 'STORIES',
-    image_url: imageUrls[index],
+    image_url: image.url,
   });
   await waitForContainer(story.id);
   const published = await postGraph(`/${igUserId}/media_publish`, {
     creation_id: story.id,
   });
   stories.push({
-    slide: index + 1,
+    slide: image.slide,
+    sourceImage: image.local || null,
     storyContainerId: story.id,
     mediaId: published.id,
   });
@@ -50,6 +51,26 @@ await writeFile(outputPath, `${JSON.stringify(result, null, 2)}\n`, 'utf8');
 
 console.log(`Published Instagram stories: ${stories.length}`);
 console.log(`Result: ${relative(outputPath)}`);
+
+function orderedStoryImages(currentPayload) {
+  if (Array.isArray(currentPayload.storyImages) && currentPayload.storyImages.length) {
+    return currentPayload.storyImages
+      .map((image, index) => ({
+        slide: Number(image.slide || index + 1),
+        url: image.url,
+        local: image.local || null,
+      }))
+      .filter((image) => image.url)
+      .sort((a, b) => a.slide - b.slide);
+  }
+
+  const urls = currentPayload.storyImageUrls || currentPayload.imageUrls || [];
+  return urls.map((url, index) => ({
+    slide: index + 1,
+    url,
+    local: currentPayload.uploads?.[index]?.local || null,
+  }));
+}
 
 async function postGraph(path, params) {
   const form = new URLSearchParams();

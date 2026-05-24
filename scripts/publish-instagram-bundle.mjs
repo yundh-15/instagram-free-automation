@@ -20,12 +20,12 @@ const baseUrl = `https://graph.facebook.com/${graphVersion}`;
 const formatGapMs = Number(argv['format-gap-ms'] || process.env.PUBLISH_FORMAT_GAP_MS || 300000);
 
 const imageUrls = payload.imageUrls || [];
-const storyImageUrls = payload.storyImageUrls || imageUrls;
+const storyImages = orderedStoryImages(payload);
 if (imageUrls.length < 2 || imageUrls.length > 10) {
   throw new Error(`Instagram carousel requires 2-10 image URLs; got ${imageUrls.length}`);
 }
-if (storyImageUrls.length !== imageUrls.length) {
-  throw new Error(`Story image count must match carousel image count; got ${storyImageUrls.length} vs ${imageUrls.length}`);
+if (storyImages.length !== imageUrls.length) {
+  throw new Error(`Story image count must match carousel image count; got ${storyImages.length} vs ${imageUrls.length}`);
 }
 if (!payload.reelVideoUrl) {
   throw new Error('Payload does not contain reelVideoUrl. Re-run upload:cloudinary.');
@@ -46,17 +46,18 @@ await waitForContainer(reelContainer.id, 60, 10000);
 await guardAgainstRecentDuplicate(payload);
 
 const stories = [];
-for (let index = 0; index < storyImageUrls.length; index += 1) {
+for (const image of storyImages) {
   const story = await postGraph(`/${igUserId}/media`, {
     media_type: 'STORIES',
-    image_url: storyImageUrls[index],
+    image_url: image.url,
   });
   await waitForContainer(story.id);
   const published = await postGraph(`/${igUserId}/media_publish`, {
     creation_id: story.id,
   });
   stories.push({
-    slide: index + 1,
+    slide: image.slide,
+    sourceImage: image.local || null,
     storyContainerId: story.id,
     mediaId: published.id,
   });
@@ -143,6 +144,26 @@ function buildReelCaption(currentPayload) {
 
 function limitedHashtags(currentPayload) {
   return (currentPayload.hashtags || []).slice(0, 4);
+}
+
+function orderedStoryImages(currentPayload) {
+  if (Array.isArray(currentPayload.storyImages) && currentPayload.storyImages.length) {
+    return currentPayload.storyImages
+      .map((image, index) => ({
+        slide: Number(image.slide || index + 1),
+        url: image.url,
+        local: image.local || null,
+      }))
+      .filter((image) => image.url)
+      .sort((a, b) => a.slide - b.slide);
+  }
+
+  const urls = currentPayload.storyImageUrls || currentPayload.imageUrls || [];
+  return urls.map((url, index) => ({
+    slide: index + 1,
+    url,
+    local: currentPayload.uploads?.[index]?.local || null,
+  }));
 }
 
 async function guardAgainstRecentDuplicate(currentPayload) {

@@ -23,6 +23,7 @@ The scheduled run checks Instagram first. If the slot already has a Reel, a
 feed post, and five Stories, it exits without publishing. If any required
 format is missing, it generates a post, runs legal review, uploads to
 Cloudinary, publishes the missing format(s), and verifies the slot again.
+Stories use the same photo order as the feed carousel.
 
 Manual `workflow_dispatch` runs default to `dry_run=true`, which runs preflight
 without publishing. Set `dry_run=false` only when intentionally publishing a

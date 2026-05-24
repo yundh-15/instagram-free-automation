@@ -60,6 +60,21 @@ const { reelVideo, reelVideoMeta } = await createReelVideo({
   secondsPerSlide,
   post,
 });
+const orderedUploads = [...uploads].sort((a, b) => a.slide - b.slide);
+const feedImages = orderedUploads.map((upload) => ({
+  slide: upload.slide,
+  local: upload.local,
+  url: cloudinaryTransform(upload.url, 'f_jpg,q_auto,w_1080,h_1350,c_fill'),
+  sourceUrl: upload.url,
+  publicId: upload.publicId,
+}));
+const storyImages = orderedUploads.map((upload) => ({
+  slide: upload.slide,
+  local: upload.local,
+  url: cloudinaryTransform(upload.url, `f_jpg,q_auto,w_1080,h_1920,c_pad,b_rgb:${post.reel?.background || 'F7F2EA'}`),
+  sourceUrl: upload.url,
+  publicId: upload.publicId,
+}));
 
 const output = {
   topic: post.topic,
@@ -67,8 +82,11 @@ const output = {
   feedCaption: withMediaCredit(post.feedCaption || post.caption, post, reelVideoMeta),
   reelCaption: withMediaCredit(post.reelCaption || buildDefaultReelCaption(post), post, reelVideoMeta),
   hashtags: (post.hashtags || []).slice(0, 4),
-  imageUrls: uploads.map((upload) => cloudinaryTransform(upload.url, 'f_jpg,q_auto,w_1080,h_1350,c_fill')),
-  storyImageUrls: uploads.map((upload) => cloudinaryTransform(upload.url, `f_jpg,q_auto,w_1080,h_1920,c_pad,b_rgb:${post.reel?.background || 'F7F2EA'}`)),
+  imageUrls: feedImages.map((image) => image.url),
+  storyImageUrls: storyImages.map((image) => image.url),
+  feedImages,
+  storyImages,
+  storyOrder: storyImages.map((image) => image.slide),
   reelTag,
   secondsPerSlide,
   reelStyle: post.reel || null,

@@ -43,7 +43,9 @@ For the free GitHub Actions setup, omit custom Reel music unless a properly
 licensed file or HTTPS URL is available at no cost.
 
 Publishing keeps a five-minute gap between public formats. The scheduled GitHub
-Actions path publishes Stories, then the Reel, then the feed carousel.
+Actions path publishes Stories, then the Reel, then the feed carousel. Story
+images are published in the same slide order as the feed carousel: `01.png`,
+`02.png`, `03.png`, `04.png`, then `05.png`.
 
 Feed and Reel captions are generated separately with longer explanatory copy
 and searchable title keywords. Legal review blocks publication if the two
