@@ -111,7 +111,7 @@ const manifest = {
   },
   publishing: {
     status: 'ready_for_review',
-    note: 'Instagram Graph API carousel publishing needs public image URLs. Use the n8n template to upload these PNGs to a public CDN first.',
+    note: 'Instagram Graph API carousel publishing needs public image URLs. Use the Cloudinary upload step before publishing.',
   },
 };
 

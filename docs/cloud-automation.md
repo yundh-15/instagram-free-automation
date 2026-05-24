@@ -146,13 +146,12 @@ META_ACCESS_TOKEN
 META_GRAPH_VERSION
 ```
 
-The GitHub Actions schedule is enabled as a cloud fallback while n8n is the
-primary scheduler. The scheduled job runs `npm run run:instagram-slot --
---fallback-publish`, so it first checks Instagram media for the current slot.
-If n8n already posted both the Reel and feed carousel, it exits without
-publishing. If either format is missing, it generates a fresh post, runs legal
-review, uploads to Cloudinary, publishes only the missing format(s), and verifies
-the slot again.
+The GitHub Actions schedule is the primary free scheduler. The scheduled job
+runs `npm run run:instagram-slot -- --fallback-publish --allow-late-publish`,
+so it first checks Instagram media for the current slot. If the slot already
+has both the Reel and feed carousel, it exits without publishing. If either
+format is missing, it generates a fresh post, runs legal review, uploads to
+Cloudinary, publishes only the missing format(s), and verifies the slot again.
 
 ## Free Cloud Setup
 
