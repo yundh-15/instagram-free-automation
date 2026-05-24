@@ -156,7 +156,9 @@ so it first checks Instagram media for the current slot. If the slot already
 has the Reel, feed carousel, and required Stories, it exits without publishing.
 If any required format is missing, it generates a fresh post, runs legal review,
 uploads to Cloudinary, publishes only the missing format(s), and verifies the
-slot again.
+slot again. Each slot has one primary run and two recovery runs so a delayed
+GitHub scheduler or temporary Graph API failure does not leave the account
+unfinished.
 
 ## Free Cloud Setup
 
@@ -166,8 +168,9 @@ The free PC-off path is the GitHub Actions workflow in:
 .github/workflows/instagram-carousel.yml
 ```
 
-It runs at 09:35, 13:35, and 17:35 KST. It runs on GitHub-hosted Linux, so it
-does not depend on the local Windows PC.
+It runs primary checks at 09:35, 13:35, and 17:35 KST, plus recovery checks at
+09:55/10:15, 13:55/14:15, and 17:55/18:15 KST. It runs on GitHub-hosted Linux,
+so it does not depend on the local Windows PC.
 
 Local/GitHub flows can persist photo, video, and topic history in
 `data/used-photos.json`, `data/used-videos.json`, and `data/used-topics.json`.

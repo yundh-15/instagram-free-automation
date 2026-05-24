@@ -2,8 +2,12 @@ name: Instagram Carousel Automation
 
 on:
   schedule:
-    # KST 09:35, 13:35, 17:35. Runs in GitHub's free cloud runner.
+    # Primary runs: KST 09:35, 13:35, 17:35.
     - cron: '35 0,4,8 * * *'
+    # Recovery runs for the same slot if GitHub starts late or a transient API
+    # error leaves a format missing. run-instagram-slot is idempotent per slot.
+    - cron: '55 0,4,8 * * *'
+    - cron: '15 1,5,9 * * *'
   workflow_dispatch:
     inputs:
       category:
@@ -40,7 +44,7 @@ jobs:
       CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
-      META_GRAPH_VERSION: ${{ secrets.META_GRAPH_VERSION || 'v25.0' }}
+      META_GRAPH_VERSION: ${{ secrets.META_GRAPH_VERSION || 'v21.0' }}
       PUBLISH_FORMAT_GAP_MS: ${{ secrets.PUBLISH_FORMAT_GAP_MS || '300000' }}
       FALLBACK_FORMAT_GAP_MS: ${{ secrets.FALLBACK_FORMAT_GAP_MS || '300000' }}
       REQUIRED_STORY_COUNT: ${{ secrets.REQUIRED_STORY_COUNT || '5' }}

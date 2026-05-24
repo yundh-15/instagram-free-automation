@@ -19,6 +19,10 @@ It runs on GitHub-hosted Ubuntu at:
 - 13:35 KST
 - 17:35 KST
 
+It also runs recovery checks at 09:55/10:15, 13:55/14:15, and 17:55/18:15 KST.
+The slot runner is idempotent, so recovery checks exit without publishing when
+the Reel, feed post, and five Stories are already present.
+
 The scheduled run checks Instagram first. If the slot already has a Reel, a
 feed post, and five Stories, it exits without publishing. If any required
 format is missing, it generates a post, runs legal review, uploads to
@@ -64,8 +68,9 @@ Before pushing, run:
 
 ```bash
 npm run preflight:free-cloud
-npm run run:instagram-slot -- --slot 2026-05-24T17
+npm run check:instagram-slot -- --slot 2026-05-24T23
+npm run run:instagram-slot -- --slot 2026-05-24T23
 ```
 
-The second command should exit without publishing if the slot is already
+The last command should exit without publishing if the slot is already
 complete.
