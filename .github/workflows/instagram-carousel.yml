@@ -68,7 +68,7 @@ jobs:
 
       - name: Publish scheduled Instagram slot if missing
         if: github.event_name == 'schedule'
-        run: npm run run:instagram-slot -- --fallback-publish
+        run: npm run run:instagram-slot -- --fallback-publish --allow-late-publish
 
       - name: Manual dry run complete
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run != 'false'
