@@ -19,10 +19,10 @@ It runs on GitHub-hosted Ubuntu at:
 - 13:35 KST
 - 17:35 KST
 
-The scheduled run checks Instagram first. If the slot already has a Reel and a
-feed post, it exits without publishing. If either format is missing, it
-generates a post, runs legal review, uploads to Cloudinary, publishes the
-missing format, and verifies the slot again.
+The scheduled run checks Instagram first. If the slot already has a Reel, a
+feed post, and five Stories, it exits without publishing. If any required
+format is missing, it generates a post, runs legal review, uploads to
+Cloudinary, publishes the missing format(s), and verifies the slot again.
 
 Manual `workflow_dispatch` runs default to `dry_run=true`, which runs preflight
 without publishing. Set `dry_run=false` only when intentionally publishing a
@@ -51,6 +51,7 @@ CLOUDINARY_UPLOAD_PRESET
 REEL_SOURCE
 PUBLISH_FORMAT_GAP_MS
 FALLBACK_FORMAT_GAP_MS
+REQUIRED_STORY_COUNT
 ```
 
 Do not add an n8n API key. n8n Cloud/API access is not part of the required free

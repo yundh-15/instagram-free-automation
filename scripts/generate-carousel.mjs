@@ -229,6 +229,7 @@ function getStrategy(categoryName) {
   const strategies = {
     massage: {
       label: '마사지',
+      titleKeywords: ['마사지샵', '어깨마사지', '목어깨관리'],
       searchQuery: 'calm spa massage therapy warm light peaceful wellness',
       videoSearchQuery: 'spa massage shoulders back therapy warm light relaxing wellness',
       theme: {
@@ -244,6 +245,7 @@ function getStrategy(categoryName) {
     },
     skincare: {
       label: '피부관리',
+      titleKeywords: ['피부관리샵', '에스테틱', '민감피부'],
       searchQuery: 'calm facial skincare spa treatment soft natural light',
       videoSearchQuery: 'facial skincare spa treatment relaxing beauty clinic soft light',
       theme: {
@@ -259,6 +261,7 @@ function getStrategy(categoryName) {
     },
     posture: {
       label: '체형교정',
+      titleKeywords: ['체형교정', '자세교정', '라운드숄더'],
       searchQuery: 'calm stretching posture wellness studio soft light',
       videoSearchQuery: 'stretching posture wellness studio calm body care soft light',
       theme: {
@@ -278,51 +281,101 @@ function getStrategy(categoryName) {
 
 function buildCards(currentTopic, strategy) {
   const subject = currentTopic.replace(/\s+/g, ' ').trim();
+  const searchTitle = buildSearchTitle(subject, strategy);
+  const copy = buildCardCopy(strategy);
   return [
     {
       kind: 'cover',
       kicker: strategy.label,
-      title: subject,
-      subtitle: '요즘 관심 가는 관리 포인트 정리',
+      title: searchTitle,
+      subtitle: `${subject} 기준을 예약 전에 비교하기 쉽게 정리`,
     },
     {
       kind: 'list',
       kicker: '01',
       title: strategy.hooks[0],
-      body: [
-        '요즘 자주 뻐근한 부위 적어두기',
-        '강한 자극보다 다음 날 컨디션 보기',
-        '내가 편한 압과 불편한 자극 구분하기',
-      ],
+      subtitle: copy.intros[0],
+      body: copy.items[0],
     },
     {
       kind: 'list',
       kicker: '02',
       title: strategy.hooks[1],
-      body: [
-        '후기에서 위생, 상담, 압 조절 확인하기',
-        '내가 원하는 분위기와 관리 목적 정리하기',
-        '사진보다 실제 방문 후기를 먼저 보기',
-      ],
+      subtitle: copy.intros[1],
+      body: copy.items[1],
     },
     {
       kind: 'list',
       kicker: '03',
       title: strategy.hooks[2],
-      body: [
-        '받은 날 느낌보다 다음 날 몸 상태 기록하기',
-        '잘 맞았던 포인트는 다음 예약 전에 다시 보기',
-        '피부와 몸이 편했던 관리 환경 메모하기',
-      ],
+      subtitle: copy.intros[2],
+      body: copy.items[2],
     },
     {
       kind: 'closing',
       kicker: 'SAVE',
       title: '다음 관리 전에 다시 보기',
-      subtitle: `${strategy.label} 관심러 저장용 체크리스트`,
-      body: ['다음 예약 전에 다시 확인하기', '내 몸에 맞았던 기준은 따로 기록하기'],
+      subtitle: `${strategy.label} 관심러가 후기, 가격, 상담 내용을 비교할 때 저장해두면 좋은 체크리스트`,
+      body: ['후기에서 반복되는 장점과 불편 후기를 같이 보기', '내 상태에 맞았던 상담 기준은 다음 예약 전에 다시 확인하기'],
     },
   ];
+}
+
+function buildSearchTitle(currentTopic, strategy) {
+  const compactTopic = compactKeyword(currentTopic);
+  const missingKeywords = (strategy.titleKeywords || [])
+    .filter((keyword) => !compactTopic.includes(compactKeyword(keyword)))
+    .slice(0, 2);
+  return [currentTopic, ...missingKeywords].join(' ').replace(/\s+/g, ' ').trim();
+}
+
+function compactKeyword(value) {
+  return String(value || '').replace(/\s+/g, '').toLowerCase();
+}
+
+function buildCardCopy(strategy) {
+  if (strategy.label === '피부관리') {
+    return {
+      intros: [
+        '피부관리샵이나 에스테틱을 찾을 때는 가격보다 내 피부가 어떤 상황에서 예민해지는지 먼저 정리해두면 상담이 훨씬 구체적이에요.',
+        '후기는 전후 사진만 보기보다 위생, 상담 시간, 제품 설명, 압 조절처럼 실제 방문 경험이 자세히 적힌 내용을 우선 확인해요.',
+        '관리 직후 느낌보다 다음 날 붉어짐, 건조함, 당김 정도를 기록하면 내 피부에 맞는 관리 강도와 주기를 찾기 쉬워요.',
+      ],
+      items: [
+        ['최근 따가움, 붉어짐, 건조함이 언제 심해지는지 적기', '처음 쓰는 제품이나 강한 필링은 사전에 꼭 문의하기', '진정 관리와 보습 관리 중 지금 필요한 쪽을 상담하기'],
+        ['피부관리샵 후기에서 위생과 상담 내용을 함께 보기', '에스테틱 제품 설명이 구체적인지 확인하기', '민감피부 경험이 있는 관리자인지 질문하기'],
+        ['관리 당일보다 다음 날 피부 반응을 기준으로 보기', '편했던 제품 향, 온도, 압 조절을 따로 메모하기', '무리한 주기보다 피부가 쉬는 시간을 같이 정하기'],
+      ],
+    };
+  }
+
+  if (strategy.label === '체형교정') {
+    return {
+      intros: [
+        '체형교정이나 자세교정을 알아볼 때는 사진 한 장보다 평소 앉는 자세, 통증이 아닌 불편감, 생활 습관을 같이 정리하는 게 좋아요.',
+        '라운드숄더, 골반균형 같은 키워드로 찾더라도 과한 변화 약속보다 상담 과정과 생활 관리 설명이 현실적인 곳을 먼저 봐요.',
+        '받은 직후의 시원함만 보지 말고 하루 동안 움직임, 피로감, 앉아 있을 때 편안함이 어떻게 달라지는지 기록해두세요.',
+      ],
+      items: [
+        ['오래 앉는 시간과 자주 말리는 자세를 먼저 적기', '어깨, 골반, 목 중 가장 신경 쓰이는 부위를 정리하기', '강한 교정보다 일상에서 유지 가능한 기준을 묻기'],
+        ['체형교정 후기에서 상담 설명과 관리 강도를 확인하기', '라운드숄더나 골반균형 사례를 과장 없이 보는지 확인하기', '집에서 할 수 있는 자세 습관 안내가 있는지 보기'],
+        ['다음 날 움직임과 피로감을 짧게 기록하기', '무리했던 동작과 편했던 스트레칭을 구분하기', '한 번의 변화보다 반복 가능한 관리 주기를 정하기'],
+      ],
+    };
+  }
+
+  return {
+    intros: [
+      '마사지샵이나 어깨마사지를 찾을 때는 뻐근한 부위만 말하기보다 언제, 어떤 자세에서 불편한지 적어두면 압 조절이 쉬워요.',
+      '후기는 분위기 사진보다 상담, 위생, 압 조절, 소음처럼 실제 관리 만족도에 영향을 주는 내용이 구체적인지 확인해요.',
+      '받은 날 바로 판단하기보다 다음 날 목어깨가 편한지, 잠은 어땠는지, 부담스러운 자극은 없었는지 기록해두면 좋아요.',
+    ],
+    items: [
+      ['목, 어깨, 등 중 가장 무거운 부위를 먼저 정리하기', '강한 압보다 다음 날 편안함을 기준으로 보기', '불편한 자극과 시원한 압을 구분해서 말하기'],
+      ['마사지샵 후기에서 위생과 상담 방식을 함께 보기', '어깨마사지 강도 조절이 가능한지 미리 확인하기', '사진보다 재방문 후기와 예약 전 안내를 먼저 보기'],
+      ['관리 직후보다 다음 날 몸 상태를 기록하기', '잠, 피로감, 뻐근함이 어떻게 달라졌는지 보기', '잘 맞았던 압과 분위기는 다음 예약 전에 다시 확인하기'],
+    ],
+  };
 }
 
 async function getPhotoPacks(query, directory, count) {
@@ -624,7 +677,7 @@ async function findLocalBackgrounds(categoryName) {
 function renderHtml({ card, index, total, strategy, photoPack, topic: currentTopic }) {
   const theme = strategy.theme;
   const body = Array.isArray(card.body) ? card.body : [];
-  const coverFontSize = coverTitleFontSize(currentTopic);
+  const coverFontSize = coverTitleFontSize(card.title);
   const backgroundStyle = photoPack.imageUrl
     ? `background-image: linear-gradient(120deg, rgba(12,18,16,.76), rgba(12,18,16,.32)), url("${photoPack.imageUrl}");`
     : '';
@@ -761,9 +814,9 @@ function renderHtml({ card, index, total, strategy, photoPack, topic: currentTop
       margin: 0;
       max-width: 820px;
       color: ${card.kind === 'cover' ? 'rgba(255,255,255,.92)' : theme.deep};
-      font-size: 34px;
+      font-size: ${card.kind === 'cover' ? '34px' : '30px'};
       font-weight: 700;
-      line-height: 1.32;
+      line-height: 1.36;
       word-break: keep-all;
       overflow-wrap: anywhere;
     }
@@ -777,11 +830,11 @@ function renderHtml({ card, index, total, strategy, photoPack, topic: currentTop
       margin: 16px 0 0;
       padding: 0;
       display: grid;
-      gap: 22px;
+      gap: 18px;
       list-style: none;
     }
     .list li {
-      min-height: 132px;
+      min-height: 126px;
       display: grid;
       grid-template-columns: 96px 1fr;
       align-items: center;
@@ -806,8 +859,8 @@ function renderHtml({ card, index, total, strategy, photoPack, topic: currentTop
     .list p {
       margin: 0;
       color: ${theme.ink};
-      font-size: 33px;
-      line-height: 1.34;
+      font-size: 30px;
+      line-height: 1.35;
       font-weight: 700;
       word-break: keep-all;
       overflow-wrap: anywhere;
@@ -894,15 +947,17 @@ function renderPng(htmlPath, pngPath) {
 }
 
 function buildFeedCaption(currentTopic, strategy, photoPacks = []) {
+  const searchTitle = buildSearchTitle(currentTopic, strategy);
   const credits = photoPacks
     .map((photoPack) => photoPack.attribution)
     .filter((attribution) => attribution?.requiresAttribution)
     .map((attribution) => `${attribution.photographer || 'creator'} on ${attribution.source}`)
     .filter(Boolean);
   return [
-    `${currentTopic}`,
+    searchTitle,
+    `주제: ${currentTopic}`,
     '',
-    `요즘 ${strategy.label}에 관심이 생겨서 예약 전 기준을 정리해봤어요. ${strategy.seoSentence} 후기만 보기보다 내 상태와 원하는 분위기를 먼저 적어두면 선택이 더 편해요.`,
+    `요즘 ${strategy.label}에 관심이 생겨서 예약 전 기준을 정리해봤어요. ${strategy.seoSentence} 후기만 보기보다 내 상태와 원하는 분위기를 먼저 적어두면 선택이 더 편해요. 상담 때는 가격, 위생, 관리 강도, 사후 안내를 함께 물어보고 내 반응을 기록해두면 다음 선택이 더 쉬워집니다.`,
     ...(credits.length ? ['', `사진: ${[...new Set(credits)].join(', ')}`] : []),
     '',
     '저장해두고 다음 관리 전에 체크해보세요.',
@@ -910,10 +965,12 @@ function buildFeedCaption(currentTopic, strategy, photoPacks = []) {
 }
 
 function buildReelCaption(currentTopic, strategy) {
+  const searchTitle = buildSearchTitle(currentTopic, strategy);
   return [
-    `${currentTopic}`,
+    searchTitle,
+    `주제: ${currentTopic}`,
     '',
-    `${strategy.label} 루틴을 영상으로 짧게 정리했어요. 오늘 몸 상태를 가볍게 살피고, 무리한 변화보다 편안한 기준을 찾는 데 초점을 둬보세요.`,
+    `${strategy.label} 루틴을 영상으로 짧게 정리했어요. 오늘 몸 상태를 가볍게 살피고, 무리한 변화보다 편안한 기준을 찾는 데 초점을 둬보세요. 후기나 가격만 보고 고르기보다 상담 방식, 위생, 압 조절, 내 피부와 몸의 반응까지 함께 비교하면 더 현실적인 선택을 할 수 있어요.`,
     '',
     '릴스는 분위기와 흐름을 보는 용도라서 자세한 체크 포인트는 피드 카드에 따로 정리해뒀어요.',
   ].join('\n');

@@ -19,7 +19,7 @@ Task Scheduler or local n8n.
 
 Supported free cloud path:
 
-1. GitHub Actions: cloud runner at 09:35, 13:35, and 17:35 KST. It checks the slot, then publishes only if the Reel or feed post is missing.
+1. GitHub Actions: cloud runner at 09:35, 13:35, and 17:35 KST. It checks the slot, then publishes only if the Reel, feed post, or Stories are missing.
 
 Use GitHub Actions as the primary free scheduler. Do not make n8n API access a
 required dependency for the final setup.
@@ -43,15 +43,17 @@ For the free GitHub Actions setup, omit custom Reel music unless a properly
 licensed file or HTTPS URL is available at no cost.
 
 Publishing keeps a five-minute gap between public formats. The scheduled GitHub
-Actions path publishes the Reel first and the feed carousel last. Story
-publishing is not part of the scheduled path to reduce Meta Graph API calls.
+Actions path publishes Stories, then the Reel, then the feed carousel.
 
-Feed and Reel captions are generated separately. Legal review blocks publication
-if the two format captions are identical.
+Feed and Reel captions are generated separately with longer explanatory copy
+and searchable title keywords. Legal review blocks publication if the two
+format captions are identical.
 
 The active content pillars are massage, skincare, and posture/body-shape care.
 Generated feed images are `1080x1350` (`4:5`) while important title text stays
-inside the centered square crop used by the Instagram profile grid.
+inside the centered square crop used by the Instagram profile grid. Cover
+titles automatically add searchable keywords such as `마사지샵`, `피부관리샵`,
+`에스테틱`, `체형교정`, or `자세교정` when they fit the content pillar.
 
 ## Required Accounts And Keys
 
@@ -149,9 +151,10 @@ META_GRAPH_VERSION
 The GitHub Actions schedule is the primary free scheduler. The scheduled job
 runs `npm run run:instagram-slot -- --fallback-publish --allow-late-publish`,
 so it first checks Instagram media for the current slot. If the slot already
-has both the Reel and feed carousel, it exits without publishing. If either
-format is missing, it generates a fresh post, runs legal review, uploads to
-Cloudinary, publishes only the missing format(s), and verifies the slot again.
+has the Reel, feed carousel, and required Stories, it exits without publishing.
+If any required format is missing, it generates a fresh post, runs legal review,
+uploads to Cloudinary, publishes only the missing format(s), and verifies the
+slot again.
 
 ## Free Cloud Setup
 

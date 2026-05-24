@@ -43,6 +43,7 @@ jobs:
       META_GRAPH_VERSION: ${{ secrets.META_GRAPH_VERSION || 'v25.0' }}
       PUBLISH_FORMAT_GAP_MS: ${{ secrets.PUBLISH_FORMAT_GAP_MS || '300000' }}
       FALLBACK_FORMAT_GAP_MS: ${{ secrets.FALLBACK_FORMAT_GAP_MS || '300000' }}
+      REQUIRED_STORY_COUNT: ${{ secrets.REQUIRED_STORY_COUNT || '5' }}
       REEL_SOURCE: ${{ secrets.REEL_SOURCE || 'pexels' }}
       REEL_AUDIO_PATH: ${{ secrets.REEL_AUDIO_PATH }}
       REEL_AUDIO_URL: ${{ secrets.REEL_AUDIO_URL }}

@@ -12,18 +12,25 @@ const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
 const baseUrl = `https://graph.facebook.com/${graphVersion}`;
 const scheduledHours = [9, 13, 17];
 const settleMinutes = Number(argv['settle-minutes'] || 25);
+const requiredStoryCount = Number(argv['required-story-count'] || process.env.REQUIRED_STORY_COUNT || 5);
 const slot = parseSlot(argv.slot) || currentSlot(new Date());
 const slotStartUtc = kstSlotToUtc(slot);
 const slotEndUtc = new Date(slotStartUtc.getTime() + 2 * 60 * 60 * 1000);
 const settleAtUtc = new Date(slotStartUtc.getTime() + settleMinutes * 60 * 1000);
 const now = new Date();
 
-const media = await getGraph(`/${igUserId}/media`, {
-  fields: 'id,caption,media_product_type,media_type,timestamp,permalink',
-  limit: '50',
-});
+const fields = 'id,caption,media_product_type,media_type,timestamp,permalink';
+const [media, storiesResult] = await Promise.all([
+  getGraph(`/${igUserId}/media`, { fields, limit: '50' }),
+  getGraph(`/${igUserId}/stories`, { fields, limit: '50' }),
+]);
 
 const slotItems = (media.data || []).filter((item) => {
+  if (!item.timestamp) return false;
+  const t = new Date(item.timestamp);
+  return t >= slotStartUtc && t <= slotEndUtc;
+});
+const slotStories = (storiesResult.data || []).filter((item) => {
   if (!item.timestamp) return false;
   const t = new Date(item.timestamp);
   return t >= slotStartUtc && t <= slotEndUtc;
@@ -31,6 +38,7 @@ const slotItems = (media.data || []).filter((item) => {
 
 const reels = slotItems.filter((item) => (item.media_product_type || item.media_type) === 'REELS');
 const feeds = slotItems.filter((item) => (item.media_product_type || item.media_type) === 'FEED');
+const stories = slotStories.filter((item) => (item.media_product_type || item.media_type) === 'STORY');
 const summary = {
   slotKst: slot.key,
   checkedAt: now.toISOString(),
@@ -38,9 +46,11 @@ const summary = {
   status: 'unknown',
   reels: reels.map(publicItem),
   feeds: feeds.map(publicItem),
+  stories: stories.map(publicItem),
+  requiredStoryCount,
 };
 
-if (reels.length && feeds.length) {
+if (reels.length && feeds.length && stories.length >= requiredStoryCount) {
   summary.status = 'ok';
   console.log(JSON.stringify(summary, null, 2));
   process.exit(0);
@@ -54,7 +64,7 @@ if (now < settleAtUtc) {
 }
 
 summary.status = 'missing';
-summary.message = `Expected at least one Reel and one Feed post for ${slot.key} KST.`;
+summary.message = `Expected at least one Reel, one Feed post, and ${requiredStoryCount} Stories for ${slot.key} KST.`;
 console.log(JSON.stringify(summary, null, 2));
 process.exit(1);
 

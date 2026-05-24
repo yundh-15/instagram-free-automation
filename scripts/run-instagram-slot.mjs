@@ -13,6 +13,7 @@ const settleMinutes = Number(argv['settle-minutes'] || process.env.FALLBACK_SETT
 const fallbackPublish = Boolean(argv['fallback-publish']);
 const allowLatePublish = Boolean(argv['allow-late-publish']);
 const formatGapMs = Number(argv['format-gap-ms'] || process.env.FALLBACK_FORMAT_GAP_MS || process.env.PUBLISH_FORMAT_GAP_MS || 300000);
+const requiredStoryCount = Number(argv['required-story-count'] || process.env.REQUIRED_STORY_COUNT || 5);
 const igUserId = requireEnv('IG_USER_ID');
 const accessToken = requireEnv('META_ACCESS_TOKEN');
 const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
@@ -32,11 +33,13 @@ const summary = {
   status: initial.status,
   reels: initial.reels.map(publicItem),
   feeds: initial.feeds.map(publicItem),
+  stories: initial.stories.map(publicItem),
+  requiredStoryCount,
   action: 'none',
 };
 
 if (initial.status === 'ok') {
-  summary.message = 'Slot already has at least one Reel and one Feed post.';
+  summary.message = `Slot already has at least one Reel, one Feed post, and ${requiredStoryCount} Stories.`;
   await writeRunSummary(summary);
   console.log(JSON.stringify(summary, null, 2));
   process.exit(0);
@@ -68,10 +71,24 @@ if (now > slotEndUtc && !allowLatePublish) {
 
 const missingReel = initial.reels.length === 0;
 const missingFeed = initial.feeds.length === 0;
-summary.action = `publishing ${[missingReel ? 'reel' : '', missingFeed ? 'feed' : ''].filter(Boolean).join(' and ')}`;
+const missingStories = initial.stories.length < requiredStoryCount;
+summary.action = `publishing ${[
+  missingStories ? 'stories' : '',
+  missingReel ? 'reel' : '',
+  missingFeed ? 'feed' : '',
+].filter(Boolean).join(' and ')}`;
 
 const payloadPath = await buildPublishPayload(preferredFallbackTopic(initial));
 summary.payloadPath = relative(payloadPath);
+
+if (missingStories) {
+  runNodeScript('scripts/publish-instagram-stories.mjs', ['--payload', payloadPath]);
+}
+
+if (missingStories && (missingReel || missingFeed) && formatGapMs > 0) {
+  console.log(`Waiting ${formatGapMs}ms before feed/Reel publish.`);
+  await sleep(formatGapMs);
+}
 
 if (missingReel) {
   runNodeScript('scripts/publish-instagram-reel.mjs', ['--payload', payloadPath]);
@@ -91,6 +108,7 @@ const final = await inspectSlot();
 summary.status = final.status;
 summary.reels = final.reels.map(publicItem);
 summary.feeds = final.feeds.map(publicItem);
+summary.stories = final.stories.map(publicItem);
 summary.completedAt = new Date().toISOString();
 summary.message = final.status === 'ok'
   ? 'Fallback publish completed and slot verified.'
@@ -129,21 +147,29 @@ function preferredFallbackTopic(slotInspection) {
 }
 
 async function inspectSlot() {
-  const media = await getGraph(`/${igUserId}/media`, {
-    fields: 'id,caption,media_product_type,media_type,timestamp,permalink',
-    limit: '50',
-  });
+  const fields = 'id,caption,media_product_type,media_type,timestamp,permalink';
+  const [media, storiesResult] = await Promise.all([
+    getGraph(`/${igUserId}/media`, { fields, limit: '50' }),
+    getGraph(`/${igUserId}/stories`, { fields, limit: '50' }),
+  ]);
   const slotItems = (media.data || []).filter((item) => {
+    if (!item.timestamp) return false;
+    const t = new Date(item.timestamp);
+    return t >= slotStartUtc && t <= slotEndUtc;
+  });
+  const slotStories = (storiesResult.data || []).filter((item) => {
     if (!item.timestamp) return false;
     const t = new Date(item.timestamp);
     return t >= slotStartUtc && t <= slotEndUtc;
   });
   const reels = slotItems.filter((item) => (item.media_product_type || item.media_type) === 'REELS');
   const feeds = slotItems.filter((item) => (item.media_product_type || item.media_type) === 'FEED');
+  const stories = slotStories.filter((item) => (item.media_product_type || item.media_type) === 'STORY');
   return {
-    status: reels.length && feeds.length ? 'ok' : 'missing',
+    status: reels.length && feeds.length && stories.length >= requiredStoryCount ? 'ok' : 'missing',
     reels,
     feeds,
+    stories,
   };
 }
 
