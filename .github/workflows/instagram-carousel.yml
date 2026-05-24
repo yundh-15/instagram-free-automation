@@ -1,0 +1,123 @@
+name: Instagram Carousel Automation
+
+on:
+  schedule:
+    # KST 09:35, 13:35, 17:35. Runs in GitHub's free cloud runner.
+    - cron: '35 0,4,8 * * *'
+  workflow_dispatch:
+    inputs:
+      category:
+        description: massage, skincare, or posture
+        required: false
+        default: massage
+      topic:
+        description: Optional Korean post topic
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-carousel-automation
+  cancel-in-progress: false
+
+jobs:
+  generate-upload-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+      PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+      UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+      CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+      CLOUDINARY_UPLOAD_PRESET: ${{ secrets.CLOUDINARY_UPLOAD_PRESET }}
+      CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+      CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+      META_GRAPH_VERSION: ${{ secrets.META_GRAPH_VERSION || 'v25.0' }}
+      PUBLISH_FORMAT_GAP_MS: ${{ secrets.PUBLISH_FORMAT_GAP_MS || '300000' }}
+      FALLBACK_FORMAT_GAP_MS: ${{ secrets.FALLBACK_FORMAT_GAP_MS || '300000' }}
+      REEL_SOURCE: ${{ secrets.REEL_SOURCE || 'pexels' }}
+      REEL_AUDIO_PATH: ${{ secrets.REEL_AUDIO_PATH }}
+      REEL_AUDIO_URL: ${{ secrets.REEL_AUDIO_URL }}
+      REEL_AUDIO_VOLUME: ${{ secrets.REEL_AUDIO_VOLUME || '0.18' }}
+      REEL_AUDIO_TITLE: ${{ secrets.REEL_AUDIO_TITLE }}
+      REEL_AUDIO_CREATOR: ${{ secrets.REEL_AUDIO_CREATOR }}
+      REEL_AUDIO_SOURCE_URL: ${{ secrets.REEL_AUDIO_SOURCE_URL }}
+      REEL_AUDIO_LICENSE: ${{ secrets.REEL_AUDIO_LICENSE }}
+      REEL_AUDIO_CREDIT: ${{ secrets.REEL_AUDIO_CREDIT }}
+      CHROME_BIN: google-chrome
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Free cloud preflight
+        run: npm run preflight:free-cloud
+
+      - name: Publish scheduled Instagram slot if missing
+        if: github.event_name == 'schedule'
+        run: npm run run:instagram-slot -- --fallback-publish
+
+      - name: Generate carousel
+        if: github.event_name != 'schedule'
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.topic }}" ]; then
+            npm run generate -- --category "${{ github.event.inputs.category || 'massage' }}" --topic "${{ github.event.inputs.topic }}"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.category }}" ]; then
+            npm run generate -- --category "${{ github.event.inputs.category }}"
+          else
+            npm run generate
+          fi
+
+      - name: Legal review
+        if: github.event_name != 'schedule'
+        run: |
+          POST_JSON="$(find output -name post.json | sort | tail -1)"
+          npm run legal:review -- --post "$POST_JSON"
+
+      - name: Upload images to Cloudinary
+        if: github.event_name != 'schedule'
+        run: |
+          POST_JSON="$(find output -name post.json | sort | tail -1)"
+          npm run upload:cloudinary -- --post "$POST_JSON"
+
+      - name: Legal review uploaded payload
+        if: github.event_name != 'schedule'
+        run: |
+          POST_JSON="$(find output -name post.json | sort | tail -1)"
+          PAYLOAD="$(dirname "$POST_JSON")/public-image-urls.json"
+          npm run legal:review -- --payload "$PAYLOAD"
+
+      - name: Publish Instagram bundle
+        if: github.event_name != 'schedule'
+        run: |
+          POST_JSON="$(find output -name post.json | sort | tail -1)"
+          PAYLOAD="$(dirname "$POST_JSON")/public-image-urls.json"
+          npm run publish:bundle -- --payload "$PAYLOAD"
+
+      - name: Commit used photo registry
+        run: |
+          if git diff --quiet -- data/used-photos.json data/used-topics.json data/used-videos.json; then
+            echo "No new used photo IDs, video IDs, or topics to record"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/used-photos.json data/used-topics.json data/used-videos.json
+          git commit -m "Record used Instagram content history [skip ci]"
+          git push
+
+      - name: Keep generated files as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: instagram-carousel-output
+          path: output
