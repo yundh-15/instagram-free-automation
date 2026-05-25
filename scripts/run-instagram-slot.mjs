@@ -3,12 +3,19 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  currentSlot,
+  inSlotObservationWindow,
+  kstSlotToUtc,
+  parseSlot,
+  slotObservationEndUtc,
+  slotPublishCutoffUtc,
+} from './instagram-slot-window.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
 
 const argv = parseArgs(process.argv.slice(2));
-const scheduledHours = [9, 13, 17];
 const settleMinutes = Number(argv['settle-minutes'] || process.env.FALLBACK_SETTLE_MINUTES || 25);
 const fallbackPublish = Boolean(argv['fallback-publish']);
 const allowLatePublish = Boolean(argv['allow-late-publish']);
@@ -27,7 +34,8 @@ const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
 const baseUrl = `https://graph.facebook.com/${graphVersion}`;
 const slot = parseSlot(argv.slot) || currentSlot(new Date());
 const slotStartUtc = kstSlotToUtc(slot);
-const slotEndUtc = new Date(slotStartUtc.getTime() + 2 * 60 * 60 * 1000);
+const publishCutoffUtc = slotPublishCutoffUtc(slot);
+const observationEndUtc = slotObservationEndUtc(slot);
 const settleAtUtc = new Date(slotStartUtc.getTime() + settleMinutes * 60 * 1000);
 const now = new Date();
 
@@ -36,7 +44,8 @@ const summary = {
   slotKst: slot.key,
   checkedAt: now.toISOString(),
   settleAt: settleAtUtc.toISOString(),
-  slotEndAt: slotEndUtc.toISOString(),
+  publishCutoffAt: publishCutoffUtc.toISOString(),
+  observationEndAt: observationEndUtc.toISOString(),
   status: initial.status,
   reels: initial.reels.map(publicItem),
   feeds: initial.feeds.map(publicItem),
@@ -68,13 +77,22 @@ if (!fallbackPublish) {
   process.exit(1);
 }
 
-if (now > slotEndUtc && !allowLatePublish) {
+if (now >= observationEndUtc) {
   summary.status = 'missed';
-  summary.message = 'Slot window has already ended, so fallback publishing was skipped to avoid late off-slot posts.';
+  summary.message = 'A newer scheduled slot has started, so publishing this older slot was skipped.';
   await writeRunSummary(summary);
   console.log(JSON.stringify(summary, null, 2));
   process.exit(1);
 }
+
+if (now > publishCutoffUtc && !allowLatePublish) {
+  summary.status = 'missed';
+  summary.message = 'The publishing cutoff has passed, so fallback publishing was skipped to avoid late off-slot posts.';
+  await writeRunSummary(summary);
+  console.log(JSON.stringify(summary, null, 2));
+  process.exit(1);
+}
+if (now > publishCutoffUtc) summary.latePublishOverride = true;
 
 summary.requestedFormats = missingFormats(initial);
 
@@ -180,13 +198,11 @@ async function inspectSlot() {
   ]);
   const slotItems = (media.data || []).filter((item) => {
     if (!item.timestamp) return false;
-    const t = new Date(item.timestamp);
-    return t >= slotStartUtc && t <= slotEndUtc;
+    return inSlotObservationWindow(item.timestamp, slot);
   });
   const slotStories = (storiesResult.data || []).filter((item) => {
     if (!item.timestamp) return false;
-    const t = new Date(item.timestamp);
-    return t >= slotStartUtc && t <= slotEndUtc;
+    return inSlotObservationWindow(item.timestamp, slot);
   });
   const reels = slotItems.filter((item) => (item.media_product_type || item.media_type) === 'REELS');
   const feeds = slotItems.filter((item) => (item.media_product_type || item.media_type) === 'FEED');
@@ -251,67 +267,6 @@ function missingFormats(inspection) {
     inspection.reels.length === 0 ? 'reel' : '',
     inspection.feeds.length === 0 ? 'feed' : '',
   ].filter(Boolean);
-}
-
-function currentSlot(value) {
-  const parts = kstParts(value);
-  let slotHour = scheduledHours.findLast((candidate) => parts.hour >= candidate);
-  let year = parts.year;
-  let month = parts.month;
-  let day = parts.day;
-  if (!slotHour) {
-    const previous = new Date(value.getTime() - 24 * 60 * 60 * 1000);
-    const previousParts = kstParts(previous);
-    year = previousParts.year;
-    month = previousParts.month;
-    day = previousParts.day;
-    slotHour = 17;
-  }
-  return {
-    year,
-    month,
-    day,
-    hour: slotHour,
-    key: `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}T${String(slotHour).padStart(2, '0')}`,
-  };
-}
-
-function parseSlot(value) {
-  if (!value) return null;
-  const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2})$/);
-  if (!match) throw new Error('Pass --slot as YYYY-MM-DDTHH in KST, for example 2026-05-24T17');
-  const [, year, month, day, hour] = match;
-  const parts = [Number(year), Number(month), Number(day), Number(hour)];
-  const normalized = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
-  if (
-    normalized.getUTCFullYear() !== parts[0]
-    || normalized.getUTCMonth() + 1 !== parts[1]
-    || normalized.getUTCDate() !== parts[2]
-    || !scheduledHours.includes(parts[3])
-  ) {
-    throw new Error('Slot must be a valid KST date at a scheduled hour: 09, 13, or 17');
-  }
-  return {
-    year: parts[0],
-    month: parts[1],
-    day: parts[2],
-    hour: parts[3],
-    key: `${year}-${month}-${day}T${hour}`,
-  };
-}
-
-function kstSlotToUtc(slotValue) {
-  return new Date(Date.UTC(slotValue.year, slotValue.month - 1, slotValue.day, slotValue.hour - 9, 0, 0));
-}
-
-function kstParts(value) {
-  const kst = new Date(new Date(value).getTime() + 9 * 60 * 60 * 1000);
-  return {
-    year: kst.getUTCFullYear(),
-    month: kst.getUTCMonth() + 1,
-    day: kst.getUTCDate(),
-    hour: kst.getUTCHours(),
-  };
 }
 
 function loadEnv(file) {

@@ -22,6 +22,8 @@ It runs on GitHub-hosted Ubuntu at:
 It also runs recovery checks at 09:55/10:15, 13:55/14:15, and 17:55/18:15 KST.
 The slot runner is idempotent, so recovery checks exit without publishing when
 the Reel, feed post, and five Stories are already present.
+Scheduled publishing stops two hours after a slot begins. A GitHub run delayed
+beyond that cutoff fails closed instead of publishing off-slot duplicates.
 
 Keep this as the only active scheduler for the Instagram account. Deactivate
 any previously imported n8n Cloud workflow before relying on this schedule;
@@ -35,6 +37,8 @@ Stories use the same photo order as the feed carousel; after a partially
 successful Story run, recovery publishes only the remaining required count.
 Scheduled retries use a stable per-slot content key so a Story-only partial
 failure does not switch to a different topic on the recovery run.
+Results are observed through the beginning of the next slot, so an explicitly
+approved late manual recovery cannot be repeated by a later recovery check.
 
 Manual `workflow_dispatch` runs default to `dry_run=true`, which runs preflight
 without publishing. Set `dry_run=false` only when intentionally publishing a

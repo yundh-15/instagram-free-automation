@@ -165,8 +165,8 @@ REEL_AUDIO_CREDIT
 ```
 
 The GitHub Actions schedule is the primary free scheduler. The scheduled job
-runs `npm run run:instagram-slot -- --fallback-publish --allow-late-publish`,
-so it first checks Instagram media for the current slot. If the slot already
+runs `npm run run:instagram-slot -- --fallback-publish`, so it first checks
+Instagram media for the current slot. If the slot already
 has the Reel, feed carousel, and required Stories, it exits without publishing.
 If any required format is missing, it generates a fresh post, runs legal review,
 uploads to Cloudinary, publishes only the missing format(s), and verifies the
@@ -176,9 +176,12 @@ of posting a second full set. Scheduled content selection is stable per slot,
 so a recovery that can see only partial Stories regenerates the same topic.
 When the Reel already exists, Story/feed recovery skips unnecessary Reel video
 creation and cannot be blocked by an unrelated video-source failure.
-Each slot has one primary run and two recovery runs so a delayed
-GitHub scheduler or temporary Graph API failure does not leave the account
-unfinished.
+Each slot has one primary run and two recovery runs. Publishing closes two
+hours after its scheduled start so an excessively delayed GitHub run cannot
+post repeated off-slot content. If late publishing is explicitly enabled for
+manual recovery, results remain attributed to that slot until the next
+scheduled slot begins, preventing repeated recovery runs from publishing them
+again.
 
 ## Free Cloud Setup
 
