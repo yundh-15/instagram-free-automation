@@ -18,8 +18,21 @@ const accessToken = requireEnv('META_ACCESS_TOKEN');
 const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
 const baseUrl = `https://graph.facebook.com/${graphVersion}`;
 
-const storyImages = orderedStoryImages(payload);
-if (!storyImages.length) throw new Error('No image URLs found in payload');
+const allStoryImages = orderedStoryImages(payload);
+if (!allStoryImages.length) throw new Error('No image URLs found in payload');
+
+const skipCount = nonNegativeInteger(argv.skip || 0, '--skip');
+const publishCount = argv.count === undefined
+  ? allStoryImages.length - skipCount
+  : positiveInteger(argv.count, '--count');
+if (skipCount >= allStoryImages.length) {
+  throw new Error(`--skip must leave at least one Story image to publish; got ${skipCount} for ${allStoryImages.length} images`);
+}
+if (skipCount + publishCount > allStoryImages.length) {
+  throw new Error(`Selected Story range exceeds available images; skip=${skipCount}, count=${publishCount}, images=${allStoryImages.length}`);
+}
+const storyImages = allStoryImages.slice(skipCount, skipCount + publishCount);
+if (!storyImages.length) throw new Error('No remaining Story images selected for publishing');
 
 const stories = [];
 for (const image of storyImages) {
@@ -43,6 +56,7 @@ const result = {
   topic: payload.topic,
   publishedAt: new Date().toISOString(),
   graphVersion,
+  skippedExistingStoryCount: skipCount,
   stories,
 };
 
@@ -155,4 +169,26 @@ function requireEnv(key) {
 
 function relative(path) {
   return path.replace(`${ROOT}/`, '');
+}
+
+function nonNegativeInteger(value, optionName) {
+  if (typeof value === 'boolean') {
+    throw new Error(`${optionName} requires an integer value`);
+  }
+  const parsed = Number(value);
+  if (!Number.isInteger(parsed) || parsed < 0) {
+    throw new Error(`${optionName} must be a non-negative integer; got ${value}`);
+  }
+  return parsed;
+}
+
+function positiveInteger(value, optionName) {
+  if (typeof value === 'boolean') {
+    throw new Error(`${optionName} requires an integer value`);
+  }
+  const parsed = Number(value);
+  if (!Number.isInteger(parsed) || parsed < 1) {
+    throw new Error(`${optionName} must be a positive integer; got ${value}`);
+  }
+  return parsed;
 }

@@ -18,6 +18,9 @@ const accessToken = requireEnv('META_ACCESS_TOKEN');
 const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
 const baseUrl = `https://graph.facebook.com/${graphVersion}`;
 const formatGapMs = Number(argv['format-gap-ms'] || process.env.PUBLISH_FORMAT_GAP_MS || 300000);
+if (!Number.isFinite(formatGapMs) || formatGapMs < 0) {
+  throw new Error(`format gap milliseconds must be a non-negative number; got ${formatGapMs}`);
+}
 
 const imageUrls = payload.imageUrls || [];
 const storyImages = orderedStoryImages(payload);

@@ -21,10 +21,21 @@ const folder = argv.folder || `instagram-carousel/${runStamp}-${safeFolderName(p
 const reelTag = argv.tag || `ig-carousel-${Date.now()}`;
 const secondsPerSlide = Number(argv.secondsPerSlide || 4);
 const reelSource = argv['reel-source'] || process.env.REEL_SOURCE || 'pexels';
-const reelAudio = getReelAudioConfig();
+const skipReel = Boolean(argv['skip-reel']);
+const reelAudio = skipReel ? null : getReelAudioConfig();
+
+if (!skipReel && !['pexels', 'pexels-required', 'slideshow'].includes(reelSource)) {
+  throw new Error(`Unsupported REEL_SOURCE: ${reelSource}. Use pexels, pexels-required, or slideshow.`);
+}
+if (!skipReel && reelSource === 'pexels-required' && !process.env.PEXELS_API_KEY) {
+  throw new Error('REEL_SOURCE=pexels-required requires PEXELS_API_KEY.');
+}
 
 const uploads = [];
 const images = post.images || [];
+if (!Array.isArray(images) || images.length < 2 || images.length > 10) {
+  throw new Error(`Instagram publishing requires 2-10 generated images; got ${Array.isArray(images) ? images.length : 0}`);
+}
 for (let index = 0; index < images.length; index += 1) {
   const image = images[index];
   const imagePath = resolve(ROOT, image);
@@ -53,13 +64,23 @@ for (let index = 0; index < images.length; index += 1) {
   });
 }
 
-const { reelVideo, reelVideoMeta } = await createReelVideo({
-  cloudName,
-  folder,
-  reelTag,
-  secondsPerSlide,
-  post,
-});
+const { reelVideo, reelVideoMeta } = skipReel
+  ? {
+    reelVideo: null,
+    reelVideoMeta: {
+      source: null,
+      deliveryUrl: null,
+      attribution: null,
+      audioAttribution: null,
+    },
+  }
+  : await createReelVideo({
+    cloudName,
+    folder,
+    reelTag,
+    secondsPerSlide,
+    post,
+  });
 const orderedUploads = [...uploads].sort((a, b) => a.slide - b.slide);
 const feedImages = orderedUploads.map((upload) => ({
   slide: upload.slide,
@@ -78,6 +99,10 @@ const storyImages = orderedUploads.map((upload) => ({
 
 const output = {
   topic: post.topic,
+  category: post.category || null,
+  images: post.images || [],
+  cards: post.cards || [],
+  photos: post.photos || [],
   caption: withMediaCredit(post.feedCaption || post.caption, post, reelVideoMeta),
   feedCaption: withMediaCredit(post.feedCaption || post.caption, post, reelVideoMeta),
   reelCaption: withMediaCredit(post.reelCaption || buildDefaultReelCaption(post), post, reelVideoMeta),
@@ -91,9 +116,9 @@ const output = {
   secondsPerSlide,
   reelStyle: post.reel || null,
   aiVideoPrompt: post.reel?.aiVideoPrompt || null,
-  reelVideoSource: reelVideoMeta.source,
-  reelVideoUrl: reelVideoMeta.deliveryUrl || reelVideo.secure_url || reelVideo.url,
-  reelVideoPublicId: reelVideo.public_id,
+  reelVideoSource: reelVideoMeta.source || null,
+  reelVideoUrl: reelVideoMeta.deliveryUrl || reelVideo?.secure_url || reelVideo?.url || null,
+  reelVideoPublicId: reelVideo?.public_id || null,
   reelVideoAttribution: reelVideoMeta.attribution,
   reelAudioAttribution: reelVideoMeta.audioAttribution || null,
   uploads,
@@ -507,7 +532,7 @@ function withMediaCredit(caption, currentPost, videoMeta) {
   const mediaSources = new Set((currentPost.photos || [])
     .map((photo) => photo?.source)
     .filter((source) => source && source !== 'generated_css_background'));
-  if (videoMeta.source === 'pexels_video') mediaSources.add('Pexels');
+  if (videoMeta?.source === 'pexels_video') mediaSources.add('Pexels');
   const creditLines = [];
   if (mediaSources.size) {
     const line = `사진/영상: ${[...mediaSources].sort().join(', ')}`;

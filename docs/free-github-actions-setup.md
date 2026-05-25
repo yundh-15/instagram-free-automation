@@ -23,11 +23,18 @@ It also runs recovery checks at 09:55/10:15, 13:55/14:15, and 17:55/18:15 KST.
 The slot runner is idempotent, so recovery checks exit without publishing when
 the Reel, feed post, and five Stories are already present.
 
+Keep this as the only active scheduler for the Instagram account. Deactivate
+any previously imported n8n Cloud workflow before relying on this schedule;
+running both schedulers can publish two sets in the same slot.
+
 The scheduled run checks Instagram first. If the slot already has a Reel, a
 feed post, and five Stories, it exits without publishing. If any required
 format is missing, it generates a post, runs legal review, uploads to
 Cloudinary, publishes the missing format(s), and verifies the slot again.
-Stories use the same photo order as the feed carousel.
+Stories use the same photo order as the feed carousel; after a partially
+successful Story run, recovery publishes only the remaining required count.
+Scheduled retries use a stable per-slot content key so a Story-only partial
+failure does not switch to a different topic on the recovery run.
 
 Manual `workflow_dispatch` runs default to `dry_run=true`, which runs preflight
 without publishing. Set `dry_run=false` only when intentionally publishing a
@@ -38,7 +45,6 @@ manual one-off post.
 Add these repository secrets:
 
 ```text
-PEXELS_API_KEY
 CLOUDINARY_CLOUD_NAME
 CLOUDINARY_API_KEY
 CLOUDINARY_API_SECRET
@@ -50,6 +56,7 @@ META_GRAPH_VERSION
 Optional free extras:
 
 ```text
+PEXELS_API_KEY
 PIXABAY_API_KEY
 UNSPLASH_ACCESS_KEY
 CLOUDINARY_UPLOAD_PRESET
@@ -58,6 +65,10 @@ PUBLISH_FORMAT_GAP_MS
 FALLBACK_FORMAT_GAP_MS
 REQUIRED_STORY_COUNT
 ```
+
+Set `PEXELS_API_KEY` when using stock photos/videos. It becomes required when
+`REEL_SOURCE=pexels-required`; otherwise the pipeline can fall back to
+generated card backgrounds and a slideshow Reel.
 
 Do not add an n8n API key. n8n Cloud/API access is not part of the required free
 setup.
@@ -68,8 +79,8 @@ Before pushing, run:
 
 ```bash
 npm run preflight:free-cloud
-npm run check:instagram-slot -- --slot 2026-05-24T23
-npm run run:instagram-slot -- --slot 2026-05-24T23
+npm run check:instagram-slot -- --slot 2026-05-24T17
+npm run run:instagram-slot -- --slot 2026-05-24T17
 ```
 
 The last command should exit without publishing if the slot is already

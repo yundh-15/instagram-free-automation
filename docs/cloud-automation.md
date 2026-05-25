@@ -23,11 +23,16 @@ Supported free cloud path:
 
 Use GitHub Actions as the primary free scheduler. Do not make n8n API access a
 required dependency for the final setup.
+Before enabling this schedule, deactivate any previously deployed n8n workflow
+for the same Instagram account; two active schedulers can publish duplicate
+sets before either one can observe the other's posts.
 
 Every generated post must pass `npm run legal:review` before upload or
-publication. The review blocks unverified local images, unknown image sources,
-missing stock-license metadata, missing Reel source traceability, and public
-wording that makes the account look like it is recruiting 체험단.
+publication. The review covers text rendered into every card as well as
+captions, and blocks missing visual-copy metadata, unverified local images,
+unknown image sources, missing stock-license metadata, missing Reel source
+traceability, and public wording that makes the account look like it is
+recruiting 체험단.
 
 Reels use free Pexels stock video when a suitable portrait clip is available.
 The video is uploaded to Cloudinary and then published through Instagram Graph.
@@ -59,10 +64,10 @@ titles automatically add searchable keywords such as `마사지샵`, `피부관�
 
 ## Required Accounts And Keys
 
-Pexels:
+Pexels (optional unless `REEL_SOURCE=pexels-required`):
 
 - Create a free API key at `https://www.pexels.com/api/`.
-- Add it as `PEXELS_API_KEY`.
+- Add it as `PEXELS_API_KEY` to use stock media instead of generated/slideshow fallbacks.
 - Pexels says the API is free and default keys include rate limits, so avoid high-frequency runs.
 - The same key is used for free stock photos and portrait stock videos for Reels.
 
@@ -76,8 +81,9 @@ Optional extra photo APIs:
 Cloudinary:
 
 - Create a free account.
-- Create an unsigned upload preset.
-- Add `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_UPLOAD_PRESET`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`.
+- Optionally create an unsigned upload preset for slide image uploads.
+- Add `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`; Reel/video creation needs signed API requests.
+- Add `CLOUDINARY_UPLOAD_PRESET` only if using unsigned image uploads.
 - This is needed because Instagram Graph API needs publicly reachable image URLs, not local files.
 
 Meta / Instagram:
@@ -129,25 +135,33 @@ The workflow file is already in:
 Add these repository secrets in GitHub:
 
 ```text
+CLOUDINARY_CLOUD_NAME
+CLOUDINARY_API_KEY
+CLOUDINARY_API_SECRET
+IG_USER_ID
+META_ACCESS_TOKEN
+```
+
+Add optional settings only when used:
+
+```text
 PEXELS_API_KEY
 PIXABAY_API_KEY
 UNSPLASH_ACCESS_KEY
+CLOUDINARY_UPLOAD_PRESET
+META_GRAPH_VERSION
+REEL_SOURCE
+PUBLISH_FORMAT_GAP_MS
+FALLBACK_FORMAT_GAP_MS
+REQUIRED_STORY_COUNT
 REEL_AUDIO_PATH
 REEL_AUDIO_URL
-REEL_AUDIO_CLOUDINARY_PUBLIC_ID
 REEL_AUDIO_VOLUME
 REEL_AUDIO_TITLE
 REEL_AUDIO_CREATOR
 REEL_AUDIO_SOURCE_URL
 REEL_AUDIO_LICENSE
 REEL_AUDIO_CREDIT
-CLOUDINARY_CLOUD_NAME
-CLOUDINARY_UPLOAD_PRESET
-CLOUDINARY_API_KEY
-CLOUDINARY_API_SECRET
-IG_USER_ID
-META_ACCESS_TOKEN
-META_GRAPH_VERSION
 ```
 
 The GitHub Actions schedule is the primary free scheduler. The scheduled job
@@ -156,7 +170,13 @@ so it first checks Instagram media for the current slot. If the slot already
 has the Reel, feed carousel, and required Stories, it exits without publishing.
 If any required format is missing, it generates a fresh post, runs legal review,
 uploads to Cloudinary, publishes only the missing format(s), and verifies the
-slot again. Each slot has one primary run and two recovery runs so a delayed
+slot again. When only some Stories were published before a failure, recovery
+publishes only the number still needed for the configured Story target instead
+of posting a second full set. Scheduled content selection is stable per slot,
+so a recovery that can see only partial Stories regenerates the same topic.
+When the Reel already exists, Story/feed recovery skips unnecessary Reel video
+creation and cannot be blocked by an unrelated video-source failure.
+Each slot has one primary run and two recovery runs so a delayed
 GitHub scheduler or temporary Graph API failure does not leave the account
 unfinished.
 

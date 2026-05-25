@@ -35,6 +35,26 @@ if (!review.pass && !argv['allow-fail']) {
 function reviewContent({ payload: currentPayload, text: currentText }) {
   const issues = [];
   const warnings = [];
+  const visualImageCount = Array.isArray(currentPayload.images) && currentPayload.images.length
+    ? currentPayload.images.length
+    : Array.isArray(currentPayload.imageUrls) ? currentPayload.imageUrls.length : 0;
+
+  if (visualImageCount < 2 || visualImageCount > 10) {
+    issues.push({
+      type: 'visual_asset_count',
+      message: `Instagram 게시용 검토 이미지 수는 2-10개여야 합니다. 현재 수: ${visualImageCount}`,
+    });
+  }
+
+  if (
+    visualImageCount
+    && (!Array.isArray(currentPayload.cards) || currentPayload.cards.length !== visualImageCount)
+  ) {
+    issues.push({
+      type: 'visual_copy_traceability',
+      message: `게시 이미지 수(${visualImageCount})와 검토 가능한 카드 문구 수(${currentPayload.cards?.length || 0})가 일치하지 않습니다.`,
+    });
+  }
 
   if (
     currentPayload.feedCaption
@@ -96,10 +116,10 @@ function reviewContent({ payload: currentPayload, text: currentText }) {
   }
 
   const photos = currentPayload.photos || [];
-  if (currentPayload.images?.length && photos.length !== currentPayload.images.length) {
+  if (visualImageCount && photos.length !== visualImageCount) {
     issues.push({
       type: 'copyright_traceability',
-      message: `게시 이미지 수(${currentPayload.images.length})와 권리 검토 대상 수(${photos.length})가 일치하지 않습니다.`,
+      message: `게시 이미지 수(${visualImageCount})와 권리 검토 대상 수(${photos.length})가 일치하지 않습니다.`,
     });
   }
 

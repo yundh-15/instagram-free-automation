@@ -6,9 +6,19 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
 
 const missing = [];
-requireAny('stock photo/video source', ['PEXELS_API_KEY']);
-requireAny('Cloudinary upload auth', ['CLOUDINARY_UPLOAD_PRESET', ['CLOUDINARY_API_KEY', 'CLOUDINARY_API_SECRET']]);
+const reelSource = process.env.REEL_SOURCE || 'pexels';
+if (!['pexels', 'pexels-required', 'slideshow'].includes(reelSource)) {
+  missing.push('REEL_SOURCE must be pexels, pexels-required, or slideshow');
+}
+if (reelSource === 'pexels-required' && !process.env.PEXELS_API_KEY) {
+  missing.push('PEXELS_API_KEY (required by REEL_SOURCE=pexels-required)');
+}
+checkStoryCount();
+checkGapMilliseconds('PUBLISH_FORMAT_GAP_MS');
+checkGapMilliseconds('FALLBACK_FORMAT_GAP_MS');
 requireOne('CLOUDINARY_CLOUD_NAME');
+requireOne('CLOUDINARY_API_KEY');
+requireOne('CLOUDINARY_API_SECRET');
 requireOne('IG_USER_ID');
 requireOne('META_ACCESS_TOKEN');
 
@@ -27,6 +37,9 @@ console.log(`graphVersion=${graphVersion}`);
 if (debug) {
   console.log(`tokenType=${debug.type || 'unknown'}`);
   console.log(`dataAccessExpiresAt=${debug.data_access_expires_at ? new Date(debug.data_access_expires_at * 1000).toISOString() : 'unknown'}`);
+}
+if (!process.env.PEXELS_API_KEY && reelSource !== 'slideshow') {
+  console.log('stockVideoWarning=PEXELS_API_KEY is not set; Reel generation will use the slideshow fallback.');
 }
 
 async function debugToken() {
@@ -49,12 +62,20 @@ function requireOne(key) {
   if (!process.env[key]) missing.push(key);
 }
 
-function requireAny(label, options) {
-  const ok = options.some((option) => {
-    if (Array.isArray(option)) return option.every((key) => Boolean(process.env[key]));
-    return Boolean(process.env[option]);
-  });
-  if (!ok) missing.push(label);
+function checkStoryCount() {
+  if (!process.env.REQUIRED_STORY_COUNT) return;
+  const value = Number(process.env.REQUIRED_STORY_COUNT);
+  if (!Number.isInteger(value) || value < 1 || value > 5) {
+    missing.push('REQUIRED_STORY_COUNT must be an integer from 1 through 5');
+  }
+}
+
+function checkGapMilliseconds(key) {
+  if (!process.env[key]) return;
+  const value = Number(process.env[key]);
+  if (!Number.isFinite(value) || value < 0) {
+    missing.push(`${key} must be a non-negative number`);
+  }
 }
 
 function loadEnv(file) {

@@ -14,6 +14,13 @@ const fallbackPublish = Boolean(argv['fallback-publish']);
 const allowLatePublish = Boolean(argv['allow-late-publish']);
 const formatGapMs = Number(argv['format-gap-ms'] || process.env.FALLBACK_FORMAT_GAP_MS || process.env.PUBLISH_FORMAT_GAP_MS || 300000);
 const requiredStoryCount = Number(argv['required-story-count'] || process.env.REQUIRED_STORY_COUNT || 5);
+const postCheckDelayMs = Number(argv['post-check-delay-ms'] || 15000);
+assertNonNegativeNumber(settleMinutes, 'settle minutes');
+assertNonNegativeNumber(formatGapMs, 'format gap milliseconds');
+assertNonNegativeNumber(postCheckDelayMs, 'post-check delay milliseconds');
+if (!Number.isInteger(requiredStoryCount) || requiredStoryCount < 1 || requiredStoryCount > 5) {
+  throw new Error(`REQUIRED_STORY_COUNT must be an integer from 1 through 5; got ${requiredStoryCount}`);
+}
 const igUserId = requireEnv('IG_USER_ID');
 const accessToken = requireEnv('META_ACCESS_TOKEN');
 const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
@@ -69,41 +76,54 @@ if (now > slotEndUtc && !allowLatePublish) {
   process.exit(1);
 }
 
-const missingReel = initial.reels.length === 0;
-const missingFeed = initial.feeds.length === 0;
-const missingStories = initial.stories.length < requiredStoryCount;
-summary.action = `publishing ${[
-  missingStories ? 'stories' : '',
-  missingReel ? 'reel' : '',
-  missingFeed ? 'feed' : '',
-].filter(Boolean).join(' and ')}`;
+summary.requestedFormats = missingFormats(initial);
 
-const payloadPath = await buildPublishPayload(preferredFallbackTopic(initial));
+const payloadPath = await buildPublishPayload(preferredFallbackTopic(initial), {
+  includeReel: initial.reels.length === 0,
+});
 summary.payloadPath = relative(payloadPath);
 
-if (missingStories) {
-  runNodeScript('scripts/publish-instagram-stories.mjs', ['--payload', payloadPath]);
+const publishedFormats = [];
+let beforePublish = await inspectSlot();
+const missingStoryCount = Math.max(0, requiredStoryCount - beforePublish.stories.length);
+summary.missingStoryCount = missingStoryCount;
+if (missingStoryCount > 0) {
+  runNodeScript('scripts/publish-instagram-stories.mjs', [
+    '--payload', payloadPath,
+    '--skip', String(beforePublish.stories.length),
+    '--count', String(missingStoryCount),
+  ]);
+  publishedFormats.push(`stories(${missingStoryCount})`);
 }
 
-if (missingStories && (missingReel || missingFeed) && formatGapMs > 0) {
+beforePublish = await inspectSlot();
+if (missingStoryCount > 0 && (beforePublish.reels.length === 0 || beforePublish.feeds.length === 0) && formatGapMs > 0) {
   console.log(`Waiting ${formatGapMs}ms before feed/Reel publish.`);
   await sleep(formatGapMs);
 }
 
-if (missingReel) {
+beforePublish = await inspectSlot();
+let publishedReel = false;
+if (beforePublish.reels.length === 0) {
   runNodeScript('scripts/publish-instagram-reel.mjs', ['--payload', payloadPath]);
+  publishedFormats.push('reel');
+  publishedReel = true;
 }
 
-if (missingReel && missingFeed && formatGapMs > 0) {
+beforePublish = await inspectSlot();
+if (publishedReel && beforePublish.feeds.length === 0 && formatGapMs > 0) {
   console.log(`Waiting ${formatGapMs}ms before feed publish.`);
   await sleep(formatGapMs);
 }
 
-if (missingFeed) {
+beforePublish = await inspectSlot();
+if (beforePublish.feeds.length === 0) {
   runNodeScript('scripts/publish-instagram-carousel.mjs', ['--payload', payloadPath]);
+  publishedFormats.push('feed');
 }
+summary.action = publishedFormats.length ? `published ${publishedFormats.join(' and ')}` : 'no publish needed after payload preparation';
 
-await sleep(Number(argv['post-check-delay-ms'] || 15000));
+await sleep(postCheckDelayMs);
 const final = await inspectSlot();
 summary.status = final.status;
 summary.reels = final.reels.map(publicItem);
@@ -118,8 +138,8 @@ await writeRunSummary(summary);
 console.log(JSON.stringify(summary, null, 2));
 process.exit(final.status === 'ok' ? 0 : 1);
 
-async function buildPublishPayload(topic) {
-  const generateArgs = topic ? ['--topic', topic] : [];
+async function buildPublishPayload(topic, { includeReel }) {
+  const generateArgs = topic ? ['--topic', topic] : ['--content-key', slot.key];
   const generatedLine = runNodeScript('scripts/generate-carousel.mjs', generateArgs).stdout
     .split(/\r?\n/)
     .find((line) => line.startsWith('Generated carousel: '));
@@ -130,7 +150,9 @@ async function buildPublishPayload(topic) {
   if (!existsSync(postPath)) throw new Error(`Generated post.json was not found: ${postPath}`);
 
   runNodeScript('scripts/legal-review.mjs', ['--post', postPath]);
-  runNodeScript('scripts/upload-cloudinary.mjs', ['--post', postPath]);
+  const uploadArgs = ['--post', postPath];
+  if (!includeReel) uploadArgs.push('--skip-reel');
+  runNodeScript('scripts/upload-cloudinary.mjs', uploadArgs);
 
   const payloadPath = join(dirname(postPath), 'public-image-urls.json');
   if (!existsSync(payloadPath)) throw new Error(`Upload payload was not found: ${payloadPath}`);
@@ -141,7 +163,11 @@ async function buildPublishPayload(topic) {
 
 function preferredFallbackTopic(slotInspection) {
   const existing = [...slotInspection.reels, ...slotInspection.feeds]
-    .map((item) => String(item.caption || '').split('\n')[0].trim())
+    .map((item) => {
+      const lines = String(item.caption || '').split(/\r?\n/).map((line) => line.trim());
+      const explicitTopic = lines.find((line) => line.startsWith('주제:'));
+      return explicitTopic ? explicitTopic.replace(/^주제:\s*/, '').trim() : lines[0] || '';
+    })
     .find(Boolean);
   return existing || '';
 }
@@ -219,6 +245,14 @@ function publicItem(item) {
   };
 }
 
+function missingFormats(inspection) {
+  return [
+    inspection.stories.length < requiredStoryCount ? 'stories' : '',
+    inspection.reels.length === 0 ? 'reel' : '',
+    inspection.feeds.length === 0 ? 'feed' : '',
+  ].filter(Boolean);
+}
+
 function currentSlot(value) {
   const parts = kstParts(value);
   let slotHour = scheduledHours.findLast((candidate) => parts.hour >= candidate);
@@ -247,11 +281,21 @@ function parseSlot(value) {
   const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2})$/);
   if (!match) throw new Error('Pass --slot as YYYY-MM-DDTHH in KST, for example 2026-05-24T17');
   const [, year, month, day, hour] = match;
+  const parts = [Number(year), Number(month), Number(day), Number(hour)];
+  const normalized = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+  if (
+    normalized.getUTCFullYear() !== parts[0]
+    || normalized.getUTCMonth() + 1 !== parts[1]
+    || normalized.getUTCDate() !== parts[2]
+    || !scheduledHours.includes(parts[3])
+  ) {
+    throw new Error('Slot must be a valid KST date at a scheduled hour: 09, 13, or 17');
+  }
   return {
-    year: Number(year),
-    month: Number(month),
-    day: Number(day),
-    hour: Number(hour),
+    year: parts[0],
+    month: parts[1],
+    day: parts[2],
+    hour: parts[3],
     key: `${year}-${month}-${day}T${hour}`,
   };
 }
@@ -315,4 +359,10 @@ function relative(path) {
 
 function sleep(ms) {
   return new Promise((resolveSleep) => setTimeout(resolveSleep, ms));
+}
+
+function assertNonNegativeNumber(value, label) {
+  if (!Number.isFinite(value) || value < 0) {
+    throw new Error(`${label} must be a non-negative number; got ${value}`);
+  }
 }

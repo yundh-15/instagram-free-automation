@@ -80,6 +80,7 @@ const manifest = {
   outputDir: relative(outDir),
   images: pngFiles,
   html: htmlFiles,
+  cards,
   caption: feedCaption,
   feedCaption,
   reelCaption,
@@ -170,12 +171,45 @@ async function selectContent(options) {
       topic: String(options.topic).trim(),
     };
   }
+  if (options['content-key']) {
+    return selectStableContent(options['content-key'], requestedCategory);
+  }
 
   const categoryName = requestedCategory || pickNextCategory(registry);
   return {
     category: categoryName,
     topic: pickNextTopic(categoryName, registry),
   };
+}
+
+function selectStableContent(key, requestedCategory) {
+  const sequenceIndex = slotSequenceIndex(key) ?? stableIndex(key, CATEGORIES.length * TOPICS.massage.length);
+  const categoryName = requestedCategory || CATEGORIES[sequenceIndex % CATEGORIES.length];
+  const list = TOPICS[categoryName] || TOPICS.massage;
+  const topicIndex = requestedCategory
+    ? sequenceIndex % list.length
+    : Math.floor(sequenceIndex / CATEGORIES.length) % list.length;
+  return {
+    category: categoryName,
+    topic: list[topicIndex],
+  };
+}
+
+function slotSequenceIndex(value) {
+  const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})T(09|13|17)$/);
+  if (!match) return null;
+  const [, year, month, day, hour] = match;
+  const dayNumber = Math.floor(Date.UTC(Number(year), Number(month) - 1, Number(day)) / 86400000);
+  return dayNumber * CATEGORIES.length + ['09', '13', '17'].indexOf(hour);
+}
+
+function stableIndex(value, modulo) {
+  let hash = 2166136261;
+  for (const character of String(value || '')) {
+    hash ^= character.codePointAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0) % modulo;
 }
 
 function normalizeCategory(value) {

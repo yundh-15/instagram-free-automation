@@ -44,7 +44,7 @@ jobs:
       CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
       META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
-      META_GRAPH_VERSION: ${{ secrets.META_GRAPH_VERSION || 'v21.0' }}
+      META_GRAPH_VERSION: ${{ secrets.META_GRAPH_VERSION || 'v25.0' }}
       PUBLISH_FORMAT_GAP_MS: ${{ secrets.PUBLISH_FORMAT_GAP_MS || '300000' }}
       FALLBACK_FORMAT_GAP_MS: ${{ secrets.FALLBACK_FORMAT_GAP_MS || '300000' }}
       REQUIRED_STORY_COUNT: ${{ secrets.REQUIRED_STORY_COUNT || '5' }}

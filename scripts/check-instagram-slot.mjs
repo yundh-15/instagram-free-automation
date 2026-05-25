@@ -13,6 +13,12 @@ const baseUrl = `https://graph.facebook.com/${graphVersion}`;
 const scheduledHours = [9, 13, 17];
 const settleMinutes = Number(argv['settle-minutes'] || 25);
 const requiredStoryCount = Number(argv['required-story-count'] || process.env.REQUIRED_STORY_COUNT || 5);
+if (!Number.isFinite(settleMinutes) || settleMinutes < 0) {
+  throw new Error(`settle minutes must be a non-negative number; got ${settleMinutes}`);
+}
+if (!Number.isInteger(requiredStoryCount) || requiredStoryCount < 1 || requiredStoryCount > 5) {
+  throw new Error(`REQUIRED_STORY_COUNT must be an integer from 1 through 5; got ${requiredStoryCount}`);
+}
 const slot = parseSlot(argv.slot) || currentSlot(new Date());
 const slotStartUtc = kstSlotToUtc(slot);
 const slotEndUtc = new Date(slotStartUtc.getTime() + 2 * 60 * 60 * 1000);
@@ -106,11 +112,21 @@ function parseSlot(value) {
   const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2})$/);
   if (!match) throw new Error('Pass --slot as YYYY-MM-DDTHH in KST, for example 2026-05-23T13');
   const [, year, month, day, hour] = match;
+  const parts = [Number(year), Number(month), Number(day), Number(hour)];
+  const normalized = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+  if (
+    normalized.getUTCFullYear() !== parts[0]
+    || normalized.getUTCMonth() + 1 !== parts[1]
+    || normalized.getUTCDate() !== parts[2]
+    || !scheduledHours.includes(parts[3])
+  ) {
+    throw new Error('Slot must be a valid KST date at a scheduled hour: 09, 13, or 17');
+  }
   return {
-    year: Number(year),
-    month: Number(month),
-    day: Number(day),
-    hour: Number(hour),
+    year: parts[0],
+    month: parts[1],
+    day: parts[2],
+    hour: parts[3],
     key: `${year}-${month}-${day}T${hour}`,
   };
 }
