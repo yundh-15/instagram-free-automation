@@ -19,7 +19,7 @@ Task Scheduler or local n8n.
 
 Supported free cloud path:
 
-1. GitHub Actions: cloud runner at 09:35, 13:35, and 17:35 KST. It checks the slot, then publishes only if the Reel, feed post, or Stories are missing.
+1. GitHub Actions: cloud runner starts at 09:00, 13:00, and 19:00 KST. It checks the slot, then publishes only if the Reel, feed post, or Stories are missing.
 
 Use GitHub Actions as the primary free scheduler. Do not make n8n API access a
 required dependency for the final setup.
@@ -165,7 +165,7 @@ REEL_AUDIO_CREDIT
 ```
 
 The GitHub Actions schedule is the primary free scheduler. The scheduled job
-runs `npm run run:instagram-slot -- --fallback-publish`, so it first checks
+runs `npm run run:instagram-slot -- --fallback-publish --settle-minutes 0`, so it first checks
 Instagram media for the current slot. If the slot already
 has the Reel, feed carousel, and required Stories, it exits without publishing.
 If any required format is missing, it generates a fresh post, runs legal review,
@@ -191,8 +191,8 @@ The free PC-off path is the GitHub Actions workflow in:
 .github/workflows/instagram-carousel.yml
 ```
 
-It runs primary checks at 09:35, 13:35, and 17:35 KST, plus recovery checks at
-09:55/10:15, 13:55/14:15, and 17:55/18:15 KST. It runs on GitHub-hosted Linux,
+It starts primary runs at 09:00, 13:00, and 19:00 KST, plus recovery checks at
+09:20/09:40, 13:20/13:40, and 19:20/19:40 KST. It runs on GitHub-hosted Linux,
 so it does not depend on the local Windows PC.
 
 Local/GitHub flows can persist photo, video, and topic history in

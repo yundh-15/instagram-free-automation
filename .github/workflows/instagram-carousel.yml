@@ -2,12 +2,12 @@ name: Instagram Carousel Automation
 
 on:
   schedule:
-    # Primary runs: KST 09:35, 13:35, 17:35.
-    - cron: '35 0,4,8 * * *'
+    # Primary runs: KST 09:00, 13:00, 19:00.
+    - cron: '0 0,4,10 * * *'
     # Recovery runs for the same slot if GitHub starts late or a transient API
     # error leaves a format missing. run-instagram-slot is idempotent per slot.
-    - cron: '55 0,4,8 * * *'
-    - cron: '15 1,5,9 * * *'
+    - cron: '20 0,4,10 * * *'
+    - cron: '40 0,4,10 * * *'
   workflow_dispatch:
     inputs:
       category:
@@ -77,7 +77,7 @@ jobs:
       - name: Publish scheduled Instagram slot if missing
         if: github.event_name == 'schedule'
         # Do not publish after the cutoff when GitHub has queued a scheduled run late.
-        run: npm run run:instagram-slot -- --fallback-publish
+        run: npm run run:instagram-slot -- --fallback-publish --settle-minutes 0
 
       - name: Manual dry run complete
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run != 'false'

@@ -196,11 +196,11 @@ function selectStableContent(key, requestedCategory) {
 }
 
 function slotSequenceIndex(value) {
-  const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})T(09|13|17)$/);
+  const match = String(value || '').match(/^(\d{4})-(\d{2})-(\d{2})T(09|13|19)$/);
   if (!match) return null;
   const [, year, month, day, hour] = match;
   const dayNumber = Math.floor(Date.UTC(Number(year), Number(month) - 1, Number(day)) / 86400000);
-  return dayNumber * CATEGORIES.length + ['09', '13', '17'].indexOf(hour);
+  return dayNumber * CATEGORIES.length + ['09', '13', '19'].indexOf(hour);
 }
 
 function stableIndex(value, modulo) {

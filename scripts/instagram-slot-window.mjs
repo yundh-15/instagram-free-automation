@@ -1,4 +1,4 @@
-export const SCHEDULED_HOURS = Object.freeze([9, 13, 17]);
+export const SCHEDULED_HOURS = Object.freeze([9, 13, 19]);
 export const DEFAULT_PUBLISH_WINDOW_MS = 2 * 60 * 60 * 1000;
 
 export function currentSlot(value = new Date()) {
@@ -16,7 +16,7 @@ export function currentSlot(value = new Date()) {
 export function parseSlot(value) {
   if (!value) return null;
   const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2})$/);
-  if (!match) throw new Error('Pass --slot as YYYY-MM-DDTHH in KST, for example 2026-05-24T17');
+  if (!match) throw new Error('Pass --slot as YYYY-MM-DDTHH in KST, for example 2026-05-24T19');
   const [, year, month, day, hour] = match;
   const parts = [Number(year), Number(month), Number(day), Number(hour)];
   const normalized = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
@@ -26,7 +26,7 @@ export function parseSlot(value) {
     || normalized.getUTCDate() !== parts[2]
     || !SCHEDULED_HOURS.includes(parts[3])
   ) {
-    throw new Error('Slot must be a valid KST date at a scheduled hour: 09, 13, or 17');
+    throw new Error('Slot must be a valid KST date at a scheduled hour: 09, 13, or 19');
   }
   return slotValue(...parts);
 }

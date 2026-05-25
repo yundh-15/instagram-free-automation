@@ -13,13 +13,13 @@ Use the workflow in:
 .github/workflows/instagram-carousel.yml
 ```
 
-It runs on GitHub-hosted Ubuntu at:
+It starts on GitHub-hosted Ubuntu at:
 
-- 09:35 KST
-- 13:35 KST
-- 17:35 KST
+- 09:00 KST
+- 13:00 KST
+- 19:00 KST
 
-It also runs recovery checks at 09:55/10:15, 13:55/14:15, and 17:55/18:15 KST.
+It also runs recovery checks at 09:20/09:40, 13:20/13:40, and 19:20/19:40 KST.
 The slot runner is idempotent, so recovery checks exit without publishing when
 the Reel, feed post, and five Stories are already present.
 Scheduled publishing stops two hours after a slot begins. A GitHub run delayed
@@ -83,8 +83,8 @@ Before pushing, run:
 
 ```bash
 npm run preflight:free-cloud
-npm run check:instagram-slot -- --slot 2026-05-24T17
-npm run run:instagram-slot -- --slot 2026-05-24T17
+npm run check:instagram-slot -- --slot 2026-05-24T19
+npm run run:instagram-slot -- --slot 2026-05-24T19
 ```
 
 The last command should exit without publishing if the slot is already

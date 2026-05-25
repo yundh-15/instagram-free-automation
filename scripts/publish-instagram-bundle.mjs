@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { currentSlot as getCurrentSlot } from './instagram-slot-window.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
@@ -179,7 +180,7 @@ async function guardAgainstRecentDuplicate(currentPayload) {
       .catch(() => ({ data: [] })),
   ]);
   const topic = String(currentPayload.topic || '').trim();
-  const currentSlot = kstSlotKey(new Date());
+  const currentSlotKey = getCurrentSlot(new Date()).key;
   const recentWindowMs = Number(process.env.INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS || 7 * 86400000);
   const now = Date.now();
 
@@ -188,7 +189,7 @@ async function guardAgainstRecentDuplicate(currentPayload) {
     if (!item.timestamp) continue;
     const itemTime = new Date(item.timestamp);
     const caption = String(item.caption || '');
-    const sameSlot = kstSlotKey(itemTime) === currentSlot;
+    const sameSlot = getCurrentSlot(itemTime).key === currentSlotKey;
     const sameTopic = topic && caption.includes(topic) && now - itemTime.getTime() <= recentWindowMs;
     if (sameSlot || sameTopic) {
       conflicts.push({
@@ -204,23 +205,6 @@ async function guardAgainstRecentDuplicate(currentPayload) {
   if (conflicts.length) {
     throw new Error(`Duplicate Instagram publish blocked for topic "${topic || 'unknown'}": ${JSON.stringify(conflicts.slice(0, 5))}`);
   }
-}
-
-function kstSlotKey(value) {
-  const kst = new Date(new Date(value).getTime() + 9 * 60 * 60 * 1000);
-  let year = kst.getUTCFullYear();
-  let month = kst.getUTCMonth() + 1;
-  let day = kst.getUTCDate();
-  const hour = kst.getUTCHours();
-  let slotHour = [17, 13, 9].find((candidate) => hour >= candidate);
-  if (!slotHour) {
-    const previous = new Date(kst.getTime() - 24 * 60 * 60 * 1000);
-    year = previous.getUTCFullYear();
-    month = previous.getUTCMonth() + 1;
-    day = previous.getUTCDate();
-    slotHour = 17;
-  }
-  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}T${String(slotHour).padStart(2, '0')}`;
 }
 
 async function waitForPublicUrl(url) {
