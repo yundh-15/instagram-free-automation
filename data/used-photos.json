@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-24T14:06:54.648Z",
+  "updatedAt": "2026-05-25T05:09:30.343Z",
   "used": [
     {
       "source": "Pexels",
@@ -179,6 +179,66 @@
       "photographer": "Polina ⠀",
       "photographerUrl": "https://www.pexels.com/@polina-kovaleva",
       "photoUrl": "https://www.pexels.com/photo/woman-in-white-shirt-applying-facial-cream-6543524/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6977999",
+      "usedAt": "2026-05-25T05:09:30.342Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "photographer": "Monstera Production",
+      "photographerUrl": "https://www.pexels.com/@gabby-k",
+      "photoUrl": "https://www.pexels.com/photo/asian-man-touching-face-with-sheet-mask-6977999/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "7622604",
+      "usedAt": "2026-05-25T05:09:30.342Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "photographer": "Miriam Alonso",
+      "photographerUrl": "https://www.pexels.com/@miriam-alonso",
+      "photoUrl": "https://www.pexels.com/photo/woman-sitting-on-the-bed-while-texting-7622604/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6977800",
+      "usedAt": "2026-05-25T05:09:30.342Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "photographer": "Monstera Production",
+      "photographerUrl": "https://www.pexels.com/@gabby-k",
+      "photoUrl": "https://www.pexels.com/photo/close-up-of-a-woman-with-facial-care-6977800/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6925537",
+      "usedAt": "2026-05-25T05:09:30.342Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "photographer": "Mike Murray",
+      "photographerUrl": "https://www.pexels.com/@content-prod-co",
+      "photoUrl": "https://www.pexels.com/photo/woman-with-a-lip-mask-6925537/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6925522",
+      "usedAt": "2026-05-25T05:09:30.342Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "photographer": "Mike Murray",
+      "photographerUrl": "https://www.pexels.com/@content-prod-co",
+      "photoUrl": "https://www.pexels.com/photo/woman-using-a-lip-mask-6925522/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
     }
