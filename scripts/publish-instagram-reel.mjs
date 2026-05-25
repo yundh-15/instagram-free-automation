@@ -2,6 +2,11 @@ import { existsSync, readFileSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  DEFAULT_DUPLICATE_TOPIC_WINDOW_MS,
+  findFormatDuplicateConflicts,
+  publicConflict,
+} from './instagram-publish-guard.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
@@ -13,10 +18,13 @@ if (!payloadPath || !existsSync(payloadPath)) {
 }
 
 const payload = JSON.parse(await readFile(payloadPath, 'utf8'));
+if (!String(payload.topic || '').trim()) throw new Error('Payload must include a topic before Instagram publishing.');
 const igUserId = requireEnv('IG_USER_ID');
 const accessToken = requireEnv('META_ACCESS_TOKEN');
 const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
 const baseUrl = `https://graph.facebook.com/${graphVersion}`;
+const duplicateWindowMs = Number(process.env.INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS || DEFAULT_DUPLICATE_TOPIC_WINDOW_MS);
+assertNonNegativeNumber(duplicateWindowMs, 'duplicate topic window milliseconds');
 
 const videoUrl = payload.reelVideoUrl;
 if (!videoUrl) throw new Error('Payload does not contain reelVideoUrl. Re-run upload:cloudinary.');
@@ -29,6 +37,7 @@ const caption = [
   ...limitedHashtags(payload),
 ].filter(Boolean).join('\n\n');
 
+await guardAgainstDuplicateReel();
 const container = await postGraph(`/${igUserId}/media`, {
   media_type: 'REELS',
   video_url: videoUrl,
@@ -37,6 +46,7 @@ const container = await postGraph(`/${igUserId}/media`, {
 });
 await waitForContainer(container.id, 60, 10000);
 
+await guardAgainstDuplicateReel();
 const published = await postGraph(`/${igUserId}/media_publish`, {
   creation_id: container.id,
 });
@@ -55,6 +65,22 @@ await writeFile(outputPath, `${JSON.stringify(result, null, 2)}\n`, 'utf8');
 
 console.log(`Published Instagram reel: ${published.id}`);
 console.log(`Result: ${relative(outputPath)}`);
+
+async function guardAgainstDuplicateReel() {
+  if (argv['skip-duplicate-guard'] || process.env.SKIP_INSTAGRAM_DUPLICATE_GUARD === 'true') return;
+  const media = await getGraph(`/${igUserId}/media`, {
+    fields: 'id,caption,media_product_type,media_type,timestamp,permalink',
+    limit: '50',
+  });
+  const conflicts = findFormatDuplicateConflicts(media.data, {
+    topic: payload.topic,
+    format: 'REELS',
+    windowMs: duplicateWindowMs,
+  });
+  if (conflicts.length) {
+    throw new Error(`Duplicate Instagram Reel blocked for topic "${payload.topic || 'unknown'}": ${JSON.stringify(conflicts.slice(0, 5).map(publicConflict))}`);
+  }
+}
 
 async function waitForPublicUrl(url) {
   const attempts = Number(process.env.REEL_VIDEO_URL_POLL_ATTEMPTS || 24);
@@ -151,4 +177,10 @@ function limitedHashtags(currentPayload) {
 
 function relative(path) {
   return path.replace(`${ROOT}/`, '');
+}
+
+function assertNonNegativeNumber(value, label) {
+  if (!Number.isFinite(value) || value < 0) {
+    throw new Error(`${label} must be a non-negative number; got ${value}`);
+  }
 }

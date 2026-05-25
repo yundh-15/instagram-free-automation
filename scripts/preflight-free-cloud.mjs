@@ -16,6 +16,7 @@ if (reelSource === 'pexels-required' && !process.env.PEXELS_API_KEY) {
 checkStoryCount();
 checkGapMilliseconds('PUBLISH_FORMAT_GAP_MS');
 checkGapMilliseconds('FALLBACK_FORMAT_GAP_MS');
+checkGapMilliseconds('INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS');
 requireOne('CLOUDINARY_CLOUD_NAME');
 requireOne('CLOUDINARY_API_KEY');
 requireOne('CLOUDINARY_API_SECRET');

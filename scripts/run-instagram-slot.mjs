@@ -11,6 +11,12 @@ import {
   slotObservationEndUtc,
   slotPublishCutoffUtc,
 } from './instagram-slot-window.mjs';
+import {
+  DEFAULT_DUPLICATE_TOPIC_WINDOW_MS,
+  findNewlyObservedItems,
+  findPriorTopicConflicts,
+  publicConflict,
+} from './instagram-publish-guard.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
@@ -22,9 +28,11 @@ const allowLatePublish = Boolean(argv['allow-late-publish']);
 const formatGapMs = Number(argv['format-gap-ms'] || process.env.FALLBACK_FORMAT_GAP_MS || process.env.PUBLISH_FORMAT_GAP_MS || 300000);
 const requiredStoryCount = Number(argv['required-story-count'] || process.env.REQUIRED_STORY_COUNT || 5);
 const postCheckDelayMs = Number(argv['post-check-delay-ms'] || 15000);
+const duplicateWindowMs = Number(process.env.INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS || DEFAULT_DUPLICATE_TOPIC_WINDOW_MS);
 assertNonNegativeNumber(settleMinutes, 'settle minutes');
 assertNonNegativeNumber(formatGapMs, 'format gap milliseconds');
 assertNonNegativeNumber(postCheckDelayMs, 'post-check delay milliseconds');
+assertNonNegativeNumber(duplicateWindowMs, 'duplicate topic window milliseconds');
 if (!Number.isInteger(requiredStoryCount) || requiredStoryCount < 1 || requiredStoryCount > 5) {
   throw new Error(`REQUIRED_STORY_COUNT must be an integer from 1 through 5; got ${requiredStoryCount}`);
 }
@@ -95,32 +103,45 @@ if (now > publishCutoffUtc && !allowLatePublish) {
 if (now > publishCutoffUtc) summary.latePublishOverride = true;
 
 summary.requestedFormats = missingFormats(initial);
+const recoveryTopic = preferredFallbackTopic(initial);
+const avoidedTopics = recoveryTopic ? [] : await findRecentPublishedTopics();
+summary.avoidedTopics = avoidedTopics;
 
-const payloadPath = await buildPublishPayload(preferredFallbackTopic(initial), {
+const payloadPath = await buildPublishPayload(recoveryTopic, {
   includeReel: initial.reels.length === 0,
+  avoidedTopics,
 });
 summary.payloadPath = relative(payloadPath);
+const payload = JSON.parse(await readFile(payloadPath, 'utf8'));
+const topicConflicts = await findDuplicateTopicConflicts(payload.topic);
+if (topicConflicts.length) {
+  summary.status = 'blocked_duplicate_topic';
+  summary.action = 'blocked duplicate topic';
+  summary.message = `A prior post within the duplicate-topic window already uses topic "${payload.topic}".`;
+  summary.conflicts = topicConflicts.slice(0, 5).map(publicConflict);
+  await writeRunSummary(summary);
+  console.log(JSON.stringify(summary, null, 2));
+  process.exit(1);
+}
 
 const publishedFormats = [];
 let beforePublish = await inspectSlot();
-const missingStoryCount = Math.max(0, requiredStoryCount - beforePublish.stories.length);
-summary.missingStoryCount = missingStoryCount;
-if (missingStoryCount > 0) {
-  runNodeScript('scripts/publish-instagram-stories.mjs', [
-    '--payload', payloadPath,
-    '--skip', String(beforePublish.stories.length),
-    '--count', String(missingStoryCount),
-  ]);
-  publishedFormats.push(`stories(${missingStoryCount})`);
+const concurrentItems = findNewlyObservedItems(initial, beforePublish);
+if (concurrentItems.length) {
+  summary.status = beforePublish.status === 'ok' ? 'ok' : 'blocked_concurrent_publish';
+  summary.action = 'none';
+  summary.reels = beforePublish.reels.map(publicItem);
+  summary.feeds = beforePublish.feeds.map(publicItem);
+  summary.stories = beforePublish.stories.map(publicItem);
+  summary.concurrentItems = concurrentItems.map(publicItem);
+  summary.message = beforePublish.status === 'ok'
+    ? 'Another publisher completed this slot while fallback content was prepared; no publication was made.'
+    : 'New media appeared in this slot while fallback content was prepared; publication was blocked for a later recovery check.';
+  await writeRunSummary(summary);
+  console.log(JSON.stringify(summary, null, 2));
+  process.exit(beforePublish.status === 'ok' ? 0 : 1);
 }
 
-beforePublish = await inspectSlot();
-if (missingStoryCount > 0 && (beforePublish.reels.length === 0 || beforePublish.feeds.length === 0) && formatGapMs > 0) {
-  console.log(`Waiting ${formatGapMs}ms before feed/Reel publish.`);
-  await sleep(formatGapMs);
-}
-
-beforePublish = await inspectSlot();
 let publishedReel = false;
 if (beforePublish.reels.length === 0) {
   runNodeScript('scripts/publish-instagram-reel.mjs', ['--payload', payloadPath]);
@@ -135,9 +156,30 @@ if (publishedReel && beforePublish.feeds.length === 0 && formatGapMs > 0) {
 }
 
 beforePublish = await inspectSlot();
+let publishedFeed = false;
 if (beforePublish.feeds.length === 0) {
   runNodeScript('scripts/publish-instagram-carousel.mjs', ['--payload', payloadPath]);
   publishedFormats.push('feed');
+  publishedFeed = true;
+}
+
+beforePublish = await inspectSlot();
+if ((publishedReel || publishedFeed) && beforePublish.stories.length < requiredStoryCount && formatGapMs > 0) {
+  console.log(`Waiting ${formatGapMs}ms before Story publish.`);
+  await sleep(formatGapMs);
+}
+
+beforePublish = await inspectSlot();
+const missingStoryCount = Math.max(0, requiredStoryCount - beforePublish.stories.length);
+summary.missingStoryCount = missingStoryCount;
+if (missingStoryCount > 0) {
+  runNodeScript('scripts/publish-instagram-stories.mjs', [
+    '--payload', payloadPath,
+    '--slot', slot.key,
+    '--skip', String(beforePublish.stories.length),
+    '--count', String(missingStoryCount),
+  ]);
+  publishedFormats.push(`stories(${missingStoryCount})`);
 }
 summary.action = publishedFormats.length ? `published ${publishedFormats.join(' and ')}` : 'no publish needed after payload preparation';
 
@@ -156,8 +198,10 @@ await writeRunSummary(summary);
 console.log(JSON.stringify(summary, null, 2));
 process.exit(final.status === 'ok' ? 0 : 1);
 
-async function buildPublishPayload(topic, { includeReel }) {
-  const generateArgs = topic ? ['--topic', topic] : ['--content-key', slot.key];
+async function buildPublishPayload(topic, { includeReel, avoidedTopics }) {
+  const generateArgs = topic
+    ? ['--topic', topic]
+    : ['--content-key', slot.key, '--avoid-topics-json', JSON.stringify(avoidedTopics || [])];
   const generatedLine = runNodeScript('scripts/generate-carousel.mjs', generateArgs).stdout
     .split(/\r?\n/)
     .find((line) => line.startsWith('Generated carousel: '));
@@ -213,6 +257,33 @@ async function inspectSlot() {
     feeds,
     stories,
   };
+}
+
+async function findDuplicateTopicConflicts(topic) {
+  if (argv['skip-duplicate-guard'] || process.env.SKIP_INSTAGRAM_DUPLICATE_GUARD === 'true') return [];
+  const fields = 'id,caption,media_product_type,media_type,timestamp,permalink';
+  const media = await getGraph(`/${igUserId}/media`, { fields, limit: '50' });
+  return findPriorTopicConflicts(media.data, {
+    topic,
+    slot,
+    windowMs: duplicateWindowMs,
+  });
+}
+
+async function findRecentPublishedTopics() {
+  const fields = 'caption,timestamp';
+  const media = await getGraph(`/${igUserId}/media`, { fields, limit: '50' });
+  return [...new Set((media.data || [])
+    .filter((item) => {
+      const age = Date.now() - new Date(item.timestamp).getTime();
+      return item.timestamp && age >= 0 && age <= duplicateWindowMs;
+    })
+    .map((item) => {
+      const lines = String(item.caption || '').split(/\r?\n/).map((line) => line.trim());
+      const explicitTopic = lines.find((line) => line.startsWith('주제:'));
+      return explicitTopic ? explicitTopic.replace(/^주제:\s*/, '').trim() : lines[0] || '';
+    })
+    .filter(Boolean))];
 }
 
 async function getGraph(path, params = {}) {

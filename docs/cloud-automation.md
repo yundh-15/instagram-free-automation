@@ -48,7 +48,8 @@ For the free GitHub Actions setup, omit custom Reel music unless a properly
 licensed file or HTTPS URL is available at no cost.
 
 Publishing keeps a five-minute gap between public formats. The scheduled GitHub
-Actions path publishes Stories, then the Reel, then the feed carousel. Story
+Actions path publishes the Reel, then the feed carousel, then Stories. This
+ensures topic-bearing formats pass duplicate checks before any Story is public. Story
 images are published in the same slide order as the feed carousel: `01.png`,
 `02.png`, `03.png`, `04.png`, then `05.png`.
 
@@ -154,6 +155,7 @@ REEL_SOURCE
 PUBLISH_FORMAT_GAP_MS
 FALLBACK_FORMAT_GAP_MS
 REQUIRED_STORY_COUNT
+INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS
 REEL_AUDIO_PATH
 REEL_AUDIO_URL
 REEL_AUDIO_VOLUME
@@ -182,6 +184,14 @@ post repeated off-slot content. If late publishing is explicitly enabled for
 manual recovery, results remain attributed to that slot until the next
 scheduled slot begins, preventing repeated recovery runs from publishing them
 again.
+Before publishing a new slot, the runner obtains recent Instagram captions and
+selects a different topic from the same content pillar. A second guard blocks
+any topic seen in the last seven days by default. Reel and feed publishers also
+block a duplicate of their own format immediately before publication, and
+Stories require an already published Reel or feed anchor for that topic. If
+another publisher adds media after the initial slot check while fallback
+content is being prepared, the run stops without posting and leaves recovery
+to the next check.
 
 ## Free Cloud Setup
 

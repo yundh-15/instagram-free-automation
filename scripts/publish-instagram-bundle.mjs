@@ -3,6 +3,12 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { currentSlot as getCurrentSlot } from './instagram-slot-window.mjs';
+import {
+  DEFAULT_DUPLICATE_TOPIC_WINDOW_MS,
+  captionContainsTopic,
+  findFormatDuplicateConflicts,
+  publicConflict,
+} from './instagram-publish-guard.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
@@ -14,6 +20,7 @@ if (!payloadPath || !existsSync(payloadPath)) {
 }
 
 const payload = JSON.parse(await readFile(payloadPath, 'utf8'));
+if (!String(payload.topic || '').trim()) throw new Error('Payload must include a topic before Instagram publishing.');
 const igUserId = requireEnv('IG_USER_ID');
 const accessToken = requireEnv('META_ACCESS_TOKEN');
 const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
@@ -40,6 +47,7 @@ await waitForPublicUrl(payload.reelVideoUrl);
 const caption = buildCaption(payload);
 const reelCaption = buildReelCaption(payload);
 
+await guardAgainstRecentDuplicate(payload);
 const reelContainer = await postGraph(`/${igUserId}/media`, {
   media_type: 'REELS',
   video_url: payload.reelVideoUrl,
@@ -48,26 +56,6 @@ const reelContainer = await postGraph(`/${igUserId}/media`, {
 });
 await waitForContainer(reelContainer.id, 60, 10000);
 await guardAgainstRecentDuplicate(payload);
-
-const stories = [];
-for (const image of storyImages) {
-  const story = await postGraph(`/${igUserId}/media`, {
-    media_type: 'STORIES',
-    image_url: image.url,
-  });
-  await waitForContainer(story.id);
-  const published = await postGraph(`/${igUserId}/media_publish`, {
-    creation_id: story.id,
-  });
-  stories.push({
-    slide: image.slide,
-    sourceImage: image.local || null,
-    storyContainerId: story.id,
-    mediaId: published.id,
-  });
-}
-
-await waitBetweenFormats('stories and reel');
 
 const reelPublished = await postGraph(`/${igUserId}/media_publish`, {
   creation_id: reelContainer.id,
@@ -93,9 +81,31 @@ const parent = await postGraph(`/${igUserId}/media`, {
 });
 await waitForContainer(parent.id);
 
+await guardAgainstFormatDuplicate('FEED');
 const carouselPublished = await postGraph(`/${igUserId}/media_publish`, {
   creation_id: parent.id,
 });
+
+await waitBetweenFormats('carousel and stories');
+
+await guardAgainstStoriesInCurrentSlot();
+const stories = [];
+for (const image of storyImages) {
+  const story = await postGraph(`/${igUserId}/media`, {
+    media_type: 'STORIES',
+    image_url: image.url,
+  });
+  await waitForContainer(story.id);
+  const published = await postGraph(`/${igUserId}/media_publish`, {
+    creation_id: story.id,
+  });
+  stories.push({
+    slide: image.slide,
+    sourceImage: image.local || null,
+    storyContainerId: story.id,
+    mediaId: published.id,
+  });
+}
 
 const result = {
   topic: payload.topic,
@@ -176,21 +186,23 @@ async function guardAgainstRecentDuplicate(currentPayload) {
   const fields = 'id,caption,media_product_type,media_type,timestamp,permalink';
   const [media, storiesResult] = await Promise.all([
     getGraph(`/${igUserId}/media`, { fields, limit: '50' }),
-    getGraph(`/${igUserId}/stories`, { fields: 'id,media_product_type,media_type,timestamp,permalink', limit: '50' })
-      .catch(() => ({ data: [] })),
+    getGraph(`/${igUserId}/stories`, { fields: 'id,media_product_type,media_type,timestamp,permalink', limit: '50' }),
   ]);
   const topic = String(currentPayload.topic || '').trim();
   const currentSlotKey = getCurrentSlot(new Date()).key;
-  const recentWindowMs = Number(process.env.INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS || 7 * 86400000);
+  const recentWindowMs = Number(process.env.INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS || DEFAULT_DUPLICATE_TOPIC_WINDOW_MS);
+  if (!Number.isFinite(recentWindowMs) || recentWindowMs < 0) {
+    throw new Error(`duplicate topic window milliseconds must be a non-negative number; got ${recentWindowMs}`);
+  }
   const now = Date.now();
 
   const conflicts = [];
   for (const item of [...(media.data || []), ...(storiesResult.data || [])]) {
     if (!item.timestamp) continue;
     const itemTime = new Date(item.timestamp);
-    const caption = String(item.caption || '');
     const sameSlot = getCurrentSlot(itemTime).key === currentSlotKey;
-    const sameTopic = topic && caption.includes(topic) && now - itemTime.getTime() <= recentWindowMs;
+    const age = now - itemTime.getTime();
+    const sameTopic = captionContainsTopic(item.caption, topic) && age >= 0 && age <= recentWindowMs;
     if (sameSlot || sameTopic) {
       conflicts.push({
         id: item.id,
@@ -204,6 +216,37 @@ async function guardAgainstRecentDuplicate(currentPayload) {
 
   if (conflicts.length) {
     throw new Error(`Duplicate Instagram publish blocked for topic "${topic || 'unknown'}": ${JSON.stringify(conflicts.slice(0, 5))}`);
+  }
+}
+
+async function guardAgainstFormatDuplicate(format) {
+  if (argv['skip-duplicate-guard'] || process.env.SKIP_INSTAGRAM_DUPLICATE_GUARD === 'true') return;
+  const media = await getGraph(`/${igUserId}/media`, {
+    fields: 'id,caption,media_product_type,media_type,timestamp,permalink',
+    limit: '50',
+  });
+  const conflicts = findFormatDuplicateConflicts(media.data, {
+    topic: payload.topic,
+    format,
+    windowMs: Number(process.env.INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS || DEFAULT_DUPLICATE_TOPIC_WINDOW_MS),
+  });
+  if (conflicts.length) {
+    throw new Error(`Duplicate Instagram ${format} blocked for topic "${payload.topic}": ${JSON.stringify(conflicts.slice(0, 5).map(publicConflict))}`);
+  }
+}
+
+async function guardAgainstStoriesInCurrentSlot() {
+  if (argv['skip-duplicate-guard'] || process.env.SKIP_INSTAGRAM_DUPLICATE_GUARD === 'true') return;
+  const currentSlotKey = getCurrentSlot(new Date()).key;
+  const storiesResult = await getGraph(`/${igUserId}/stories`, {
+    fields: 'id,media_product_type,media_type,timestamp,permalink',
+    limit: '50',
+  });
+  const conflicts = (storiesResult.data || []).filter((item) => (
+    item.timestamp && getCurrentSlot(new Date(item.timestamp)).key === currentSlotKey
+  ));
+  if (conflicts.length) {
+    throw new Error(`Duplicate Instagram Stories blocked for slot ${currentSlotKey}: ${JSON.stringify(conflicts.slice(0, 5).map(publicConflict))}`);
   }
 }
 

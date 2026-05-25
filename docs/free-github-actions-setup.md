@@ -33,12 +33,19 @@ The scheduled run checks Instagram first. If the slot already has a Reel, a
 feed post, and five Stories, it exits without publishing. If any required
 format is missing, it generates a post, runs legal review, uploads to
 Cloudinary, publishes the missing format(s), and verifies the slot again.
-Stories use the same photo order as the feed carousel; after a partially
+For a new set, publication order is Reel, feed, then Stories so visible-topic
+duplicate checks run before any Story is posted. Stories use the same photo
+order as the feed carousel; after a partially
 successful Story run, recovery publishes only the remaining required count.
 Scheduled retries use a stable per-slot content key so a Story-only partial
 failure does not switch to a different topic on the recovery run.
 Results are observed through the beginning of the next slot, so an explicitly
 approved late manual recovery cannot be repeated by a later recovery check.
+Recent Instagram captions are used to avoid topics already posted within the
+default seven-day window, and the public publishers independently block
+same-format duplicates immediately before posting.
+If another scheduler adds media while fallback content is being prepared, the
+GitHub run stops instead of combining two publication attempts.
 
 Manual `workflow_dispatch` runs default to `dry_run=true`, which runs preflight
 without publishing. Set `dry_run=false` only when intentionally publishing a
@@ -68,6 +75,7 @@ REEL_SOURCE
 PUBLISH_FORMAT_GAP_MS
 FALLBACK_FORMAT_GAP_MS
 REQUIRED_STORY_COUNT
+INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS
 ```
 
 Set `PEXELS_API_KEY` when using stock photos/videos. It becomes required when

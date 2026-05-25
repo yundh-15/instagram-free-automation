@@ -2,6 +2,8 @@ import { existsSync, readFileSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { captionContainsTopic } from './instagram-publish-guard.mjs';
+import { currentSlot, inSlotObservationWindow, parseSlot } from './instagram-slot-window.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
@@ -13,10 +15,12 @@ if (!payloadPath || !existsSync(payloadPath)) {
 }
 
 const payload = JSON.parse(await readFile(payloadPath, 'utf8'));
+if (!String(payload.topic || '').trim()) throw new Error('Payload must include a topic before Instagram publishing.');
 const igUserId = requireEnv('IG_USER_ID');
 const accessToken = requireEnv('META_ACCESS_TOKEN');
 const graphVersion = process.env.META_GRAPH_VERSION || 'v25.0';
 const baseUrl = `https://graph.facebook.com/${graphVersion}`;
+const slot = parseSlot(argv.slot) || currentSlot(new Date());
 
 const allStoryImages = orderedStoryImages(payload);
 if (!allStoryImages.length) throw new Error('No image URLs found in payload');
@@ -34,6 +38,7 @@ if (skipCount + publishCount > allStoryImages.length) {
 const storyImages = allStoryImages.slice(skipCount, skipCount + publishCount);
 if (!storyImages.length) throw new Error('No remaining Story images selected for publishing');
 
+await guardStoryPublication();
 const stories = [];
 for (const image of storyImages) {
   const story = await postGraph(`/${igUserId}/media`, {
@@ -65,6 +70,31 @@ await writeFile(outputPath, `${JSON.stringify(result, null, 2)}\n`, 'utf8');
 
 console.log(`Published Instagram stories: ${stories.length}`);
 console.log(`Result: ${relative(outputPath)}`);
+
+async function guardStoryPublication() {
+  const allowUnanchored = Boolean(argv['allow-unanchored']) || process.env.ALLOW_UNANCHORED_INSTAGRAM_STORIES === 'true';
+  const allowDuplicateStories = Boolean(argv['allow-duplicate-stories']) || process.env.ALLOW_DUPLICATE_INSTAGRAM_STORIES === 'true';
+  const fields = 'id,caption,media_product_type,media_type,timestamp,permalink';
+  const [media, storyResult] = await Promise.all([
+    getGraph(`/${igUserId}/media`, { fields, limit: '50' }),
+    getGraph(`/${igUserId}/stories`, { fields, limit: '50' }),
+  ]);
+  const anchors = (media.data || []).filter((item) => (
+    item.timestamp
+    && inSlotObservationWindow(item.timestamp, slot)
+    && captionContainsTopic(item.caption, payload.topic)
+  ));
+  if (!allowUnanchored && !anchors.length) {
+    throw new Error(`Instagram Stories require an existing Reel or Feed anchor for topic "${payload.topic || 'unknown'}" in slot ${slot.key}.`);
+  }
+  if (allowDuplicateStories) return;
+  const existingCount = (storyResult.data || []).filter((item) => (
+    item.timestamp && inSlotObservationWindow(item.timestamp, slot)
+  )).length;
+  if (skipCount < existingCount || skipCount + publishCount > allStoryImages.length) {
+    throw new Error(`Duplicate Instagram Stories blocked for slot ${slot.key}: existing=${existingCount}, requested skip=${skipCount}, count=${publishCount}.`);
+  }
+}
 
 function orderedStoryImages(currentPayload) {
   if (Array.isArray(currentPayload.storyImages) && currentPayload.storyImages.length) {

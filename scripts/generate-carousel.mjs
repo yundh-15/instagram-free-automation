@@ -18,16 +18,31 @@ const TOPICS = {
     '목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴',
     '오래 앉아 있는 사람을 위한 등 관리 포인트',
     '숙면을 돕는 저녁 마사지 체크리스트',
+    '손목과 팔이 자주 피로할 때 관리 전 확인할 점',
+    '하루 종일 서 있었던 날 종아리 관리 체크',
+    '주말 회복을 위한 가벼운 바디케어 준비',
+    '허리가 답답한 날 상담 전에 적어둘 질문',
+    '마사지 압 조절을 요청할 때 알아두면 좋은 기준',
   ],
   skincare: [
     '피부관리 받기 전 확인하면 좋은 5가지',
     '건조한 피부를 위한 관리 순서',
     '민감 피부가 관리실에서 물어봐야 할 질문',
+    '환절기 피부관리 전 체크할 생활 습관',
+    '수분관리 상담 전에 정리할 피부 반응',
+    '첫 에스테틱 방문 전 위생과 상담 체크',
+    '피부가 예민한 날 관리를 미루어야 할 신호',
+    '관리 후 피부 반응을 기록하는 간단한 방법',
   ],
   posture: [
     '라운드숄더가 고민일 때 체형관리 체크포인트',
     '골반 균형을 볼 때 놓치기 쉬운 신호',
     '목이 앞으로 나오는 자세를 줄이는 관리 습관',
+    '오래 앉은 날 골반과 허리 상태 확인하기',
+    '한쪽 어깨가 불편할 때 기록할 자세 습관',
+    '목과 등 자세 상담 전 준비할 체크리스트',
+    '걷고 난 뒤 좌우 균형을 살펴보는 방법',
+    '체형관리 선택 전 무리하지 않을 기준 정하기',
   ],
 };
 
@@ -172,7 +187,7 @@ async function selectContent(options) {
     };
   }
   if (options['content-key']) {
-    return selectStableContent(options['content-key'], requestedCategory);
+    return selectStableContent(options['content-key'], requestedCategory, parseAvoidedTopics(options['avoid-topics-json']));
   }
 
   const categoryName = requestedCategory || pickNextCategory(registry);
@@ -182,16 +197,18 @@ async function selectContent(options) {
   };
 }
 
-function selectStableContent(key, requestedCategory) {
+function selectStableContent(key, requestedCategory, avoidedTopics = []) {
   const sequenceIndex = slotSequenceIndex(key) ?? stableIndex(key, CATEGORIES.length * TOPICS.massage.length);
   const categoryName = requestedCategory || CATEGORIES[sequenceIndex % CATEGORIES.length];
   const list = TOPICS[categoryName] || TOPICS.massage;
   const topicIndex = requestedCategory
     ? sequenceIndex % list.length
     : Math.floor(sequenceIndex / CATEGORIES.length) % list.length;
+  const selectedTopic = Array.from({ length: list.length }, (_, offset) => list[(topicIndex + offset) % list.length])
+    .find((candidate) => !isAvoidedTopic(candidate, avoidedTopics));
   return {
     category: categoryName,
-    topic: list[topicIndex],
+    topic: selectedTopic || list[topicIndex],
   };
 }
 
@@ -210,6 +227,28 @@ function stableIndex(value, modulo) {
     hash = Math.imul(hash, 16777619);
   }
   return (hash >>> 0) % modulo;
+}
+
+function parseAvoidedTopics(value) {
+  if (!value || typeof value === 'boolean') return [];
+  try {
+    const parsed = JSON.parse(String(value));
+    return Array.isArray(parsed) ? parsed.map((item) => String(item || '')).filter(Boolean) : [];
+  } catch {
+    throw new Error('--avoid-topics-json must contain a JSON array of topic strings');
+  }
+}
+
+function isAvoidedTopic(candidate, avoidedTopics) {
+  const normalizedCandidate = normalizeText(candidate);
+  return avoidedTopics.some((topic) => {
+    const normalizedTopic = normalizeText(topic);
+    return normalizedTopic.includes(normalizedCandidate) || normalizedCandidate.includes(normalizedTopic);
+  });
+}
+
+function normalizeText(value) {
+  return String(value || '').normalize('NFC').replace(/\s+/g, ' ').trim();
 }
 
 function normalizeCategory(value) {
