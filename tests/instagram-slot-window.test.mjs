@@ -27,11 +27,12 @@ test('current slot switches at the next Korean scheduled hour', () => {
   assert.equal(currentSlot(new Date('2026-05-26T00:00:00Z')).key, '2026-05-26T09');
 });
 
-test('scheduled workflow does not opt into publishing after the cutoff', async () => {
+test('scheduled workflow retries off the hour within the publish window without late publishing', async () => {
   const workflow = await readFile(join(ROOT, '.github', 'workflows', 'instagram-carousel.yml'), 'utf8');
   const runner = await readFile(join(ROOT, 'scripts', 'run-instagram-slot.mjs'), 'utf8');
 
-  assert.match(workflow, /cron: '0 0,4,10 \* \* \*'/);
+  assert.match(workflow, /cron: '7,27,47 0,1,4,5,10,11 \* \* \*'/);
+  assert.doesNotMatch(workflow, /cron: '0 [^']* \* \* \*'/);
   assert.match(workflow, /npm run run:instagram-slot -- --fallback-publish --settle-minutes 0/);
   assert.doesNotMatch(workflow, /--allow-late-publish/);
   assert.ok(runner.indexOf("'scripts/publish-instagram-reel.mjs'") < runner.indexOf("'scripts/publish-instagram-carousel.mjs'"));

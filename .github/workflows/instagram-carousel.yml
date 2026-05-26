@@ -2,12 +2,10 @@ name: Instagram Carousel Automation
 
 on:
   schedule:
-    # Primary runs: KST 09:00, 13:00, 19:00.
-    - cron: '0 0,4,10 * * *'
-    # Recovery runs for the same slot if GitHub starts late or a transient API
-    # error leaves a format missing. run-instagram-slot is idempotent per slot.
-    - cron: '20 0,4,10 * * *'
-    - cron: '40 0,4,10 * * *'
+    # Avoid the top of the hour, when GitHub documents heavier schedule delay.
+    # Each KST 09:00/13:00/19:00 slot is checked throughout its two-hour
+    # publishing window; run-instagram-slot is idempotent per slot.
+    - cron: '7,27,47 0,1,4,5,10,11 * * *'
   workflow_dispatch:
     inputs:
       category:

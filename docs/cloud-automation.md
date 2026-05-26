@@ -19,7 +19,7 @@ Task Scheduler or local n8n.
 
 Supported free cloud path:
 
-1. GitHub Actions: cloud runner starts at 09:00, 13:00, and 19:00 KST. It checks the slot, then publishes only if the Reel, feed post, or Stories are missing.
+1. GitHub Actions: publishing slots begin at 09:00, 13:00, and 19:00 KST. Off-the-hour checks throughout each slot's two-hour publishing window publish only if the Reel, feed post, or Stories are missing.
 
 Use GitHub Actions as the primary free scheduler. Do not make n8n API access a
 required dependency for the final setup.
@@ -166,7 +166,11 @@ REEL_AUDIO_LICENSE
 REEL_AUDIO_CREDIT
 ```
 
-The GitHub Actions schedule is the primary free scheduler. The scheduled job
+The GitHub Actions schedule is the primary free scheduler. GitHub documents
+that scheduled workflows can be delayed or dropped during heavy load,
+especially at the start of an hour. The workflow therefore avoids `:00` and
+checks each KST 09:00/13:00/19:00 slot at `+07`, `+27`, `+47`, `+67`, `+87`,
+and `+107` minutes during its two-hour publishing window. Each scheduled job
 runs `npm run run:instagram-slot -- --fallback-publish --settle-minutes 0`, so it first checks
 Instagram media for the current slot. If the slot already
 has the Reel, feed carousel, and required Stories, it exits without publishing.
@@ -178,12 +182,12 @@ of posting a second full set. Scheduled content selection is stable per slot,
 so a recovery that can see only partial Stories regenerates the same topic.
 When the Reel already exists, Story/feed recovery skips unnecessary Reel video
 creation and cannot be blocked by an unrelated video-source failure.
-Each slot has one primary run and two recovery runs. Publishing closes two
-hours after its scheduled start so an excessively delayed GitHub run cannot
-post repeated off-slot content. If late publishing is explicitly enabled for
-manual recovery, results remain attributed to that slot until the next
-scheduled slot begins, preventing repeated recovery runs from publishing them
-again.
+Each slot has six idempotent checks within the two-hour publishing window.
+Publishing closes two hours after its scheduled start so an excessively
+delayed GitHub run cannot post repeated off-slot content. If late publishing is
+explicitly enabled for manual recovery, results remain attributed to that slot
+until the next scheduled slot begins, preventing repeated recovery runs from
+publishing them again.
 Before publishing a new slot, the runner obtains recent Instagram captions and
 selects a different topic from the same content pillar. A second guard blocks
 any topic seen in the last seven days by default. Reel and feed publishers also
@@ -201,9 +205,10 @@ The free PC-off path is the GitHub Actions workflow in:
 .github/workflows/instagram-carousel.yml
 ```
 
-It starts primary runs at 09:00, 13:00, and 19:00 KST, plus recovery checks at
-09:20/09:40, 13:20/13:40, and 19:20/19:40 KST. It runs on GitHub-hosted Linux,
-so it does not depend on the local Windows PC.
+It manages slots beginning at 09:00, 13:00, and 19:00 KST, checking each one
+at `+07`, `+27`, `+47`, `+67`, `+87`, and `+107` minutes to avoid top-of-hour
+schedule congestion and recover from delayed or dropped checks. It runs on
+GitHub-hosted Linux, so it does not depend on the local Windows PC.
 
 Local/GitHub flows can persist photo, video, and topic history in
 `data/used-photos.json`, `data/used-videos.json`, and `data/used-topics.json`.

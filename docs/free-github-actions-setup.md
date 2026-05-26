@@ -13,13 +13,17 @@ Use the workflow in:
 .github/workflows/instagram-carousel.yml
 ```
 
-It starts on GitHub-hosted Ubuntu at:
+It opens Instagram posting slots on GitHub-hosted Ubuntu for:
 
 - 09:00 KST
 - 13:00 KST
 - 19:00 KST
 
-It also runs recovery checks at 09:20/09:40, 13:20/13:40, and 19:20/19:40 KST.
+GitHub Actions scheduled runs can be delayed or dropped under load, especially
+at the start of an hour. To avoid that congested minute and add recovery
+coverage, the workflow checks each slot at `+07`, `+27`, `+47`, `+67`, `+87`,
+and `+107` minutes. For example, the 19:00 slot is checked at 19:07, 19:27,
+19:47, 20:07, 20:27, and 20:47 KST.
 The slot runner is idempotent, so recovery checks exit without publishing when
 the Reel, feed post, and five Stories are already present.
 Scheduled publishing stops two hours after a slot begins. A GitHub run delayed
@@ -29,7 +33,7 @@ Keep this as the only active scheduler for the Instagram account. Deactivate
 any previously imported n8n Cloud workflow before relying on this schedule;
 running both schedulers can publish two sets in the same slot.
 
-The scheduled run checks Instagram first. If the slot already has a Reel, a
+Each scheduled check reads Instagram first. If the slot already has a Reel, a
 feed post, and five Stories, it exits without publishing. If any required
 format is missing, it generates a post, runs legal review, uploads to
 Cloudinary, publishes the missing format(s), and verifies the slot again.
