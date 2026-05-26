@@ -22,6 +22,10 @@ on:
         description: Set to false only when you intentionally want a manual publish
         required: false
         default: 'true'
+      recover_current_slot:
+        description: Publish only missing formats for the current scheduled slot
+        required: false
+        default: 'false'
 
 permissions:
   contents: write
@@ -75,17 +79,17 @@ jobs:
       - name: Free cloud preflight
         run: npm run preflight:free-cloud
 
-      - name: Publish scheduled Instagram slot if missing
-        if: github.event_name == 'schedule'
+      - name: Recover scheduled Instagram slot if missing
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.recover_current_slot == 'true')
         # Do not publish after the cutoff when GitHub has queued a scheduled run late.
         run: npm run run:instagram-slot -- --fallback-publish --settle-minutes 0
 
       - name: Manual dry run complete
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run != 'false'
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.recover_current_slot != 'true' && github.event.inputs.dry_run != 'false'
         run: echo "Dry run passed. Set dry_run=false only for intentional manual publish."
 
       - name: Generate carousel
-        if: github.event_name != 'schedule' && github.event.inputs.dry_run == 'false'
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.recover_current_slot != 'true' && github.event.inputs.dry_run == 'false'
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.topic }}" ]; then
             npm run generate -- --category "${{ github.event.inputs.category || 'massage' }}" --topic "${{ github.event.inputs.topic }}"
@@ -96,26 +100,26 @@ jobs:
           fi
 
       - name: Legal review
-        if: github.event_name != 'schedule' && github.event.inputs.dry_run == 'false'
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.recover_current_slot != 'true' && github.event.inputs.dry_run == 'false'
         run: |
           POST_JSON="$(find output -name post.json | sort | tail -1)"
           npm run legal:review -- --post "$POST_JSON"
 
       - name: Upload images to Cloudinary
-        if: github.event_name != 'schedule' && github.event.inputs.dry_run == 'false'
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.recover_current_slot != 'true' && github.event.inputs.dry_run == 'false'
         run: |
           POST_JSON="$(find output -name post.json | sort | tail -1)"
           npm run upload:cloudinary -- --post "$POST_JSON"
 
       - name: Legal review uploaded payload
-        if: github.event_name != 'schedule' && github.event.inputs.dry_run == 'false'
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.recover_current_slot != 'true' && github.event.inputs.dry_run == 'false'
         run: |
           POST_JSON="$(find output -name post.json | sort | tail -1)"
           PAYLOAD="$(dirname "$POST_JSON")/public-image-urls.json"
           npm run legal:review -- --payload "$PAYLOAD"
 
       - name: Publish Instagram bundle
-        if: github.event_name != 'schedule' && github.event.inputs.dry_run == 'false'
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.recover_current_slot != 'true' && github.event.inputs.dry_run == 'false'
         run: |
           POST_JSON="$(find output -name post.json | sort | tail -1)"
           PAYLOAD="$(dirname "$POST_JSON")/public-image-urls.json"
@@ -135,7 +139,7 @@ jobs:
 
       - name: Keep generated files as artifact
         uses: actions/upload-artifact@v6
-        if: always() && (github.event_name == 'schedule' || github.event.inputs.dry_run == 'false')
+        if: always() && (github.event_name == 'schedule' || github.event.inputs.dry_run == 'false' || github.event.inputs.recover_current_slot == 'true')
         with:
           name: instagram-carousel-output
           path: output

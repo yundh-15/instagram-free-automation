@@ -217,3 +217,8 @@ Local/GitHub flows can persist photo, video, and topic history in
 The scheduled workflow reduces repetition by checking recent Instagram media,
 rotating stock API pages, using stock media source metadata, and blocking
 duplicate scheduled slots before public posting.
+
+If a GitHub scheduled trigger is delayed while an active slot remains missing,
+run the workflow manually with `recover_current_slot=true`. This invokes the
+same idempotent slot runner, posts only missing formats before the cutoff, and
+is serialized with any delayed scheduled run by workflow concurrency.

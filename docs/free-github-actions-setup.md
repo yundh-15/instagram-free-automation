@@ -53,8 +53,11 @@ If another scheduler adds media while fallback content is being prepared, the
 GitHub run stops instead of combining two publication attempts.
 
 Manual `workflow_dispatch` runs default to `dry_run=true`, which runs preflight
-without publishing. Set `dry_run=false` only when intentionally publishing a
-manual one-off post.
+without publishing. For a missing active scheduled slot, set
+`recover_current_slot=true`; it runs the same slot-aware recovery path and
+publishes only missing formats while the two-hour cutoff is still open. Set
+`dry_run=false` only when intentionally publishing a manual one-off post
+outside that recovery path.
 
 ## GitHub Secrets
 

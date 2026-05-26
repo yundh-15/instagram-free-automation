@@ -34,6 +34,8 @@ test('scheduled workflow retries off the hour within the publish window without 
   assert.match(workflow, /cron: '7,27,47 0,4,10 \* \* \*'/);
   assert.match(workflow, /cron: '7,27 1,5,11 \* \* \*'/);
   assert.doesNotMatch(workflow, /cron: '0 [^']* \* \* \*'/);
+  assert.match(workflow, /recover_current_slot/);
+  assert.match(workflow, /github\.event\.inputs\.recover_current_slot == 'true'/);
   assert.match(workflow, /npm run run:instagram-slot -- --fallback-publish --settle-minutes 0/);
   assert.doesNotMatch(workflow, /--allow-late-publish/);
   assert.ok(runner.indexOf("'scripts/publish-instagram-reel.mjs'") < runner.indexOf("'scripts/publish-instagram-carousel.mjs'"));
