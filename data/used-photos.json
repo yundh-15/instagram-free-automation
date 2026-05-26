@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-25T05:09:30.343Z",
+  "updatedAt": "2026-05-26T04:36:12.017Z",
   "used": [
     {
       "source": "Pexels",
@@ -239,6 +239,66 @@
       "photographer": "Mike Murray",
       "photographerUrl": "https://www.pexels.com/@content-prod-co",
       "photoUrl": "https://www.pexels.com/photo/woman-using-a-lip-mask-6925522/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6555461",
+      "usedAt": "2026-05-26T04:36:12.016Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-with-under-eye-masks-stretching-her-face-upwards-6555461/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "9774584",
+      "usedAt": "2026-05-26T04:36:12.016Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "SHVETS production",
+      "photographerUrl": "https://www.pexels.com/@shvets-production",
+      "photoUrl": "https://www.pexels.com/photo/an-asian-woman-using-cosmetics-products-9774584/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6728299",
+      "usedAt": "2026-05-26T04:36:12.016Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "AI25.Studio  Studio",
+      "photographerUrl": "https://www.pexels.com/@ai25studioai",
+      "photoUrl": "https://www.pexels.com/photo/woman-with-makeup-tool-and-bathtub-6728299/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "7622922",
+      "usedAt": "2026-05-26T04:36:12.016Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "Miriam Alonso",
+      "photographerUrl": "https://www.pexels.com/@miriam-alonso",
+      "photoUrl": "https://www.pexels.com/photo/woman-in-bathrobe-with-skin-care-face-mask-7622922/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "5308638",
+      "usedAt": "2026-05-26T04:36:12.016Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "Anna Tarazevich",
+      "photographerUrl": "https://www.pexels.com/@anntarazevich",
+      "photoUrl": "https://www.pexels.com/photo/closed-eyes-woman-with-towel-on-her-head-putting-facial-cream-on-face-5308638/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
     }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-25T05:09:35.994Z",
+  "updatedAt": "2026-05-26T04:36:19.000Z",
   "used": [
     {
       "source": "Pexels",
@@ -48,6 +48,18 @@
       "creator": "ArtHouse Studio",
       "creatorUrl": "https://www.pexels.com/@arthousestudio",
       "videoUrl": "https://www.pexels.com/video/woman-having-face-massage-8204299/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8204306",
+      "usedAt": "2026-05-26T04:36:19.000Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "ArtHouse Studio",
+      "creatorUrl": "https://www.pexels.com/@arthousestudio",
+      "videoUrl": "https://www.pexels.com/video/woman-having-a-facial-massage-8204306/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

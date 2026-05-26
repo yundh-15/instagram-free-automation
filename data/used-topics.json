@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-25T05:09:30.351Z",
+  "updatedAt": "2026-05-26T04:36:12.024Z",
   "used": [
     {
       "category": "posture",
@@ -21,6 +21,11 @@
       "category": "skincare",
       "topic": "피부관리 받기 전 확인하면 좋은 5가지",
       "usedAt": "2026-05-25T05:09:30.351Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "usedAt": "2026-05-26T04:36:12.024Z"
     }
   ]
 }
