@@ -21,9 +21,10 @@ It opens Instagram posting slots on GitHub-hosted Ubuntu for:
 
 GitHub Actions scheduled runs can be delayed or dropped under load, especially
 at the start of an hour. To avoid that congested minute and add recovery
-coverage, the workflow checks each slot at `+07`, `+27`, `+47`, `+67`, `+87`,
-and `+107` minutes. For example, the 19:00 slot is checked at 19:07, 19:27,
-19:47, 20:07, 20:27, and 20:47 KST.
+coverage, the workflow checks each slot at `+07`, `+27`, `+47`, `+67`, and
+`+87` minutes. For example, the 19:00 slot is checked at 19:07, 19:27, 19:47,
+20:07, and 20:27 KST. The last check leaves time for multi-format publication
+to complete before the two-hour cutoff.
 The slot runner is idempotent, so recovery checks exit without publishing when
 the Reel, feed post, and five Stories are already present.
 Scheduled publishing stops two hours after a slot begins. A GitHub run delayed

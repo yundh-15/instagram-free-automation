@@ -3,9 +3,11 @@ name: Instagram Carousel Automation
 on:
   schedule:
     # Avoid the top of the hour, when GitHub documents heavier schedule delay.
-    # Each KST 09:00/13:00/19:00 slot is checked throughout its two-hour
-    # publishing window; run-instagram-slot is idempotent per slot.
-    - cron: '7,27,47 0,1,4,5,10,11 * * *'
+    # Each KST 09:00/13:00/19:00 slot is checked repeatedly with time left
+    # for Reel -> Feed -> Story publication before its two-hour cutoff.
+    # run-instagram-slot is idempotent per slot.
+    - cron: '7,27,47 0,4,10 * * *'
+    - cron: '7,27 1,5,11 * * *'
   workflow_dispatch:
     inputs:
       category:

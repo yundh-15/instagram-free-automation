@@ -169,8 +169,9 @@ REEL_AUDIO_CREDIT
 The GitHub Actions schedule is the primary free scheduler. GitHub documents
 that scheduled workflows can be delayed or dropped during heavy load,
 especially at the start of an hour. The workflow therefore avoids `:00` and
-checks each KST 09:00/13:00/19:00 slot at `+07`, `+27`, `+47`, `+67`, `+87`,
-and `+107` minutes during its two-hour publishing window. Each scheduled job
+checks each KST 09:00/13:00/19:00 slot at `+07`, `+27`, `+47`, `+67`, and
+`+87` minutes during its two-hour publishing window, leaving completion time
+after the last check. Each scheduled job
 runs `npm run run:instagram-slot -- --fallback-publish --settle-minutes 0`, so it first checks
 Instagram media for the current slot. If the slot already
 has the Reel, feed carousel, and required Stories, it exits without publishing.
@@ -182,7 +183,7 @@ of posting a second full set. Scheduled content selection is stable per slot,
 so a recovery that can see only partial Stories regenerates the same topic.
 When the Reel already exists, Story/feed recovery skips unnecessary Reel video
 creation and cannot be blocked by an unrelated video-source failure.
-Each slot has six idempotent checks within the two-hour publishing window.
+Each slot has five idempotent checks within the two-hour publishing window.
 Publishing closes two hours after its scheduled start so an excessively
 delayed GitHub run cannot post repeated off-slot content. If late publishing is
 explicitly enabled for manual recovery, results remain attributed to that slot
@@ -206,8 +207,9 @@ The free PC-off path is the GitHub Actions workflow in:
 ```
 
 It manages slots beginning at 09:00, 13:00, and 19:00 KST, checking each one
-at `+07`, `+27`, `+47`, `+67`, `+87`, and `+107` minutes to avoid top-of-hour
-schedule congestion and recover from delayed or dropped checks. It runs on
+at `+07`, `+27`, `+47`, `+67`, and `+87` minutes to avoid top-of-hour schedule
+congestion, recover from delayed or dropped checks, and leave time to finish
+publishing before cutoff. It runs on
 GitHub-hosted Linux, so it does not depend on the local Windows PC.
 
 Local/GitHub flows can persist photo, video, and topic history in
