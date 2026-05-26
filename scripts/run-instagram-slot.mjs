@@ -7,7 +7,9 @@ import {
   currentSlot,
   inSlotObservationWindow,
   kstSlotToUtc,
+  latestSafeRecoveryStartUtc,
   parseSlot,
+  recoveryCompletionLeadMs,
   slotObservationEndUtc,
   slotPublishCutoffUtc,
 } from './instagram-slot-window.mjs';
@@ -29,10 +31,12 @@ const formatGapMs = Number(argv['format-gap-ms'] || process.env.FALLBACK_FORMAT_
 const requiredStoryCount = Number(argv['required-story-count'] || process.env.REQUIRED_STORY_COUNT || 5);
 const postCheckDelayMs = Number(argv['post-check-delay-ms'] || 15000);
 const duplicateWindowMs = Number(process.env.INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS || DEFAULT_DUPLICATE_TOPIC_WINDOW_MS);
+const recoveryCompletionReserveMs = Number(process.env.RECOVERY_COMPLETION_RESERVE_MS || 900000);
 assertNonNegativeNumber(settleMinutes, 'settle minutes');
 assertNonNegativeNumber(formatGapMs, 'format gap milliseconds');
 assertNonNegativeNumber(postCheckDelayMs, 'post-check delay milliseconds');
 assertNonNegativeNumber(duplicateWindowMs, 'duplicate topic window milliseconds');
+assertNonNegativeNumber(recoveryCompletionReserveMs, 'recovery completion reserve milliseconds');
 if (!Number.isInteger(requiredStoryCount) || requiredStoryCount < 1 || requiredStoryCount > 5) {
   throw new Error(`REQUIRED_STORY_COUNT must be an integer from 1 through 5; got ${requiredStoryCount}`);
 }
@@ -54,6 +58,7 @@ const summary = {
   settleAt: settleAtUtc.toISOString(),
   publishCutoffAt: publishCutoffUtc.toISOString(),
   observationEndAt: observationEndUtc.toISOString(),
+  recoveryCompletionReserveMs,
   status: initial.status,
   reels: initial.reels.map(publicItem),
   feeds: initial.feeds.map(publicItem),
@@ -100,9 +105,26 @@ if (now > publishCutoffUtc && !allowLatePublish) {
   console.log(JSON.stringify(summary, null, 2));
   process.exit(1);
 }
-if (now > publishCutoffUtc) summary.latePublishOverride = true;
 
 summary.requestedFormats = missingFormats(initial);
+const completionLeadMs = recoveryCompletionLeadMs(initial, {
+  formatGapMs,
+  requiredStoryCount,
+  postCheckDelayMs,
+  recoveryCompletionReserveMs,
+});
+const latestSafeStartUtc = latestSafeRecoveryStartUtc(slot, completionLeadMs);
+summary.completionLeadMs = completionLeadMs;
+summary.latestSafeRecoveryStartAt = latestSafeStartUtc.toISOString();
+if (now > publishCutoffUtc && allowLatePublish && now > latestSafeStartUtc) {
+  summary.status = 'missed';
+  summary.message = 'The delayed recovery cannot finish safely before the next scheduled slot, so publishing was skipped.';
+  await writeRunSummary(summary);
+  console.log(JSON.stringify(summary, null, 2));
+  process.exit(1);
+}
+if (now > publishCutoffUtc) summary.latePublishOverride = true;
+
 const recoveryTopic = preferredFallbackTopic(initial);
 const avoidedTopics = recoveryTopic ? [] : await findRecentPublishedTopics();
 summary.avoidedTopics = avoidedTopics;

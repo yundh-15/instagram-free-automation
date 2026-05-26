@@ -17,6 +17,7 @@ checkStoryCount();
 checkGapMilliseconds('PUBLISH_FORMAT_GAP_MS');
 checkGapMilliseconds('FALLBACK_FORMAT_GAP_MS');
 checkGapMilliseconds('INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS');
+checkGapMilliseconds('RECOVERY_COMPLETION_RESERVE_MS');
 requireOne('CLOUDINARY_CLOUD_NAME');
 requireOne('CLOUDINARY_API_KEY');
 requireOne('CLOUDINARY_API_SECRET');

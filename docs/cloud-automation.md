@@ -156,6 +156,7 @@ PUBLISH_FORMAT_GAP_MS
 FALLBACK_FORMAT_GAP_MS
 REQUIRED_STORY_COUNT
 INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS
+RECOVERY_COMPLETION_RESERVE_MS
 REEL_AUDIO_PATH
 REEL_AUDIO_URL
 REEL_AUDIO_VOLUME
@@ -172,7 +173,7 @@ especially at the start of an hour. The workflow therefore avoids `:00` and
 checks each KST 09:00/13:00/19:00 slot at `+07`, `+27`, `+47`, `+67`, and
 `+87` minutes during its two-hour publishing window, leaving completion time
 after the last check. Each scheduled job
-runs `npm run run:instagram-slot -- --fallback-publish --settle-minutes 0`, so it first checks
+runs `npm run run:instagram-slot -- --fallback-publish --allow-late-publish --settle-minutes 0`, so it first checks
 Instagram media for the current slot. If the slot already
 has the Reel, feed carousel, and required Stories, it exits without publishing.
 If any required format is missing, it generates a fresh post, runs legal review,
@@ -183,12 +184,12 @@ of posting a second full set. Scheduled content selection is stable per slot,
 so a recovery that can see only partial Stories regenerates the same topic.
 When the Reel already exists, Story/feed recovery skips unnecessary Reel video
 creation and cannot be blocked by an unrelated video-source failure.
-Each slot has five idempotent checks within the two-hour publishing window.
-Publishing closes two hours after its scheduled start so an excessively
-delayed GitHub run cannot post repeated off-slot content. If late publishing is
-explicitly enabled for manual recovery, results remain attributed to that slot
-until the next scheduled slot begins, preventing repeated recovery runs from
-publishing them again.
+Each slot has five idempotent checks within the two-hour target publishing
+window. If GitHub starts a scheduled check after that target window, the
+runner can recover the slot before the next scheduled slot only when the
+remaining format gaps and a 15-minute processing reserve fit. Results remain
+attributed to the original slot until the next scheduled slot begins,
+preventing repeated recovery runs from publishing them again.
 Before publishing a new slot, the runner obtains recent Instagram captions and
 selects a different topic from the same content pillar. A second guard blocks
 any topic seen in the last seven days by default. Reel and feed publishers also
@@ -208,8 +209,9 @@ The free PC-off path is the GitHub Actions workflow in:
 
 It manages slots beginning at 09:00, 13:00, and 19:00 KST, checking each one
 at `+07`, `+27`, `+47`, `+67`, and `+87` minutes to avoid top-of-hour schedule
-congestion, recover from delayed or dropped checks, and leave time to finish
-publishing before cutoff. It runs on
+congestion, recover from delayed or dropped checks, and leave time for normal
+publication. Delayed runs can still recover before the next slot when their
+safe-completion reserve permits it. It runs on
 GitHub-hosted Linux, so it does not depend on the local Windows PC.
 
 Local/GitHub flows can persist photo, video, and topic history in
@@ -220,5 +222,6 @@ duplicate scheduled slots before public posting.
 
 If a GitHub scheduled trigger is delayed while an active slot remains missing,
 run the workflow manually with `recover_current_slot=true`. This invokes the
-same idempotent slot runner, posts only missing formats before the cutoff, and
-is serialized with any delayed scheduled run by workflow concurrency.
+same idempotent slot runner, posts only missing formats while enough time
+remains before the next slot, and is serialized with any delayed scheduled run
+by workflow concurrency.

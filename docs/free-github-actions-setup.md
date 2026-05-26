@@ -24,11 +24,13 @@ at the start of an hour. To avoid that congested minute and add recovery
 coverage, the workflow checks each slot at `+07`, `+27`, `+47`, `+67`, and
 `+87` minutes. For example, the 19:00 slot is checked at 19:07, 19:27, 19:47,
 20:07, and 20:27 KST. The last check leaves time for multi-format publication
-to complete before the two-hour cutoff.
+to complete within the target publishing window.
 The slot runner is idempotent, so recovery checks exit without publishing when
 the Reel, feed post, and five Stories are already present.
-Scheduled publishing stops two hours after a slot begins. A GitHub run delayed
-beyond that cutoff fails closed instead of publishing off-slot duplicates.
+When GitHub starts a scheduled check late, recovery can continue after the
+two-hour target window until shortly before the next slot. It requires the
+configured format gaps plus a 15-minute processing reserve; a run too late to
+finish safely fails closed instead of overlapping the next slot.
 
 Keep this as the only active scheduler for the Instagram account. Deactivate
 any previously imported n8n Cloud workflow before relying on this schedule;
@@ -55,7 +57,7 @@ GitHub run stops instead of combining two publication attempts.
 Manual `workflow_dispatch` runs default to `dry_run=true`, which runs preflight
 without publishing. For a missing active scheduled slot, set
 `recover_current_slot=true`; it runs the same slot-aware recovery path and
-publishes only missing formats while the two-hour cutoff is still open. Set
+publishes only missing formats while enough time remains before the next slot. Set
 `dry_run=false` only when intentionally publishing a manual one-off post
 outside that recovery path.
 
@@ -84,7 +86,11 @@ PUBLISH_FORMAT_GAP_MS
 FALLBACK_FORMAT_GAP_MS
 REQUIRED_STORY_COUNT
 INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS
+RECOVERY_COMPLETION_RESERVE_MS
 ```
+
+`RECOVERY_COMPLETION_RESERVE_MS` defaults to `900000` (15 minutes) and is
+added to any remaining Reel-to-feed-to-Story gaps before delayed publication.
 
 Set `PEXELS_API_KEY` when using stock photos/videos. It becomes required when
 `REEL_SOURCE=pexels-required`; otherwise the pipeline can fall back to

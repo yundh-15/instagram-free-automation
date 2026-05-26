@@ -49,6 +49,23 @@ export function slotObservationEndUtc(slot) {
   return new Date(kstSlotToUtc(slot).getTime() + deltaHours * 60 * 60 * 1000);
 }
 
+export function recoveryCompletionLeadMs(
+  inspection,
+  { formatGapMs, requiredStoryCount, postCheckDelayMs, recoveryCompletionReserveMs },
+) {
+  const willPublishReel = inspection.reels.length === 0;
+  const willPublishFeed = inspection.feeds.length === 0;
+  const willPublishStories = inspection.stories.length < requiredStoryCount;
+  let gaps = 0;
+  if (willPublishReel && willPublishFeed) gaps += formatGapMs;
+  if ((willPublishReel || willPublishFeed) && willPublishStories) gaps += formatGapMs;
+  return gaps + postCheckDelayMs + recoveryCompletionReserveMs;
+}
+
+export function latestSafeRecoveryStartUtc(slot, completionLeadMs) {
+  return new Date(slotObservationEndUtc(slot).getTime() - completionLeadMs);
+}
+
 export function inSlotObservationWindow(timestamp, slot) {
   const time = new Date(timestamp);
   return time >= kstSlotToUtc(slot) && time < slotObservationEndUtc(slot);

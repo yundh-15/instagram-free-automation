@@ -53,6 +53,7 @@ jobs:
       FALLBACK_FORMAT_GAP_MS: ${{ secrets.FALLBACK_FORMAT_GAP_MS || '300000' }}
       REQUIRED_STORY_COUNT: ${{ secrets.REQUIRED_STORY_COUNT || '5' }}
       INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS: ${{ secrets.INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS || '604800000' }}
+      RECOVERY_COMPLETION_RESERVE_MS: ${{ secrets.RECOVERY_COMPLETION_RESERVE_MS || '900000' }}
       REEL_SOURCE: ${{ secrets.REEL_SOURCE || 'pexels' }}
       REEL_AUDIO_PATH: ${{ secrets.REEL_AUDIO_PATH }}
       REEL_AUDIO_URL: ${{ secrets.REEL_AUDIO_URL }}
@@ -81,8 +82,9 @@ jobs:
 
       - name: Recover scheduled Instagram slot if missing
         if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.recover_current_slot == 'true')
-        # Do not publish after the cutoff when GitHub has queued a scheduled run late.
-        run: npm run run:instagram-slot -- --fallback-publish --settle-minutes 0
+        # Scheduled events may start late; recover only while the runner can
+        # still finish safely before the next scheduled slot begins.
+        run: npm run run:instagram-slot -- --fallback-publish --allow-late-publish --settle-minutes 0
 
       - name: Manual dry run complete
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.recover_current_slot != 'true' && github.event.inputs.dry_run != 'false'
