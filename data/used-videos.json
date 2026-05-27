@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-27T04:51:07.076Z",
+  "updatedAt": "2026-05-27T11:48:13.488Z",
   "used": [
     {
       "source": "Pexels",
@@ -96,6 +96,18 @@
       "creator": "Gustavo Fring",
       "creatorUrl": "https://www.pexels.com/@gustavo-fring",
       "videoUrl": "https://www.pexels.com/video/a-woman-getting-a-skin-treatment-7423543/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6322767",
+      "usedAt": "2026-05-27T11:48:13.484Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Monstera Production",
+      "creatorUrl": "https://www.pexels.com/@gabby-k",
+      "videoUrl": "https://www.pexels.com/video/female-stretching-her-hands-upward-6322767/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

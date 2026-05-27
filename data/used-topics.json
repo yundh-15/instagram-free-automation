@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-27T04:50:59.744Z",
+  "updatedAt": "2026-05-27T11:48:01.786Z",
   "used": [
     {
       "category": "posture",
@@ -41,6 +41,11 @@
       "category": "skincare",
       "topic": "건조한 피부를 위한 관리 순서",
       "usedAt": "2026-05-27T04:50:59.744Z"
+    },
+    {
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "usedAt": "2026-05-27T11:48:01.786Z"
     }
   ]
 }
