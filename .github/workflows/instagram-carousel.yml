@@ -8,6 +8,9 @@ on:
     # run-instagram-slot is idempotent per slot.
     - cron: '7,27,47 0,4,10 * * *'
     - cron: '7,27 1,5,11 * * *'
+    # The 19:00 slot remains current overnight. Use sparse recovery attempts
+    # in case all of its two-hour checks are delayed or dropped.
+    - cron: '17 12,15,18,22,23 * * *'
   workflow_dispatch:
     inputs:
       category:

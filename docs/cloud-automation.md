@@ -19,7 +19,7 @@ Task Scheduler or local n8n.
 
 Supported free cloud path:
 
-1. GitHub Actions: publishing slots begin at 09:00, 13:00, and 19:00 KST. Off-the-hour checks throughout each slot's two-hour publishing window publish only if the Reel, feed post, or Stories are missing.
+1. GitHub Actions: publishing slots begin at 09:00, 13:00, and 19:00 KST. Off-the-hour checks throughout each slot's two-hour publishing window publish only if the Reel, feed post, or Stories are missing. Because the 19:00 slot stays current overnight, additional sparse recovery checks run before the following 09:00 slot.
 
 Use GitHub Actions as the primary free scheduler. Do not make n8n API access a
 required dependency for the final setup.
@@ -172,7 +172,9 @@ that scheduled workflows can be delayed or dropped during heavy load,
 especially at the start of an hour. The workflow therefore avoids `:00` and
 checks each KST 09:00/13:00/19:00 slot at `+07`, `+27`, `+47`, `+67`, and
 `+87` minutes during its two-hour publishing window, leaving completion time
-after the last check. Each scheduled job
+after the last check. For the 19:00 slot, it also checks at `21:17`, `00:17`,
+`03:17`, `07:17`, and `08:17` KST, because no newer slot begins overnight and
+GitHub can delay or drop earlier scheduled runs. Each scheduled job
 runs `npm run run:instagram-slot -- --fallback-publish --allow-late-publish --settle-minutes 0`, so it first checks
 Instagram media for the current slot. If the slot already
 has the Reel, feed carousel, and required Stories, it exits without publishing.
@@ -210,7 +212,9 @@ The free PC-off path is the GitHub Actions workflow in:
 It manages slots beginning at 09:00, 13:00, and 19:00 KST, checking each one
 at `+07`, `+27`, `+47`, `+67`, and `+87` minutes to avoid top-of-hour schedule
 congestion, recover from delayed or dropped checks, and leave time for normal
-publication. Delayed runs can still recover before the next slot when their
+publication. The 19:00 slot also receives recovery checks at `21:17`, `00:17`,
+`03:17`, `07:17`, and `08:17` KST while it remains current overnight. Delayed
+runs can still recover before the next slot when their
 safe-completion reserve permits it. It runs on
 GitHub-hosted Linux, so it does not depend on the local Windows PC.
 

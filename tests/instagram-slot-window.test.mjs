@@ -26,6 +26,7 @@ test('late publication is observed as part of the same slot until the next slot 
 
 test('current slot switches at the next Korean scheduled hour', () => {
   assert.equal(currentSlot(new Date('2026-05-25T12:57:32Z')).key, '2026-05-25T19');
+  assert.equal(currentSlot(new Date('2026-05-25T22:17:00Z')).key, '2026-05-25T19');
   assert.equal(currentSlot(new Date('2026-05-26T00:00:00Z')).key, '2026-05-26T09');
 });
 
@@ -45,14 +46,19 @@ test('late recovery reserves remaining format gaps and processing time before th
     latestSafeRecoveryStartUtc(parseSlot('2026-05-26T13'), fullLeadMs).toISOString(),
     '2026-05-26T09:34:45.000Z',
   );
+  assert.equal(
+    latestSafeRecoveryStartUtc(parseSlot('2026-05-26T19'), fullLeadMs).toISOString(),
+    '2026-05-26T23:34:45.000Z',
+  );
 });
 
-test('scheduled workflow retries off the hour and permits bounded late recovery', async () => {
+test('scheduled workflow retries off the hour, overnight for the evening slot, and permits bounded late recovery', async () => {
   const workflow = await readFile(join(ROOT, '.github', 'workflows', 'instagram-carousel.yml'), 'utf8');
   const runner = await readFile(join(ROOT, 'scripts', 'run-instagram-slot.mjs'), 'utf8');
 
   assert.match(workflow, /cron: '7,27,47 0,4,10 \* \* \*'/);
   assert.match(workflow, /cron: '7,27 1,5,11 \* \* \*'/);
+  assert.match(workflow, /cron: '17 12,15,18,22,23 \* \* \*'/);
   assert.doesNotMatch(workflow, /cron: '0 [^']* \* \* \*'/);
   assert.match(workflow, /recover_current_slot/);
   assert.match(workflow, /github\.event\.inputs\.recover_current_slot == 'true'/);
