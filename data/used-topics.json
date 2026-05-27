@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-27T02:37:50.483Z",
+  "updatedAt": "2026-05-27T04:50:59.744Z",
   "used": [
     {
       "category": "posture",
@@ -36,6 +36,11 @@
       "category": "massage",
       "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
       "usedAt": "2026-05-27T02:37:50.483Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "usedAt": "2026-05-27T04:50:59.744Z"
     }
   ]
 }

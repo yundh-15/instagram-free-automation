@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-27T02:37:56.219Z",
+  "updatedAt": "2026-05-27T04:51:07.076Z",
   "used": [
     {
       "source": "Pexels",
@@ -84,6 +84,18 @@
       "creator": "23  Audiovisual",
       "creatorUrl": "https://www.pexels.com/@23audiovisual",
       "videoUrl": "https://www.pexels.com/video/relaxing-body-massage-14749279/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7423543",
+      "usedAt": "2026-05-27T04:51:07.075Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Gustavo Fring",
+      "creatorUrl": "https://www.pexels.com/@gustavo-fring",
+      "videoUrl": "https://www.pexels.com/video/a-woman-getting-a-skin-treatment-7423543/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
