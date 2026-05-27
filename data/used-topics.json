@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-26T11:11:56.274Z",
+  "updatedAt": "2026-05-27T02:37:50.483Z",
   "used": [
     {
       "category": "posture",
@@ -31,6 +31,11 @@
       "category": "posture",
       "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
       "usedAt": "2026-05-26T11:11:56.274Z"
+    },
+    {
+      "category": "massage",
+      "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
+      "usedAt": "2026-05-27T02:37:50.483Z"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-26T11:12:07.290Z",
+  "updatedAt": "2026-05-27T02:37:56.219Z",
   "used": [
     {
       "source": "Pexels",
@@ -72,6 +72,18 @@
       "creator": "cottonbro studio",
       "creatorUrl": "https://www.pexels.com/@cottonbro",
       "videoUrl": "https://www.pexels.com/video/ballerina-sitting-and-stretching-10637343/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "14749279",
+      "usedAt": "2026-05-27T02:37:56.218Z",
+      "category": "massage",
+      "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "23  Audiovisual",
+      "creatorUrl": "https://www.pexels.com/@23audiovisual",
+      "videoUrl": "https://www.pexels.com/video/relaxing-body-massage-14749279/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
