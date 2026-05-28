@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-28T04:22:39.405Z",
+  "updatedAt": "2026-05-28T11:14:58.599Z",
   "used": [
     {
       "category": "posture",
@@ -51,6 +51,11 @@
       "category": "skincare",
       "topic": "환절기 피부관리 전 체크할 생활 습관",
       "usedAt": "2026-05-28T04:22:39.405Z"
+    },
+    {
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "usedAt": "2026-05-28T11:14:58.599Z"
     }
   ]
 }

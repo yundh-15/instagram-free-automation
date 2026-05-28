@@ -138,7 +138,7 @@ console.log(`Result: ${relative(outputPath)}`);
 function buildCaption(currentPayload) {
   return [
     currentPayload.feedCaption || currentPayload.caption,
-    ...limitedHashtags(currentPayload),
+    hashtagLine(currentPayload),
   ].filter(Boolean).join('\n\n');
 }
 
@@ -146,18 +146,22 @@ function buildReelCaption(currentPayload) {
   if (currentPayload.reelCaption) {
     return [
       currentPayload.reelCaption,
-      ...limitedHashtags(currentPayload),
+      hashtagLine(currentPayload),
     ].filter(Boolean).join('\n\n');
   }
   return [
     currentPayload.caption,
     '천천히 넘겨보며 오늘 몸이 쉬어갈 시간을 떠올려보세요.',
-    ...limitedHashtags(currentPayload),
+    hashtagLine(currentPayload),
   ].filter(Boolean).join('\n\n');
 }
 
 function limitedHashtags(currentPayload) {
-  return (currentPayload.hashtags || []).slice(0, 4);
+  return (currentPayload.hashtags || []).slice(0, 5);
+}
+
+function hashtagLine(currentPayload) {
+  return limitedHashtags(currentPayload).join(' ');
 }
 
 function orderedStoryImages(currentPayload) {

@@ -34,7 +34,7 @@ await waitForPublicUrl(videoUrl);
 const caption = [
   payload.reelCaption || payload.caption || payload.topic,
   ...(payload.reelCaption ? [] : ['천천히 넘겨보며 오늘 몸이 쉬어갈 시간을 떠올려보세요.']),
-  ...limitedHashtags(payload),
+  hashtagLine(payload),
 ].filter(Boolean).join('\n\n');
 
 await guardAgainstDuplicateReel();
@@ -172,7 +172,11 @@ function requireEnv(key) {
 }
 
 function limitedHashtags(currentPayload) {
-  return (currentPayload.hashtags || []).slice(0, 4);
+  return (currentPayload.hashtags || []).slice(0, 5);
+}
+
+function hashtagLine(currentPayload) {
+  return limitedHashtags(currentPayload).join(' ');
 }
 
 function relative(path) {

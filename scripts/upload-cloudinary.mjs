@@ -106,7 +106,7 @@ const output = {
   caption: withMediaCredit(post.feedCaption || post.caption, post, reelVideoMeta),
   feedCaption: withMediaCredit(post.feedCaption || post.caption, post, reelVideoMeta),
   reelCaption: withMediaCredit(post.reelCaption || buildDefaultReelCaption(post), post, reelVideoMeta),
-  hashtags: (post.hashtags || []).slice(0, 4),
+  hashtags: (post.hashtags || []).slice(0, 5),
   imageUrls: feedImages.map((image) => image.url),
   storyImageUrls: storyImages.map((image) => image.url),
   feedImages,

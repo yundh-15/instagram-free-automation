@@ -56,9 +56,8 @@ test('scheduled workflow retries off the hour, overnight for the evening slot, a
   const workflow = await readFile(join(ROOT, '.github', 'workflows', 'instagram-carousel.yml'), 'utf8');
   const runner = await readFile(join(ROOT, 'scripts', 'run-instagram-slot.mjs'), 'utf8');
 
-  assert.match(workflow, /cron: '7,27,47 0,4,10 \* \* \*'/);
-  assert.match(workflow, /cron: '7,27 1,5,11 \* \* \*'/);
-  assert.match(workflow, /cron: '17 12,15,18,22,23 \* \* \*'/);
+  assert.match(workflow, /cron: '7,17,27,37,47,57 0,1,2,4,5,6,10,11,12 \* \* \*'/);
+  assert.match(workflow, /cron: '17,47 15,18,22,23 \* \* \*'/);
   assert.doesNotMatch(workflow, /cron: '0 [^']* \* \* \*'/);
   assert.match(workflow, /recover_current_slot/);
   assert.match(workflow, /github\.event\.inputs\.recover_current_slot == 'true'/);

@@ -11,6 +11,7 @@ const CARD_HEIGHT = 1350;
 const GRID_THUMBNAIL_SIZE = 1080;
 const GRID_SAFE_TOP = Math.round((CARD_HEIGHT - GRID_THUMBNAIL_SIZE) / 2);
 const GRID_SAFE_BOTTOM = GRID_SAFE_TOP + GRID_THUMBNAIL_SIZE;
+const HASHTAG_LIMIT = 5;
 const FONT_CSS = fontFaceCss();
 const CATEGORIES = ['massage', 'skincare', 'posture'];
 const TOPICS = {
@@ -99,7 +100,7 @@ const manifest = {
   caption: feedCaption,
   feedCaption,
   reelCaption,
-  hashtags: buildHashtags(strategy),
+  hashtags: buildHashtags(topic, strategy),
   photos: photoPacks.map((photoPack) => photoPack.attribution),
   feedImage: {
     width: CARD_WIDTH,
@@ -1099,9 +1100,50 @@ function fontFaceCss() {
     .join('\n');
 }
 
-function buildHashtags(strategy) {
-  const common = ['#셀프관리', '#관리루틴', '#웰니스', '#뷰티정보', '#일상관리', '#힐링루틴'];
-  return [...new Set([...strategy.tags, ...common])].slice(0, 4);
+function buildHashtags(currentTopic, strategy) {
+  const common = ['#관리루틴', '#셀프관리', '#뷰티정보', '#일상관리', '#힐링루틴'];
+  return uniqueHashtags([
+    ...topicHashtags(currentTopic, strategy),
+    ...(strategy.titleKeywords || []).map(toHashtag),
+    ...strategy.tags,
+    ...common,
+  ]).slice(0, HASHTAG_LIMIT);
+}
+
+function topicHashtags(currentTopic, strategy) {
+  const topicText = String(currentTopic || '');
+  const rulesByCategory = {
+    마사지: [
+      [/목|어깨|등/, ['#목어깨관리']],
+      [/어깨/, ['#어깨마사지']],
+      [/마사지|스파|바디케어|종아리|손목|팔|허리/, ['#마사지샵']],
+    ],
+    피부관리: [
+      [/피부|스킨케어/, ['#피부관리']],
+      [/건조|수분/, ['#수분관리']],
+      [/민감|예민/, ['#민감피부']],
+      [/에스테틱|관리실/, ['#에스테틱']],
+    ],
+    체형교정: [
+      [/라운드숄더/, ['#라운드숄더']],
+      [/골반/, ['#골반균형']],
+      [/목|허리|등|자세/, ['#자세교정']],
+      [/체형|균형|밸런스/, ['#체형관리']],
+    ],
+  };
+  const rules = rulesByCategory[strategy.label] || [];
+  return rules.flatMap(([pattern, tags]) => (pattern.test(topicText) ? tags : []));
+}
+
+function uniqueHashtags(values) {
+  return [...new Set(values.map(toHashtag).filter(Boolean))];
+}
+
+function toHashtag(value) {
+  const body = String(value || '')
+    .replace(/^#/, '')
+    .replace(/[^\p{Letter}\p{Number}_]+/gu, '');
+  return body ? `#${body}` : '';
 }
 
 function slugify(input) {

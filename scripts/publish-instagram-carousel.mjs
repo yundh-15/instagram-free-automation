@@ -31,7 +31,7 @@ if (imageUrls.length < 2 || imageUrls.length > 10) {
   throw new Error(`Instagram carousel requires 2-10 image URLs; got ${imageUrls.length}`);
 }
 
-const caption = [payload.feedCaption || payload.caption, ...limitedHashtags(payload)].filter(Boolean).join('\n\n');
+const caption = [payload.feedCaption || payload.caption, hashtagLine(payload)].filter(Boolean).join('\n\n');
 const childIds = [];
 
 await guardAgainstDuplicateFeed();
@@ -177,7 +177,11 @@ function requireEnv(key) {
 }
 
 function limitedHashtags(currentPayload) {
-  return (currentPayload.hashtags || []).slice(0, 4);
+  return (currentPayload.hashtags || []).slice(0, 5);
+}
+
+function hashtagLine(currentPayload) {
+  return limitedHashtags(currentPayload).join(' ');
 }
 
 function relative(path) {

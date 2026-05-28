@@ -3,14 +3,13 @@ name: Instagram Carousel Automation
 on:
   schedule:
     # Avoid the top of the hour, when GitHub documents heavier schedule delay.
-    # Each KST 09:00/13:00/19:00 slot is checked repeatedly with time left
-    # for Reel -> Feed -> Story publication before its two-hour cutoff.
-    # run-instagram-slot is idempotent per slot.
-    - cron: '7,27,47 0,4,10 * * *'
-    - cron: '7,27 1,5,11 * * *'
-    # The 19:00 slot remains current overnight. Use sparse recovery attempts
-    # in case all of its two-hour checks are delayed or dropped.
-    - cron: '17 12,15,18,22,23 * * *'
+    # Each KST 09:00/13:00/19:00 slot is checked as a watchdog during the
+    # on-time and bounded-late recovery window. run-instagram-slot is
+    # idempotent per slot, so extra checks exit without publishing once done.
+    - cron: '7,17,27,37,47,57 0,1,2,4,5,6,10,11,12 * * *'
+    # The 19:00 slot remains current overnight. Keep sparse recovery attempts
+    # in case GitHub delays or drops the dense evening checks.
+    - cron: '17,47 15,18,22,23 * * *'
   workflow_dispatch:
     inputs:
       category:

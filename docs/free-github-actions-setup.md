@@ -21,12 +21,14 @@ It opens Instagram posting slots on GitHub-hosted Ubuntu for:
 
 GitHub Actions scheduled runs can be delayed or dropped under load, especially
 at the start of an hour. To avoid that congested minute and add recovery
-coverage, the workflow checks each slot at `+07`, `+27`, `+47`, `+67`, and
-`+87` minutes. For example, the 19:00 slot is checked at 19:07, 19:27, 19:47,
-20:07, and 20:27 KST. The last check leaves time for multi-format publication
-to complete within the target publishing window.
+coverage, the workflow checks each slot every 10 minutes at `+07`, `+17`,
+`+27`, `+37`, `+47`, and `+57` across the on-time and bounded-late recovery
+window. For example, the 19:00 slot is checked repeatedly from 19:07 through
+21:57 KST. The slot runner exits without publishing once the required formats
+are already present.
 The 19:00 slot has no newer slot until 09:00 the following day, so it also
-receives sparse recovery checks at 21:17, 00:17, 03:17, 07:17, and 08:17 KST.
+receives sparse recovery checks at 00:17, 00:47, 03:17, 03:47, 07:17, 07:47,
+08:17, and 08:47 KST.
 This covers delayed or dropped initial evening triggers while the runner still
 refuses to start if it cannot finish before the following 09:00 slot.
 The slot runner is idempotent, so recovery checks exit without publishing when
