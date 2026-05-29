@@ -104,8 +104,10 @@ Set `PEXELS_API_KEY` when using stock photos/videos. It becomes required when
 generated card backgrounds and a slideshow Reel.
 
 `REEL_AUDIO_PRESET=calm-piano` adds an original generated quiet piano bed to
-Reels. Set it to `none` to publish silent Reels, or use `REEL_AUDIO_URL` /
-`REEL_AUDIO_PATH` plus license metadata for a specific licensed track.
+Reels. The generated audio varies by slot/topic seed, so repeated posts do not
+reuse the exact same music bed. Set it to `none` to publish silent Reels, or
+use `REEL_AUDIO_URL` / `REEL_AUDIO_PATH` plus license metadata for a specific
+licensed track.
 
 Do not add an n8n API key. n8n Cloud/API access is not part of the required free
 setup.

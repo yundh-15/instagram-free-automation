@@ -59,6 +59,7 @@ if (reelAudio) {
     basename: 'reel-audio',
     root: ROOT,
     durationSec: Math.max(30, sourceUrls.length * secondsPerSlide + 5),
+    seed: `${payload.reelTag || ''}:${payload.topic || ''}:payload`,
   });
   spawnFile(ffmpegPath, [
     '-y',

@@ -431,6 +431,7 @@ async function uploadPexelsVideoWithAudio({ cloudName, folder: currentFolder, ta
     basename: 'reel-audio',
     root: ROOT,
     durationSec: Math.max(45, Math.ceil(video.duration || 0) + 5),
+    seed: `${tag}:${video.id}:${post.topic || ''}`,
   });
   const outputPath = join(workDir, `${publicId}.mp4`);
   await downloadToFile(video.file.link, videoPath);
@@ -460,6 +461,7 @@ async function uploadSlideshowWithAudio({ cloudName, folder: currentFolder, tag,
     basename: 'reel-audio',
     root: ROOT,
     durationSec,
+    seed: `${tag}:${post.topic || ''}:slideshow`,
   });
   const outputPath = join(workDir, `${publicId}.mp4`);
   await downloadToFile(videoUrl, videoPath);

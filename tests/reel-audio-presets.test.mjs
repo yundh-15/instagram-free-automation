@@ -37,3 +37,36 @@ test('calm piano preset renders a WAV file', async () => {
     await rm(directory, { recursive: true, force: true });
   }
 });
+
+test('calm piano preset varies by seed and stays deterministic per seed', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'reel-audio-seeded-'));
+  try {
+    const audio = getConfiguredReelAudio({}, { REEL_AUDIO_PRESET: 'calm-piano' });
+    const firstPath = await prepareReelAudioInput(audio, {
+      workDir: directory,
+      basename: 'first',
+      durationSec: 1,
+      seed: '2026-05-30T09:topic-a',
+    });
+    const repeatedPath = await prepareReelAudioInput(audio, {
+      workDir: directory,
+      basename: 'repeated',
+      durationSec: 1,
+      seed: '2026-05-30T09:topic-a',
+    });
+    const secondPath = await prepareReelAudioInput(audio, {
+      workDir: directory,
+      basename: 'second',
+      durationSec: 1,
+      seed: '2026-05-30T13:topic-b',
+    });
+
+    const first = await readFile(firstPath);
+    const repeated = await readFile(repeatedPath);
+    const second = await readFile(secondPath);
+    assert.deepEqual(first, repeated);
+    assert.notDeepEqual(first, second);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});

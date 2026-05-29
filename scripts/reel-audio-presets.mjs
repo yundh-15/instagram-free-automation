@@ -63,11 +63,12 @@ export async function prepareReelAudioInput(reelAudio, {
   basename = 'reel-audio',
   root = process.cwd(),
   durationSec = 90,
+  seed = '',
 } = {}) {
   if (!reelAudio) return null;
   if (reelAudio.preset === 'calm-piano') {
     const outputPath = join(workDir, `${basename}-calm-piano.wav`);
-    await writeGeneratedCalmPiano(outputPath, { durationSec });
+    await writeGeneratedCalmPiano(outputPath, { durationSec, seed });
     return outputPath;
   }
 
@@ -109,36 +110,105 @@ function mediaExtension(value) {
   return match?.[1]?.toLowerCase() || null;
 }
 
-async function writeGeneratedCalmPiano(outputPath, { durationSec }) {
+async function writeGeneratedCalmPiano(outputPath, { durationSec, seed }) {
   const sampleRate = 44100;
   const seconds = Math.max(1, Math.min(Number(durationSec) || 90, 180));
   const totalSamples = Math.ceil(sampleRate * seconds);
   const samples = new Float32Array(totalSamples);
-  const bpm = 68;
+  const random = seededRandom(seed || outputPath);
+  const bpm = 62 + Math.floor(random() * 11);
   const beat = 60 / bpm;
-  const chords = [
-    [261.63, 329.63, 392.00, 493.88],
-    [196.00, 293.66, 392.00, 493.88],
-    [220.00, 261.63, 329.63, 440.00],
-    [174.61, 261.63, 349.23, 440.00],
-    [146.83, 220.00, 293.66, 349.23],
-    [196.00, 246.94, 293.66, 392.00],
-    [164.81, 246.94, 329.63, 392.00],
-    [174.61, 220.00, 261.63, 349.23],
+  const transpose = [-5, -3, 0, 2, 4][Math.floor(random() * 5)];
+  const progressions = [
+    [
+      [261.63, 329.63, 392.00, 493.88],
+      [196.00, 293.66, 392.00, 493.88],
+      [220.00, 261.63, 329.63, 440.00],
+      [174.61, 261.63, 349.23, 440.00],
+      [146.83, 220.00, 293.66, 349.23],
+      [196.00, 246.94, 293.66, 392.00],
+      [164.81, 246.94, 329.63, 392.00],
+      [174.61, 220.00, 261.63, 349.23],
+    ],
+    [
+      [220.00, 261.63, 329.63, 392.00],
+      [174.61, 220.00, 261.63, 349.23],
+      [196.00, 246.94, 293.66, 392.00],
+      [164.81, 220.00, 261.63, 329.63],
+      [146.83, 220.00, 293.66, 349.23],
+      [174.61, 261.63, 329.63, 392.00],
+      [196.00, 246.94, 329.63, 440.00],
+      [220.00, 261.63, 329.63, 392.00],
+    ],
+    [
+      [196.00, 246.94, 293.66, 392.00],
+      [146.83, 220.00, 293.66, 369.99],
+      [164.81, 246.94, 329.63, 392.00],
+      [130.81, 196.00, 261.63, 329.63],
+      [174.61, 220.00, 261.63, 349.23],
+      [196.00, 246.94, 293.66, 392.00],
+      [220.00, 261.63, 329.63, 440.00],
+      [196.00, 246.94, 293.66, 392.00],
+    ],
   ];
+  const progression = progressions[Math.floor(random() * progressions.length)];
+  const rotation = Math.floor(random() * progression.length);
+  const noteOrders = [
+    [0, 2, 1, 3],
+    [0, 1, 2, 3],
+    [0, 3, 2, 1],
+    [1, 3, 0, 2],
+  ];
+  const noteOrder = noteOrders[Math.floor(random() * noteOrders.length)];
+  const halfBeatChance = 0.55 + random() * 0.25;
 
   let eventIndex = 0;
   for (let t = 0; t < seconds + 2; t += beat / 2) {
-    const chord = chords[Math.floor((t / (beat * 4)) % chords.length)];
-    const frequency = chord[eventIndex % chord.length] * (eventIndex % 8 === 0 ? 0.5 : 1);
-    addPianoNote(samples, sampleRate, t, frequency, 2.9, eventIndex % 8 === 0 ? 0.17 : 0.11);
+    if (eventIndex % 2 === 1 && random() > halfBeatChance) {
+      eventIndex += 1;
+      continue;
+    }
+    const chordIndex = (Math.floor(t / (beat * 4)) + rotation) % progression.length;
+    const chord = progression[chordIndex].map((frequency) => transposeFrequency(frequency, transpose));
+    const orderIndex = noteOrder[eventIndex % noteOrder.length] || 0;
+    const isBass = eventIndex % 8 === 0;
+    const frequency = chord[orderIndex] * (isBass ? 0.5 : 1);
+    const jitter = (random() - 0.5) * 0.035;
+    const noteStart = Math.max(0, t + jitter);
+    const length = isBass ? 3.1 : 2.35 + random() * 0.75;
+    const gain = isBass ? 0.14 + random() * 0.04 : 0.085 + random() * 0.035;
+    addPianoNote(samples, sampleRate, noteStart, frequency, length, gain);
     eventIndex += 1;
   }
 
-  applyEcho(samples, sampleRate, 0.33, 0.22);
-  applyEcho(samples, sampleRate, 0.71, 0.11);
+  applyEcho(samples, sampleRate, 0.31 + random() * 0.08, 0.18 + random() * 0.07);
+  applyEcho(samples, sampleRate, 0.68 + random() * 0.12, 0.08 + random() * 0.05);
   normalize(samples, 0.82);
   await writeFile(outputPath, encodeWav(samples, sampleRate));
+}
+
+function transposeFrequency(frequency, semitones) {
+  return frequency * (2 ** (semitones / 12));
+}
+
+function seededRandom(seed) {
+  let state = hashSeed(seed);
+  return () => {
+    state = (state + 0x6D2B79F5) >>> 0;
+    let value = state;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function hashSeed(seed) {
+  let hash = 2166136261;
+  for (const char of String(seed || 'calm-piano')) {
+    hash ^= char.codePointAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
 }
 
 function addPianoNote(samples, sampleRate, startSec, frequency, lengthSec, gain) {

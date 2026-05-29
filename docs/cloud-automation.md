@@ -42,7 +42,9 @@ existing image slideshow unless `REEL_SOURCE=pexels-required` is set.
 Reels can include a calm generated piano bed by setting
 `REEL_AUDIO_PRESET=calm-piano`. This creates original background audio during
 the run, bakes it into the Reel MP4 before upload, and stores audio attribution
-metadata for legal review. Set `REEL_AUDIO_PRESET=none` to disable it.
+metadata for legal review. The melody, tempo, voicing, and echo vary by
+slot/topic seed so repeated posts do not reuse the same audio bed. Set
+`REEL_AUDIO_PRESET=none` to disable it.
 
 Licensed external background music can also be baked into the Reel MP4 by
 setting `REEL_AUDIO_PATH` or `REEL_AUDIO_URL`. Do not use a personal Google or
