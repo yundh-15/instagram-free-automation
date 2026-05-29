@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { REEL_AUDIO_PRESETS } from './reel-audio-presets.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
@@ -18,6 +19,7 @@ checkGapMilliseconds('PUBLISH_FORMAT_GAP_MS');
 checkGapMilliseconds('FALLBACK_FORMAT_GAP_MS');
 checkGapMilliseconds('INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS');
 checkGapMilliseconds('RECOVERY_COMPLETION_RESERVE_MS');
+checkReelAudioPreset();
 requireOne('CLOUDINARY_CLOUD_NAME');
 requireOne('CLOUDINARY_API_KEY');
 requireOne('CLOUDINARY_API_SECRET');
@@ -77,6 +79,15 @@ function checkGapMilliseconds(key) {
   const value = Number(process.env[key]);
   if (!Number.isFinite(value) || value < 0) {
     missing.push(`${key} must be a non-negative number`);
+  }
+}
+
+function checkReelAudioPreset() {
+  if (!process.env.REEL_AUDIO_PRESET) return;
+  const value = process.env.REEL_AUDIO_PRESET.trim().toLowerCase();
+  if (!value || ['none', 'off', 'false', '0'].includes(value)) return;
+  if (!REEL_AUDIO_PRESETS.includes(value)) {
+    missing.push(`REEL_AUDIO_PRESET must be one of: ${REEL_AUDIO_PRESETS.join(', ')}, none`);
   }
 }
 

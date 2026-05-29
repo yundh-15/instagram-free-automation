@@ -57,6 +57,7 @@ jobs:
       INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS: ${{ secrets.INSTAGRAM_DUPLICATE_TOPIC_WINDOW_MS || '604800000' }}
       RECOVERY_COMPLETION_RESERVE_MS: ${{ secrets.RECOVERY_COMPLETION_RESERVE_MS || '900000' }}
       REEL_SOURCE: ${{ secrets.REEL_SOURCE || 'pexels' }}
+      REEL_AUDIO_PRESET: ${{ secrets.REEL_AUDIO_PRESET || 'calm-piano' }}
       REEL_AUDIO_PATH: ${{ secrets.REEL_AUDIO_PATH }}
       REEL_AUDIO_URL: ${{ secrets.REEL_AUDIO_URL }}
       REEL_AUDIO_VOLUME: ${{ secrets.REEL_AUDIO_VOLUME || '0.18' }}

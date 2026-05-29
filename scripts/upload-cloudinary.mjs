@@ -5,6 +5,10 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import ffmpegPath from 'ffmpeg-static';
+import {
+  getConfiguredReelAudio,
+  prepareReelAudioInput,
+} from './reel-audio-presets.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
@@ -22,7 +26,7 @@ const reelTag = argv.tag || `ig-carousel-${Date.now()}`;
 const secondsPerSlide = Number(argv.secondsPerSlide || 4);
 const reelSource = argv['reel-source'] || process.env.REEL_SOURCE || 'pexels';
 const skipReel = Boolean(argv['skip-reel']);
-const reelAudio = skipReel ? null : getReelAudioConfig();
+const reelAudio = skipReel ? null : getConfiguredReelAudio(argv);
 
 if (!skipReel && !['pexels', 'pexels-required', 'slideshow'].includes(reelSource)) {
   throw new Error(`Unsupported REEL_SOURCE: ${reelSource}. Use pexels, pexels-required, or slideshow.`);
@@ -207,12 +211,23 @@ async function createReelVideo({ cloudName: currentCloudName, folder: currentFol
     secondsPerSlide: currentSecondsPerSlide,
     background: currentPost.reel?.background || 'F7F2EA',
   });
+  const reelVideo = reelAudio
+    ? await uploadSlideshowWithAudio({
+      cloudName: currentCloudName,
+      folder: currentFolder,
+      tag: currentReelTag,
+      slideshow,
+      publicId: `${currentReelTag}-slideshow-music`,
+      durationSec: Math.max(30, Math.ceil((currentPost.images || []).length * currentSecondsPerSlide) + 5),
+    })
+    : slideshow;
   return {
-    reelVideo: slideshow,
+    reelVideo,
     reelVideoMeta: {
       source: 'cloudinary_slideshow',
-      deliveryUrl: slideshow.secure_url || slideshow.url,
+      deliveryUrl: reelVideo.secure_url || reelVideo.url,
       attribution: null,
+      audioAttribution: reelAudio?.attribution || null,
     },
   };
 }
@@ -411,7 +426,12 @@ async function uploadPexelsVideoWithAudio({ cloudName, folder: currentFolder, ta
   await mkdir(workDir, { recursive: true });
 
   const videoPath = join(workDir, `pexels-${video.id}.mp4`);
-  const audioPath = await prepareMediaInput(reelAudio.input, workDir, 'reel-audio');
+  const audioPath = await prepareReelAudioInput(reelAudio, {
+    workDir,
+    basename: 'reel-audio',
+    root: ROOT,
+    durationSec: Math.max(45, Math.ceil(video.duration || 0) + 5),
+  });
   const outputPath = join(workDir, `${publicId}.mp4`);
   await downloadToFile(video.file.link, videoPath);
   muxVideoWithAudio({ videoPath, audioPath, outputPath, volume: reelAudio.volume });
@@ -422,15 +442,45 @@ async function uploadPexelsVideoWithAudio({ cloudName, folder: currentFolder, ta
     tag,
     filePath: outputPath,
     publicId,
+    baseTags: ['pexels-video', 'instagram-reel'],
     extraTags: ['background-music'],
   });
 }
 
-async function uploadLocalVideoToCloudinary({ cloudName, folder: currentFolder, tag, filePath, publicId, extraTags = [] }) {
+async function uploadSlideshowWithAudio({ cloudName, folder: currentFolder, tag, slideshow, publicId, durationSec }) {
+  if (!ffmpegPath) throw new Error('ffmpeg-static did not resolve an ffmpeg binary');
+  const workDir = resolve(argv.workDir || join(postDir, 'reel-audio-work'));
+  await mkdir(workDir, { recursive: true });
+
+  const videoUrl = slideshow.secure_url || slideshow.url;
+  if (!videoUrl) throw new Error('Cloudinary slideshow video did not return a downloadable URL.');
+  const videoPath = join(workDir, 'cloudinary-slideshow.mp4');
+  const audioPath = await prepareReelAudioInput(reelAudio, {
+    workDir,
+    basename: 'reel-audio',
+    root: ROOT,
+    durationSec,
+  });
+  const outputPath = join(workDir, `${publicId}.mp4`);
+  await downloadToFile(videoUrl, videoPath);
+  muxVideoWithAudio({ videoPath, audioPath, outputPath, volume: reelAudio.volume });
+
+  return uploadLocalVideoToCloudinary({
+    cloudName,
+    folder: currentFolder,
+    tag,
+    filePath: outputPath,
+    publicId,
+    baseTags: ['cloudinary-slideshow', 'instagram-reel'],
+    extraTags: ['background-music'],
+  });
+}
+
+async function uploadLocalVideoToCloudinary({ cloudName, folder: currentFolder, tag, filePath, publicId, baseTags = ['instagram-reel'], extraTags = [] }) {
   const apiKey = requireEnv('CLOUDINARY_API_KEY');
   const apiSecret = requireEnv('CLOUDINARY_API_SECRET');
   const timestamp = Math.floor(Date.now() / 1000);
-  const tags = [tag, 'pexels-video', 'instagram-reel', ...extraTags].filter(Boolean).join(',');
+  const tags = [tag, ...baseTags, ...extraTags].filter(Boolean).join(',');
   const params = { folder: currentFolder, public_id: publicId, tags, timestamp };
   const signature = signCloudinaryParams(params, apiSecret);
 
@@ -453,20 +503,6 @@ async function uploadLocalVideoToCloudinary({ cloudName, folder: currentFolder, 
     throw new Error(`Cloudinary local video upload failed: ${JSON.stringify(result)}`);
   }
   return result;
-}
-
-async function prepareMediaInput(source, workDir, basename) {
-  if (/^https?:\/\//i.test(source)) {
-    const url = new URL(source);
-    const extension = mediaExtension(url.pathname) || 'mp3';
-    const outputPath = join(workDir, `${basename}.${extension}`);
-    await downloadToFile(source, outputPath);
-    return outputPath;
-  }
-
-  const localPath = resolve(ROOT, source);
-  if (!existsSync(localPath)) throw new Error(`Reel audio file does not exist: ${localPath}`);
-  return localPath;
 }
 
 async function downloadToFile(url, outputPath) {
@@ -550,52 +586,6 @@ function buildDefaultReelCaption(currentPost) {
     '',
     '오늘 몸 상태를 짧은 영상으로 천천히 살펴보세요. 자세한 체크 포인트는 피드 카드에 따로 정리해뒀어요.',
   ].filter(Boolean).join('\n');
-}
-
-function getReelAudioConfig() {
-  const input = argv['reel-audio'] || argv.audio || process.env.REEL_AUDIO_PATH || process.env.REEL_AUDIO_URL || '';
-  if (!input) return null;
-
-  const license = argv['reel-audio-license'] || process.env.REEL_AUDIO_LICENSE || '';
-  if (!license) {
-    throw new Error('REEL_AUDIO_LICENSE or --reel-audio-license is required when adding Reel audio.');
-  }
-
-  const title = argv['reel-audio-title'] || process.env.REEL_AUDIO_TITLE || null;
-  const creator = argv['reel-audio-creator'] || process.env.REEL_AUDIO_CREATOR || null;
-  const sourceUrl = argv['reel-audio-source-url'] || process.env.REEL_AUDIO_SOURCE_URL || (/^https?:\/\//i.test(input) ? input : null);
-  if (!title && !sourceUrl) {
-    throw new Error('REEL_AUDIO_TITLE or REEL_AUDIO_SOURCE_URL is required when adding Reel audio.');
-  }
-  const creditLine = argv['reel-audio-credit'] || process.env.REEL_AUDIO_CREDIT || buildAudioCreditLine({ title, creator });
-  return {
-    input,
-    volume: clampAudioVolume(argv['reel-audio-volume'] || process.env.REEL_AUDIO_VOLUME || 0.18),
-    attribution: {
-      source: 'user_provided_audio',
-      title,
-      creator,
-      sourceUrl,
-      license,
-      creditLine,
-    },
-  };
-}
-
-function buildAudioCreditLine({ title, creator }) {
-  if (!title && !creator) return null;
-  return `음악: ${[title, creator].filter(Boolean).join(' - ')}`;
-}
-
-function clampAudioVolume(value) {
-  const number = Number(value);
-  if (!Number.isFinite(number)) return 0.18;
-  return Math.min(Math.max(number, 0.01), 1);
-}
-
-function mediaExtension(value) {
-  const match = String(value || '').match(/\.([a-z0-9]{2,5})$/i);
-  return match?.[1]?.toLowerCase() || null;
 }
 
 function spawnFile(command, args) {

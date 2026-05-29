@@ -88,6 +88,7 @@ PIXABAY_API_KEY
 UNSPLASH_ACCESS_KEY
 CLOUDINARY_UPLOAD_PRESET
 REEL_SOURCE
+REEL_AUDIO_PRESET
 PUBLISH_FORMAT_GAP_MS
 FALLBACK_FORMAT_GAP_MS
 REQUIRED_STORY_COUNT
@@ -101,6 +102,10 @@ added to any remaining Reel-to-feed-to-Story gaps before delayed publication.
 Set `PEXELS_API_KEY` when using stock photos/videos. It becomes required when
 `REEL_SOURCE=pexels-required`; otherwise the pipeline can fall back to
 generated card backgrounds and a slideshow Reel.
+
+`REEL_AUDIO_PRESET=calm-piano` adds an original generated quiet piano bed to
+Reels. Set it to `none` to publish silent Reels, or use `REEL_AUDIO_URL` /
+`REEL_AUDIO_PATH` plus license metadata for a specific licensed track.
 
 Do not add an n8n API key. n8n Cloud/API access is not part of the required free
 setup.

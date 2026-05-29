@@ -5,6 +5,10 @@ import { spawnSync } from 'node:child_process';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import ffmpegPath from 'ffmpeg-static';
+import {
+  getConfiguredReelAudio,
+  prepareReelAudioInput,
+} from './reel-audio-presets.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadEnv(join(ROOT, '.env'));
@@ -24,7 +28,7 @@ if (sourceUrls.length < 2) {
 const workDir = resolve(argv.workDir || join(dirname(payloadPath), 'reel-video-work'));
 const outputVideo = resolve(argv.video || join(workDir, 'reel.mp4'));
 const outputPayload = resolve(argv.out || payloadPath);
-const reelAudio = getReelAudioConfig();
+const reelAudio = getConfiguredReelAudio(argv);
 await mkdir(workDir, { recursive: true });
 
 const imagePaths = [];
@@ -50,7 +54,12 @@ await writeFile(concatPath, `${concatLines.join('\n')}\n`, 'utf8');
 
 if (!ffmpegPath) throw new Error('ffmpeg-static did not resolve an ffmpeg binary');
 if (reelAudio) {
-  const audioPath = await prepareMediaInput(reelAudio.input, workDir, 'reel-audio');
+  const audioPath = await prepareReelAudioInput(reelAudio, {
+    workDir,
+    basename: 'reel-audio',
+    root: ROOT,
+    durationSec: Math.max(30, sourceUrls.length * secondsPerSlide + 5),
+  });
   spawnFile(ffmpegPath, [
     '-y',
     '-f',
@@ -143,68 +152,6 @@ async function uploadVideo(videoPath, currentPayload) {
     throw new Error(`Cloudinary video upload failed: ${JSON.stringify(result)}`);
   }
   return result;
-}
-
-function getReelAudioConfig() {
-  const input = argv['reel-audio'] || argv.audio || process.env.REEL_AUDIO_PATH || process.env.REEL_AUDIO_URL || '';
-  if (!input) return null;
-
-  const license = argv['reel-audio-license'] || process.env.REEL_AUDIO_LICENSE || '';
-  if (!license) {
-    throw new Error('REEL_AUDIO_LICENSE or --reel-audio-license is required when adding Reel audio.');
-  }
-
-  const title = argv['reel-audio-title'] || process.env.REEL_AUDIO_TITLE || null;
-  const creator = argv['reel-audio-creator'] || process.env.REEL_AUDIO_CREATOR || null;
-  const sourceUrl = argv['reel-audio-source-url'] || process.env.REEL_AUDIO_SOURCE_URL || (/^https?:\/\//i.test(input) ? input : null);
-  if (!title && !sourceUrl) {
-    throw new Error('REEL_AUDIO_TITLE or REEL_AUDIO_SOURCE_URL is required when adding Reel audio.');
-  }
-  const creditLine = argv['reel-audio-credit'] || process.env.REEL_AUDIO_CREDIT || buildAudioCreditLine({ title, creator });
-  return {
-    input,
-    volume: clampAudioVolume(argv['reel-audio-volume'] || process.env.REEL_AUDIO_VOLUME || 0.18),
-    attribution: {
-      source: 'user_provided_audio',
-      title,
-      creator,
-      sourceUrl,
-      license,
-      creditLine,
-    },
-  };
-}
-
-async function prepareMediaInput(source, directory, basename) {
-  if (/^https?:\/\//i.test(source)) {
-    const url = new URL(source);
-    const extension = mediaExtension(url.pathname) || 'mp3';
-    const outputPath = join(directory, `${basename}.${extension}`);
-    const response = await fetch(source);
-    if (!response.ok) throw new Error(`Failed to download Reel audio: ${response.status}`);
-    await writeFile(outputPath, Buffer.from(await response.arrayBuffer()));
-    return outputPath;
-  }
-
-  const localPath = resolve(ROOT, source);
-  if (!existsSync(localPath)) throw new Error(`Reel audio file does not exist: ${localPath}`);
-  return localPath;
-}
-
-function buildAudioCreditLine({ title, creator }) {
-  if (!title && !creator) return null;
-  return `음악: ${[title, creator].filter(Boolean).join(' - ')}`;
-}
-
-function clampAudioVolume(value) {
-  const number = Number(value);
-  if (!Number.isFinite(number)) return 0.18;
-  return Math.min(Math.max(number, 0.01), 1);
-}
-
-function mediaExtension(value) {
-  const match = String(value || '').match(/\.([a-z0-9]{2,5})$/i);
-  return match?.[1]?.toLowerCase() || null;
 }
 
 function signCloudinaryParams(params, apiSecret) {

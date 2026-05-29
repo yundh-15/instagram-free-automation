@@ -39,13 +39,16 @@ The video is uploaded to Cloudinary and then published through Instagram Graph.
 If Pexels does not return a usable clip, the local publisher falls back to the
 existing image slideshow unless `REEL_SOURCE=pexels-required` is set.
 
-Licensed background music can be baked into the Reel MP4 before upload by
+Reels can include a calm generated piano bed by setting
+`REEL_AUDIO_PRESET=calm-piano`. This creates original background audio during
+the run, bakes it into the Reel MP4 before upload, and stores audio attribution
+metadata for legal review. Set `REEL_AUDIO_PRESET=none` to disable it.
+
+Licensed external background music can also be baked into the Reel MP4 by
 setting `REEL_AUDIO_PATH` or `REEL_AUDIO_URL`. Do not use a personal Google or
 Instagram login for this. Download a track whose license allows Instagram use,
 store the license metadata, and set `REEL_AUDIO_LICENSE`; otherwise the upload
 script blocks the run. A quiet spa-style level is `REEL_AUDIO_VOLUME=0.18`.
-For the free GitHub Actions setup, omit custom Reel music unless a properly
-licensed file or HTTPS URL is available at no cost.
 
 Publishing keeps a five-minute gap between public formats. The scheduled GitHub
 Actions path publishes the Reel, then the feed carousel, then Stories. This
@@ -152,6 +155,7 @@ UNSPLASH_ACCESS_KEY
 CLOUDINARY_UPLOAD_PRESET
 META_GRAPH_VERSION
 REEL_SOURCE
+REEL_AUDIO_PRESET
 PUBLISH_FORMAT_GAP_MS
 FALLBACK_FORMAT_GAP_MS
 REQUIRED_STORY_COUNT
