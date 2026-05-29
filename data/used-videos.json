@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-29T04:26:59.543Z",
+  "updatedAt": "2026-05-29T12:51:59.976Z",
   "used": [
     {
       "source": "Pexels",
@@ -156,6 +156,18 @@
       "creator": "Monstera Production",
       "creatorUrl": "https://www.pexels.com/@gabby-k",
       "videoUrl": "https://www.pexels.com/video/a-person-applying-facial-mask-on-a-woman-6975297/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6967426",
+      "usedAt": "2026-05-29T12:51:59.975Z",
+      "category": "posture",
+      "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "SHVETS production",
+      "creatorUrl": "https://www.pexels.com/@shvets-production",
+      "videoUrl": "https://www.pexels.com/video/a-woman-stretching-her-arms-6967426/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
