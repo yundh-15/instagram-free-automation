@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-28T11:14:58.599Z",
+  "updatedAt": "2026-05-29T01:49:09.240Z",
   "used": [
     {
       "category": "posture",
@@ -56,6 +56,11 @@
       "category": "posture",
       "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
       "usedAt": "2026-05-28T11:14:58.599Z"
+    },
+    {
+      "category": "massage",
+      "topic": "손목과 팔이 자주 피로할 때 관리 전 확인할 점",
+      "usedAt": "2026-05-29T01:49:09.240Z"
     }
   ]
 }
