@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-30T04:12:12.122Z",
+  "updatedAt": "2026-05-30T11:39:15.060Z",
   "used": [
     {
       "source": "Pexels",
@@ -192,6 +192,18 @@
       "creator": "Gustavo Fring",
       "creatorUrl": "https://www.pexels.com/@gustavo-fring",
       "videoUrl": "https://www.pexels.com/video/woman-having-a-facial-treatment-7423538/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7521964",
+      "usedAt": "2026-05-30T11:39:15.059Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Pavel Danilyuk",
+      "creatorUrl": "https://www.pexels.com/@pavel-danilyuk",
+      "videoUrl": "https://www.pexels.com/video/a-woman-holding-a-burning-palo-santo-7521964/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
