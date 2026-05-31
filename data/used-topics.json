@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-31T01:54:39.172Z",
+  "updatedAt": "2026-05-31T04:46:00.721Z",
   "used": [
     {
       "category": "posture",
@@ -91,6 +91,11 @@
       "category": "massage",
       "topic": "주말 회복을 위한 가벼운 바디케어 준비",
       "usedAt": "2026-05-31T01:54:39.172Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "usedAt": "2026-05-31T04:46:00.721Z"
     }
   ]
 }

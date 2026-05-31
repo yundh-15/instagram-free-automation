@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-31T01:54:54.098Z",
+  "updatedAt": "2026-05-31T04:46:13.522Z",
   "used": [
     {
       "source": "Pexels",
@@ -216,6 +216,18 @@
       "creator": "Greta Hoffman",
       "creatorUrl": "https://www.pexels.com/@greta-hoffman",
       "videoUrl": "https://www.pexels.com/video/a-woman-scrubbing-her-back-with-soap-9474976/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "12322636",
+      "usedAt": "2026-05-31T04:46:13.522Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "RDNE Stock project",
+      "creatorUrl": "https://www.pexels.com/@rdne",
+      "videoUrl": "https://www.pexels.com/video/a-woman-applying-makeup-12322636/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
