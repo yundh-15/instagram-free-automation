@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-30T11:39:15.060Z",
+  "updatedAt": "2026-05-31T01:54:54.098Z",
   "used": [
     {
       "source": "Pexels",
@@ -204,6 +204,18 @@
       "creator": "Pavel Danilyuk",
       "creatorUrl": "https://www.pexels.com/@pavel-danilyuk",
       "videoUrl": "https://www.pexels.com/video/a-woman-holding-a-burning-palo-santo-7521964/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "9474976",
+      "usedAt": "2026-05-31T01:54:54.097Z",
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Greta Hoffman",
+      "creatorUrl": "https://www.pexels.com/@greta-hoffman",
+      "videoUrl": "https://www.pexels.com/video/a-woman-scrubbing-her-back-with-soap-9474976/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
