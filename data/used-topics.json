@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-01T05:08:20.214Z",
+  "updatedAt": "2026-06-01T10:31:49.600Z",
   "used": [
     {
       "category": "posture",
@@ -111,6 +111,11 @@
       "category": "skincare",
       "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
       "usedAt": "2026-06-01T05:08:20.214Z"
+    },
+    {
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "usedAt": "2026-06-01T10:31:49.600Z"
     }
   ]
 }
