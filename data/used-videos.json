@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-31T11:45:50.036Z",
+  "updatedAt": "2026-06-01T02:03:56.156Z",
   "used": [
     {
       "source": "Pexels",
@@ -240,6 +240,18 @@
       "creator": "Miriam Alonso",
       "creatorUrl": "https://www.pexels.com/@miriam-alonso",
       "videoUrl": "https://www.pexels.com/video/a-woman-exercising-indoors-7590383/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6629845",
+      "usedAt": "2026-06-01T02:03:56.155Z",
+      "category": "massage",
+      "topic": "허리가 답답한 날 상담 전에 적어둘 질문",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "www.kaboompics.com",
+      "creatorUrl": "https://www.pexels.com/@karola-g",
+      "videoUrl": "https://www.pexels.com/video/woman-getting-a-back-massage-6629845/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
