@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-01T02:03:56.156Z",
+  "updatedAt": "2026-06-01T05:08:32.319Z",
   "used": [
     {
       "source": "Pexels",
@@ -252,6 +252,18 @@
       "creator": "www.kaboompics.com",
       "creatorUrl": "https://www.pexels.com/@karola-g",
       "videoUrl": "https://www.pexels.com/video/woman-getting-a-back-massage-6629845/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8231347",
+      "usedAt": "2026-06-01T05:08:32.319Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "ArtHouse Studio",
+      "creatorUrl": "https://www.pexels.com/@arthousestudio",
+      "videoUrl": "https://www.pexels.com/video/a-woman-using-jade-roller-8231347/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
