@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-01T10:32:02.109Z",
+  "updatedAt": "2026-06-02T14:17:38.434Z",
   "used": [
     {
       "source": "Pexels",
@@ -276,6 +276,18 @@
       "creator": "Miriam Alonso",
       "creatorUrl": "https://www.pexels.com/@miriam-alonso",
       "videoUrl": "https://www.pexels.com/video/a-couple-exercising-at-home-7590390/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8480256",
+      "usedAt": "2026-06-02T14:17:38.434Z",
+      "category": "posture",
+      "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Yan Krukau",
+      "creatorUrl": "https://www.pexels.com/@yankrukov",
+      "videoUrl": "https://www.pexels.com/video/a-woman-doing-yoga-with-her-eyes-closed-8480256/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
