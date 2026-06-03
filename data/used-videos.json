@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-03T05:06:13.381Z",
+  "updatedAt": "2026-06-03T10:03:09.652Z",
   "used": [
     {
       "source": "Pexels",
@@ -312,6 +312,18 @@
       "creator": "Ivan S",
       "creatorUrl": "https://www.pexels.com/@ivan-s",
       "videoUrl": "https://www.pexels.com/video/a-woman-with-clay-mask-on-her-face-using-a-cellphone-7191127/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4327278",
+      "usedAt": "2026-06-03T10:03:09.651Z",
+      "category": "posture",
+      "topic": "라운드숄더가 고민일 때 체형관리 체크포인트",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/woman-stretching-on-a-yoga-mat-4327278/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
