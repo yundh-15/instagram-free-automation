@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-03T00:04:12.381Z",
+  "updatedAt": "2026-06-03T05:05:57.834Z",
   "used": [
     {
       "category": "posture",
@@ -131,6 +131,11 @@
       "category": "massage",
       "topic": "오래 앉아 있는 사람을 위한 등 관리 포인트",
       "usedAt": "2026-06-03T00:04:12.381Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "usedAt": "2026-06-03T05:05:57.834Z"
     }
   ]
 }
