@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-02T14:17:16.331Z",
+  "updatedAt": "2026-06-03T00:04:12.381Z",
   "used": [
     {
       "category": "posture",
@@ -126,6 +126,11 @@
       "category": "posture",
       "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
       "usedAt": "2026-06-02T14:17:16.331Z"
+    },
+    {
+      "category": "massage",
+      "topic": "오래 앉아 있는 사람을 위한 등 관리 포인트",
+      "usedAt": "2026-06-03T00:04:12.381Z"
     }
   ]
 }

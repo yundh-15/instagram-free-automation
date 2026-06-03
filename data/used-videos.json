@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-02T14:17:38.434Z",
+  "updatedAt": "2026-06-03T00:04:23.600Z",
   "used": [
     {
       "source": "Pexels",
@@ -288,6 +288,18 @@
       "creator": "Yan Krukau",
       "creatorUrl": "https://www.pexels.com/@yankrukov",
       "videoUrl": "https://www.pexels.com/video/a-woman-doing-yoga-with-her-eyes-closed-8480256/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6187888",
+      "usedAt": "2026-06-03T00:04:23.595Z",
+      "category": "massage",
+      "topic": "오래 앉아 있는 사람을 위한 등 관리 포인트",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Tima Miroshnichenko",
+      "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "videoUrl": "https://www.pexels.com/video/woman-being-given-professional-massage-6187888/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
