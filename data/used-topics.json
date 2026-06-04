@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-04T00:04:18.807Z",
+  "updatedAt": "2026-06-04T16:13:52.514Z",
   "used": [
     {
       "category": "posture",
@@ -146,6 +146,11 @@
       "category": "massage",
       "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
       "usedAt": "2026-06-04T00:04:18.807Z"
+    },
+    {
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "usedAt": "2026-06-04T16:13:52.514Z"
     }
   ]
 }
