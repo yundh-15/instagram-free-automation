@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-03T10:02:51.785Z",
+  "updatedAt": "2026-06-04T00:04:18.807Z",
   "used": [
     {
       "category": "posture",
@@ -141,6 +141,11 @@
       "category": "posture",
       "topic": "라운드숄더가 고민일 때 체형관리 체크포인트",
       "usedAt": "2026-06-03T10:02:51.785Z"
+    },
+    {
+      "category": "massage",
+      "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
+      "usedAt": "2026-06-04T00:04:18.807Z"
     }
   ]
 }
