@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-05T04:41:56.072Z",
+  "updatedAt": "2026-06-05T12:45:29.467Z",
   "used": [
     {
       "source": "Pexels",
@@ -360,6 +360,18 @@
       "creator": "Vlada Karpovich",
       "creatorUrl": "https://www.pexels.com/@vlada-karpovich",
       "videoUrl": "https://www.pexels.com/video/woman-putting-on-a-facial-mask-5353474/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4327195",
+      "usedAt": "2026-06-05T12:45:29.467Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/man-grabbing-a-yoga-mat-4327195/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
