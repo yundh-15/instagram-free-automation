@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-04T16:13:52.514Z",
+  "updatedAt": "2026-06-05T01:55:26.154Z",
   "used": [
     {
       "category": "posture",
@@ -151,6 +151,11 @@
       "category": "posture",
       "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
       "usedAt": "2026-06-04T16:13:52.514Z"
+    },
+    {
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "usedAt": "2026-06-05T01:55:26.154Z"
     }
   ]
 }
