@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-05T01:55:26.154Z",
+  "updatedAt": "2026-06-05T04:41:43.102Z",
   "used": [
     {
       "category": "posture",
@@ -156,6 +156,11 @@
       "category": "massage",
       "topic": "숙면을 돕는 저녁 마사지 체크리스트",
       "usedAt": "2026-06-05T01:55:26.154Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "usedAt": "2026-06-05T04:41:43.102Z"
     }
   ]
 }
