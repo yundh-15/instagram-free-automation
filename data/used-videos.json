@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-06T01:48:00.669Z",
+  "updatedAt": "2026-06-06T04:15:28.795Z",
   "used": [
     {
       "source": "Pexels",
@@ -384,6 +384,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/therapist-and-patient-during-massage-session-6186693/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "9335939",
+      "usedAt": "2026-06-06T04:15:28.792Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "olia danilevich",
+      "creatorUrl": "https://www.pexels.com/@olia-danilevich",
+      "videoUrl": "https://www.pexels.com/video/woman-putting-on-facial-care-while-eyes-closed-9335939/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
