@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-07T01:58:50.949Z",
+  "updatedAt": "2026-06-07T04:51:09.109Z",
   "used": [
     {
       "source": "Pexels",
@@ -408,6 +408,18 @@
       "creator": "AI25.Studio  Studio",
       "creatorUrl": "https://www.pexels.com/@ai25studioai",
       "videoUrl": "https://www.pexels.com/video/woman-having-a-body-massage-4608529/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7133221",
+      "usedAt": "2026-06-07T04:51:09.109Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Renata Zyuzko",
+      "creatorUrl": "https://www.pexels.com/@renata-zyuzko-20454988",
+      "videoUrl": "https://www.pexels.com/video/a-person-applying-lotion-on-a-woman-s-eye-7133221/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

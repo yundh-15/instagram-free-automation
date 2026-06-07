@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-07T01:58:37.908Z",
+  "updatedAt": "2026-06-07T04:50:57.177Z",
   "used": [
     {
       "category": "posture",
@@ -186,6 +186,11 @@
       "category": "massage",
       "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
       "usedAt": "2026-06-07T01:58:37.908Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "usedAt": "2026-06-07T04:50:57.177Z"
     }
   ]
 }
