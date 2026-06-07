@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-06T04:15:28.795Z",
+  "updatedAt": "2026-06-07T01:58:50.949Z",
   "used": [
     {
       "source": "Pexels",
@@ -396,6 +396,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/woman-putting-on-facial-care-while-eyes-closed-9335939/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4608529",
+      "usedAt": "2026-06-07T01:58:50.948Z",
+      "category": "massage",
+      "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "AI25.Studio  Studio",
+      "creatorUrl": "https://www.pexels.com/@ai25studioai",
+      "videoUrl": "https://www.pexels.com/video/woman-having-a-body-massage-4608529/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

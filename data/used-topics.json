@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-06T12:53:58.227Z",
+  "updatedAt": "2026-06-07T01:58:37.908Z",
   "used": [
     {
       "category": "posture",
@@ -181,6 +181,11 @@
       "category": "posture",
       "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
       "usedAt": "2026-06-06T12:53:58.227Z"
+    },
+    {
+      "category": "massage",
+      "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
+      "usedAt": "2026-06-07T01:58:37.908Z"
     }
   ]
 }
