@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-07T11:57:45.652Z",
+  "updatedAt": "2026-06-08T04:56:42.577Z",
   "used": [
     {
       "category": "posture",
@@ -196,6 +196,11 @@
       "category": "posture",
       "topic": "목과 등 자세 상담 전 준비할 체크리스트",
       "usedAt": "2026-06-07T11:57:45.652Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "usedAt": "2026-06-08T04:56:42.577Z"
     }
   ]
 }
