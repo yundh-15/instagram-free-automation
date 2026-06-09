@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-09T04:19:01.275Z",
+  "updatedAt": "2026-06-09T12:46:11.411Z",
   "used": [
     {
       "source": "Pexels",
@@ -480,6 +480,18 @@
       "creator": "Vlada Karpovich",
       "creatorUrl": "https://www.pexels.com/@vlada-karpovich",
       "videoUrl": "https://www.pexels.com/video/a-woman-using-jade-roller-on-her-face-6724827/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6446189",
+      "usedAt": "2026-06-09T12:46:11.410Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Pavel Danilyuk",
+      "creatorUrl": "https://www.pexels.com/@pavel-danilyuk",
+      "videoUrl": "https://www.pexels.com/video/woman-lying-down-on-bed-6446189/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
