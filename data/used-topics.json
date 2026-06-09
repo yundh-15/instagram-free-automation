@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-08T14:18:22.415Z",
+  "updatedAt": "2026-06-09T01:32:50.848Z",
   "used": [
     {
       "category": "posture",
@@ -206,6 +206,11 @@
       "category": "posture",
       "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
       "usedAt": "2026-06-08T14:18:22.415Z"
+    },
+    {
+      "category": "massage",
+      "topic": "허리가 답답한 날 상담 전에 적어둘 질문",
+      "usedAt": "2026-06-09T01:32:50.848Z"
     }
   ]
 }
