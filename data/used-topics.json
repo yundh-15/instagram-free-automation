@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-10T01:55:21.008Z",
+  "updatedAt": "2026-06-10T04:40:03.949Z",
   "used": [
     {
       "category": "posture",
@@ -226,6 +226,11 @@
       "category": "massage",
       "topic": "마사지 압 조절을 요청할 때 알아두면 좋은 기준",
       "usedAt": "2026-06-10T01:55:21.008Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "usedAt": "2026-06-10T04:40:03.949Z"
     }
   ]
 }
