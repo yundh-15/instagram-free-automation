@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-10T18:11:15.163Z",
+  "updatedAt": "2026-06-11T04:52:55.045Z",
   "used": [
     {
       "category": "posture",
@@ -236,6 +236,11 @@
       "category": "posture",
       "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
       "usedAt": "2026-06-10T18:11:15.163Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "usedAt": "2026-06-11T04:52:55.045Z"
     }
   ]
 }
