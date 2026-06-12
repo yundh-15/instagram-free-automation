@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-11T04:53:11.077Z",
+  "updatedAt": "2026-06-12T04:56:31.468Z",
   "used": [
     {
       "source": "Pexels",
@@ -528,6 +528,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/a-person-applying-a-face-mask-on-a-client-s-face-9335905/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6975343",
+      "usedAt": "2026-06-12T04:56:31.467Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Monstera Production",
+      "creatorUrl": "https://www.pexels.com/@gabby-k",
+      "videoUrl": "https://www.pexels.com/video/a-woman-looking-up-with-a-beauty-mask-on-the-face-6975343/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

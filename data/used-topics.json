@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-11T18:29:24.222Z",
+  "updatedAt": "2026-06-12T04:56:16.003Z",
   "used": [
     {
       "category": "posture",
@@ -246,6 +246,11 @@
       "category": "posture",
       "topic": "라운드숄더가 고민일 때 체형관리 체크포인트",
       "usedAt": "2026-06-11T18:29:24.222Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "usedAt": "2026-06-12T04:56:16.003Z"
     }
   ]
 }
