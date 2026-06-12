@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-12T04:56:31.468Z",
+  "updatedAt": "2026-06-12T17:43:12.304Z",
   "used": [
     {
       "source": "Pexels",
@@ -540,6 +540,18 @@
       "creator": "Monstera Production",
       "creatorUrl": "https://www.pexels.com/@gabby-k",
       "videoUrl": "https://www.pexels.com/video/a-woman-looking-up-with-a-beauty-mask-on-the-face-6975343/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6798421",
+      "usedAt": "2026-06-12T17:43:12.304Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/man-stretching-6798421/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
