@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-14T05:01:21.579Z",
+  "updatedAt": "2026-06-14T12:06:57.102Z",
   "used": [
     {
       "source": "Pexels",
@@ -588,6 +588,18 @@
       "creator": "Sarah  Chai",
       "creatorUrl": "https://www.pexels.com/@sarah-chai",
       "videoUrl": "https://www.pexels.com/video/a-woman-holding-a-body-brush-and-soap-7250219/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6246148",
+      "usedAt": "2026-06-14T12:06:57.102Z",
+      "category": "posture",
+      "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "KoolShooters",
+      "creatorUrl": "https://www.pexels.com/@koolshooters",
+      "videoUrl": "https://www.pexels.com/video/woman-doing-yoga-6246148/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
