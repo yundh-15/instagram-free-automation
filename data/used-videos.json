@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T12:00:03.249Z",
+  "updatedAt": "2026-06-14T05:01:21.579Z",
   "used": [
     {
       "source": "Pexels",
@@ -576,6 +576,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-woman-in-activewear-stretching-her-arms-8402108/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7250219",
+      "usedAt": "2026-06-14T05:01:21.578Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Sarah  Chai",
+      "creatorUrl": "https://www.pexels.com/@sarah-chai",
+      "videoUrl": "https://www.pexels.com/video/a-woman-holding-a-body-brush-and-soap-7250219/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

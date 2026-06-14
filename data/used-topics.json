@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-13T11:59:50.357Z",
+  "updatedAt": "2026-06-14T05:01:06.270Z",
   "used": [
     {
       "category": "posture",
@@ -266,6 +266,11 @@
       "category": "posture",
       "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
       "usedAt": "2026-06-13T11:59:50.357Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "usedAt": "2026-06-14T05:01:06.270Z"
     }
   ]
 }
