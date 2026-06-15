@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-14T12:06:41.921Z",
+  "updatedAt": "2026-06-15T02:07:12.496Z",
   "used": [
     {
       "category": "posture",
@@ -276,6 +276,11 @@
       "category": "posture",
       "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
       "usedAt": "2026-06-14T12:06:41.921Z"
+    },
+    {
+      "category": "massage",
+      "topic": "손목과 팔이 자주 피로할 때 관리 전 확인할 점",
+      "usedAt": "2026-06-15T02:07:12.496Z"
     }
   ]
 }
