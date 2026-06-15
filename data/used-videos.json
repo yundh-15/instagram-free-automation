@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-15T02:07:29.845Z",
+  "updatedAt": "2026-06-15T05:21:39.320Z",
   "used": [
     {
       "source": "Pexels",
@@ -612,6 +612,18 @@
       "creator": "Yaroslav Shuraev",
       "creatorUrl": "https://www.pexels.com/@yaroslav-shuraev",
       "videoUrl": "https://www.pexels.com/video/a-woman-looking-at-a-piece-of-fabric-8516590/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5937380",
+      "usedAt": "2026-06-15T05:21:39.319Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Sora Shimazaki",
+      "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
+      "videoUrl": "https://www.pexels.com/video/woman-using-a-face-mask-5937380/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
