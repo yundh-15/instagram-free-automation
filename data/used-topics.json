@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-15T16:27:23.982Z",
+  "updatedAt": "2026-06-16T10:23:33.847Z",
   "used": [
     {
       "category": "posture",
@@ -291,6 +291,11 @@
       "category": "posture",
       "topic": "목과 등 자세 상담 전 준비할 체크리스트",
       "usedAt": "2026-06-15T16:27:23.982Z"
+    },
+    {
+      "category": "posture",
+      "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
+      "usedAt": "2026-06-16T10:23:33.847Z"
     }
   ]
 }
