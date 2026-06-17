@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T10:23:33.847Z",
+  "updatedAt": "2026-06-17T05:04:27.748Z",
   "used": [
     {
       "category": "posture",
@@ -296,6 +296,11 @@
       "category": "posture",
       "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
       "usedAt": "2026-06-16T10:23:33.847Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "usedAt": "2026-06-17T05:04:27.748Z"
     }
   ]
 }

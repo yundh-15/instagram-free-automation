@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T10:23:46.327Z",
+  "updatedAt": "2026-06-17T05:04:38.907Z",
   "used": [
     {
       "source": "Pexels",
@@ -636,6 +636,18 @@
       "creator": "Marta Wave",
       "creatorUrl": "https://www.pexels.com/@marta-wave",
       "videoUrl": "https://www.pexels.com/video/woman-doing-exercise-6437950/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "16360233",
+      "usedAt": "2026-06-17T05:04:38.906Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Stefano Patacchiola",
+      "creatorUrl": "https://www.pexels.com/@stefano-patacchiola-3436130",
+      "videoUrl": "https://www.pexels.com/video/massaggio-16360233/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
