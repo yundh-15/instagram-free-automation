@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-17T13:52:53.878Z",
+  "updatedAt": "2026-06-18T04:54:31.482Z",
   "used": [
     {
       "source": "Pexels",
@@ -660,6 +660,18 @@
       "creator": "SHVETS production",
       "creatorUrl": "https://www.pexels.com/@shvets-production",
       "videoUrl": "https://www.pexels.com/video/woman-stretching-6967483/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5936534",
+      "usedAt": "2026-06-18T04:54:31.481Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Sora Shimazaki",
+      "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
+      "videoUrl": "https://www.pexels.com/video/a-woman-with-an-eye-mask-smiling-while-holding-a-bouquet-of-tulips-5936534/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
