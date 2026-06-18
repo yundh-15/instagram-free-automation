@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-18T04:54:16.439Z",
+  "updatedAt": "2026-06-18T13:36:00.138Z",
   "used": [
     {
       "source": "Pexels",
@@ -3721,6 +3721,66 @@
       "photoUrl": "https://www.pexels.com/photo/an-asian-woman-holding-a-gua-sha-roller-9774586/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Korean East Asian person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "7592372",
+      "usedAt": "2026-06-18T13:36:00.131Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Miriam Alonso",
+      "photographerUrl": "https://www.pexels.com/@miriam-alonso",
+      "photoUrl": "https://www.pexels.com/photo/close-up-photo-of-a-woman-meditating-on-a-black-yoga-mat-7592372/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6932378",
+      "usedAt": "2026-06-18T13:36:00.131Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Mikhail Nilov",
+      "photographerUrl": "https://www.pexels.com/@mikhail-nilov",
+      "photoUrl": "https://www.pexels.com/photo/photo-of-man-assisting-a-woman-stretching-her-arms-6932378/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "7592478",
+      "usedAt": "2026-06-18T13:36:00.131Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Miriam Alonso",
+      "photographerUrl": "https://www.pexels.com/@miriam-alonso",
+      "photoUrl": "https://www.pexels.com/photo/anonymous-woman-stretching-body-in-baddha-konasana-a-yoga-pose-7592478/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "7592512",
+      "usedAt": "2026-06-18T13:36:00.131Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Miriam Alonso",
+      "photographerUrl": "https://www.pexels.com/@miriam-alonso",
+      "photoUrl": "https://www.pexels.com/photo/slim-woman-stretching-arms-during-workout-7592512/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6643236",
+      "usedAt": "2026-06-18T13:36:00.131Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Alena Darmel",
+      "photographerUrl": "https://www.pexels.com/@a-darmel",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-in-beige-shirt-meditating-while-raising-her-hands-6643236/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
     }
   ]
 }
