@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-19T05:18:15.160Z",
+  "updatedAt": "2026-06-19T13:42:15.822Z",
   "used": [
     {
       "source": "Pexels",
@@ -696,6 +696,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-young-woman-holding-a-hand-mirror-and-touching-her-face-12322661/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7590824",
+      "usedAt": "2026-06-19T13:42:15.821Z",
+      "category": "posture",
+      "topic": "라운드숄더가 고민일 때 체형관리 체크포인트",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Miriam Alonso",
+      "creatorUrl": "https://www.pexels.com/@miriam-alonso",
+      "videoUrl": "https://www.pexels.com/video/woman-doing-yoga-7590824/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
