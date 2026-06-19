@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-18T13:36:13.006Z",
+  "updatedAt": "2026-06-19T05:18:15.160Z",
   "used": [
     {
       "source": "Pexels",
@@ -684,6 +684,18 @@
       "creator": "Sasha  Kim",
       "creatorUrl": "https://www.pexels.com/@sasha-kim",
       "videoUrl": "https://www.pexels.com/video/two-women-in-meditation-8477503/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "12322661",
+      "usedAt": "2026-06-19T05:18:15.159Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "RDNE Stock project",
+      "creatorUrl": "https://www.pexels.com/@rdne",
+      "videoUrl": "https://www.pexels.com/video/a-young-woman-holding-a-hand-mirror-and-touching-her-face-12322661/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
