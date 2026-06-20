@@ -1,6 +1,6 @@
 # 코인 투자 에이전트 팀 — 실행 코드
 
-기획서([`docs/coin-agent-team-plan.md`](../docs/coin-agent-team-plan.md))의 8인 팀과 의사결정 흐름(분석 → CIO → 리스크 → 집행)을 Node 코드로 구현한 모듈입니다.
+기획서([`docs/coin-agent-team-plan.md`](../docs/coin-agent-team-plan.md))의 6인 팀과 의사결정 흐름(분석 → CIO → 리스크 → 집행)을 Node 코드로 구현한 모듈입니다.
 
 > 두 가지 계층이 있습니다.
 > - **Claude 서브에이전트** (`.claude/agents/`): 판단·리서치·해석 등 고차원 역할(대화형).
