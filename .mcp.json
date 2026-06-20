@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "upbit": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "vendor/upbit-mcp-server",
+        "python",
+        "main.py"
+      ],
+      "env": {
+        "UPBIT_ACCESS_KEY": "${UPBIT_ACCESS_KEY}",
+        "UPBIT_SECRET_KEY": "${UPBIT_SECRET_KEY}"
+      }
+    }
+  }
+}
