@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-20T08:01:57.613Z",
+  "updatedAt": "2026-06-20T12:04:49.291Z",
   "used": [
     {
       "category": "posture",
@@ -336,6 +336,11 @@
       "category": "skincare",
       "topic": "건조한 피부를 위한 관리 순서",
       "usedAt": "2026-06-20T08:01:57.613Z"
+    },
+    {
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "usedAt": "2026-06-20T12:04:49.291Z"
     }
   ]
 }
