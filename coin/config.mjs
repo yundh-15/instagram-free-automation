@@ -13,6 +13,10 @@ export const DEFAULT_POLICY = {
   slippagePct: 0.0005,
   // 1회 매수가 사용할 수 있는 현금 비중 상한
   maxCashUsePct: 0.95,
+  // 최소 주문 금액(KRW). 이하의 주문은 거부(마이크로 주문/먼지 체결 방지). Upbit 최소 5,000원.
+  minOrderKRW: 5000,
+  // '하루'로 간주할 사이클 수(예: 1시간봉 24개 = 1일). 이 주기마다 일일 손실 기준 리셋.
+  cyclesPerDay: 24,
 };
 
 export const DEFAULT_CONFIG = {

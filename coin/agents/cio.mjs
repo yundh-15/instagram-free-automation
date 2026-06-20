@@ -24,8 +24,14 @@ export function decide(signals, pf, { symbol = 'KRW-BTC', policy } = {}) {
     const targetNotional = eq * policy.maxPositionPct * effectiveConf;
     const currentNotional = pos.size * price;
     const addNotional = Math.max(0, targetNotional - currentNotional);
-    size = +(addNotional / price).toFixed(8);
-    if (size <= 0) { action = 'hold'; }
+    // 최소 주문 금액 미만의 '탑업'은 하지 않는다(먼지 주문/잦은 체결 방지).
+    if (addNotional < (policy.minOrderKRW ?? 0)) {
+      action = 'hold';
+      size = 0;
+    } else {
+      size = +(addNotional / price).toFixed(8);
+      if (size <= 0) { action = 'hold'; }
+    }
   } else if (tech.signal === 'bearish' && pos.size > 0) {
     action = 'sell';
     size = pos.size; // 보유분 청산

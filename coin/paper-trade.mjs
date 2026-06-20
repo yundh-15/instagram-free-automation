@@ -8,7 +8,7 @@
 //   node coin/paper-trade.mjs --source upbit          # 실데이터(키/egress 필요)
 //   node coin/paper-trade.mjs --cycles 120 --seed 7   # 사이클 수/시드
 import { DEFAULT_CONFIG } from './config.mjs';
-import { createPortfolio, equity } from './lib/portfolio.mjs';
+import { createPortfolio, equity, rolloverDay } from './lib/portfolio.mjs';
 import { generateSyntheticCloses, fetchUpbitCloses } from './lib/feed.mjs';
 import { runCycle } from './orchestrator.mjs';
 
@@ -41,19 +41,27 @@ async function main() {
   const closes = await loadCloses(args);
   const warmup = 50;
   let trades = 0;
+  let protectiveExits = 0;
+  const cyclesPerDay = policy.cyclesPerDay ?? 24;
 
   for (let i = warmup; i < closes.length; i++) {
     const window = closes.slice(0, i + 1);
-    const { order, riskReview, execution } = runCycle(window, pf, { symbol, policy, mode: 'paper', ts: i });
+    const { order, riskReview, execution, protective } = runCycle(window, pf, { symbol, policy, mode: 'paper', ts: i });
     if (execution.status === 'filled' || execution.status === 'partial') {
       trades++;
+      if (protective) protectiveExits++;
       const eq = equity(pf, { [symbol]: closes[i] });
+      const tag = protective ? `보호청산:${protective}` : riskReview.decision;
       console.log(
         `#${String(i).padStart(3)} ${order.action.toUpperCase().padEnd(4)} ` +
           `size=${execution.filled.size} @${execution.filled.price} ` +
           `| cash=${Math.round(pf.cash)} equity=${Math.round(eq)} ` +
-          `| ${riskReview.decision}`,
+          `| ${tag}`,
       );
+    }
+    // 하루 경과 시 일일 손실 기준 리셋(킬 스위치가 실제 '일일' 기준으로 동작)
+    if ((i - warmup + 1) % cyclesPerDay === 0) {
+      rolloverDay(pf, { [symbol]: closes[i] });
     }
   }
 
@@ -64,7 +72,7 @@ async function main() {
   console.log(`데이터원   : ${args.source}`);
   console.log(`종목       : ${symbol}`);
   console.log(`사이클     : ${closes.length - warmup}`);
-  console.log(`체결 횟수  : ${trades}`);
+  console.log(`체결 횟수  : ${trades} (보호 청산 ${protectiveExits}회)`);
   console.log(`시작 자산  : ${pf.startEquity.toLocaleString()} KRW`);
   console.log(`최종 자산  : ${Math.round(finalEq).toLocaleString()} KRW`);
   console.log(`실현손익   : ${Math.round(pf.realizedPnl).toLocaleString()} KRW`);

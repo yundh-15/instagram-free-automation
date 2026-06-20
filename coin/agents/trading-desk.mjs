@@ -21,7 +21,16 @@ export function execute(order, review, pf, { mode = 'paper', policy, ts = null }
   const side = order.action === 'buy' ? 'bid' : 'ask';
   const slip = policy?.slippagePct ?? 0.0005;
   const fillPrice = side === 'bid' ? order.price * (1 + slip) : order.price * (1 - slip);
-  const fill = { symbol: order.symbol, side, size, price: +fillPrice.toFixed(2), ts };
+  const fill = {
+    symbol: order.symbol,
+    side,
+    size,
+    price: +fillPrice.toFixed(2),
+    ts,
+    // 매수 시 손절/익절 라인을 포지션에 함께 기록
+    stopLoss: order.stop_loss,
+    takeProfit: order.take_profit,
+  };
   applyFill(pf, fill);
 
   return {

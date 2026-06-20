@@ -68,6 +68,12 @@ export function review(order, pf, { policy } = {}) {
     return { decision: 'reject', approved_size: 0, violations, rationale: '승인 가능 수량 0' };
   }
 
+  // 최소 주문 금액 미만이면 거부(먼지 주문 방지)
+  if (policy.minOrderKRW && approvedSize * price < policy.minOrderKRW) {
+    violations.push(`최소 주문금액 미만(${Math.round(approvedSize * price)} < ${policy.minOrderKRW})`);
+    return { decision: 'reject', approved_size: 0, violations, rationale: '최소 주문금액 미만' };
+  }
+
   const decision = approvedSize < order.size ? 'reduce' : 'approve';
   return { decision, approved_size: approvedSize, violations, rationale: decision === 'reduce' ? '한도 내 축소 승인' : '승인' };
 }

@@ -12,7 +12,13 @@ export function createPortfolio({ cash = 1_000_000 } = {}) {
 }
 
 export function getPosition(pf, symbol) {
-  return pf.positions[symbol] || { size: 0, avgPrice: 0 };
+  return pf.positions[symbol] || { size: 0, avgPrice: 0, stopLoss: 0, takeProfit: 0 };
+}
+
+// 일일 손실 기준 리셋(하루 경과 시 호출). 킬 스위치가 실제 '일일' 기준으로 동작하게 한다.
+export function rolloverDay(pf, prices) {
+  pf.dayStartEquity = equity(pf, prices);
+  return pf;
 }
 
 // 현재가 맵({sym: price})으로 총자산(현금 + 평가금액) 계산.
@@ -34,13 +40,21 @@ export function applyFill(pf, fill) {
     const newSize = pos.size + size;
     const newAvg = newSize > 0 ? (pos.size * pos.avgPrice + size * price) / newSize : 0;
     pf.cash -= size * price;
-    pf.positions[symbol] = { size: newSize, avgPrice: newAvg };
+    // 매수 시 손절/익절 라인을 포지션에 기록 → 이후 사이클에서 보호 청산에 사용.
+    pf.positions[symbol] = {
+      size: newSize,
+      avgPrice: newAvg,
+      stopLoss: fill.stopLoss ?? pos.stopLoss ?? 0,
+      takeProfit: fill.takeProfit ?? pos.takeProfit ?? 0,
+    };
   } else {
     const sellSize = Math.min(size, pos.size);
     pf.realizedPnl += (price - pos.avgPrice) * sellSize;
     pf.cash += sellSize * price;
     const remaining = pos.size - sellSize;
-    pf.positions[symbol] = { size: remaining, avgPrice: remaining > 0 ? pos.avgPrice : 0 };
+    pf.positions[symbol] = remaining > 0
+      ? { size: remaining, avgPrice: pos.avgPrice, stopLoss: pos.stopLoss, takeProfit: pos.takeProfit }
+      : { size: 0, avgPrice: 0, stopLoss: 0, takeProfit: 0 }; // 전량 청산 시 보호선 초기화
   }
 
   pf.history.push({ ts: fill.ts ?? null, ...fill });

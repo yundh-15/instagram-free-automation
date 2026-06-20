@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { sma, ema, rsi, macd } from '../coin/lib/indicators.mjs';
-import { createPortfolio, applyFill, equity, getPosition } from '../coin/lib/portfolio.mjs';
+import { createPortfolio, applyFill, equity, getPosition, rolloverDay } from '../coin/lib/portfolio.mjs';
 import { analyze } from '../coin/agents/technical-analyst.mjs';
 import { review } from '../coin/agents/risk-manager.mjs';
 import { execute } from '../coin/agents/trading-desk.mjs';
@@ -81,4 +81,46 @@ test('analyze: 데이터 부족 시 중립', () => {
   const a = analyze([100, 101, 102], { symbol: 'KRW-BTC' });
   assert.equal(a.signal, 'neutral');
   assert.equal(a.confidence, 0);
+});
+
+test('보호 청산: 손절선 도달 시 시그널과 무관하게 청산', () => {
+  // 50M 워밍업 후 매수가 일어나는 상승 구간을 만들고, 마지막에 손절선 아래로 급락시킨다.
+  const up = generateSyntheticCloses({ count: 120, trend: 0.004, vol: 0.003, seed: 3 });
+  const pf = createPortfolio({ cash: 1_000_000 });
+  // 강제로 포지션 + 손절선 세팅
+  applyFill(pf, { symbol: 'KRW-BTC', side: 'bid', size: 0.01, price: 50_000_000, stopLoss: 49_000_000, takeProfit: 60_000_000 });
+  assert.equal(getPosition(pf, 'KRW-BTC').stopLoss, 49_000_000);
+  // 현재가가 손절선 아래 → 보호 청산되어야 함
+  const closes = [...up.slice(0, 119), 48_000_000];
+  const out = runCycle(closes, pf, { symbol: 'KRW-BTC', policy: DEFAULT_POLICY, mode: 'paper' });
+  assert.equal(out.protective, 'stop_loss');
+  assert.equal(out.execution.status, 'filled');
+  assert.equal(getPosition(pf, 'KRW-BTC').size, 0); // 청산 완료
+});
+
+test('보호 청산: 익절선 도달 시 청산', () => {
+  const pf = createPortfolio({ cash: 1_000_000 });
+  applyFill(pf, { symbol: 'KRW-BTC', side: 'bid', size: 0.01, price: 50_000_000, stopLoss: 48_000_000, takeProfit: 55_000_000 });
+  const closes = [...generateSyntheticCloses({ count: 119, seed: 5 }), 56_000_000];
+  const out = runCycle(closes, pf, { symbol: 'KRW-BTC', policy: DEFAULT_POLICY, mode: 'paper' });
+  assert.equal(out.protective, 'take_profit');
+  assert.equal(getPosition(pf, 'KRW-BTC').size, 0);
+});
+
+test('risk-manager: 최소 주문금액 미만 매수는 거부', () => {
+  const pf = createPortfolio({ cash: 1_000_000 });
+  // 0.00001 BTC @50M = 500원 < 5000원 최소금액
+  const order = { action: 'buy', symbol: 'KRW-BTC', size: 0.00001, price: 50_000_000, stop_loss: 48_000_000 };
+  const r = review(order, pf, { policy: DEFAULT_POLICY });
+  assert.equal(r.decision, 'reject');
+  assert.ok(r.violations.some((v) => v.includes('최소 주문금액')));
+});
+
+test('portfolio: rolloverDay 가 일일 기준을 현재 자산으로 리셋', () => {
+  const pf = createPortfolio({ cash: 1_000_000 });
+  applyFill(pf, { symbol: 'KRW-BTC', side: 'bid', size: 0.01, price: 50_000_000 });
+  // 평가익 반영된 현재 자산으로 dayStartEquity 갱신
+  rolloverDay(pf, { 'KRW-BTC': 60_000_000 });
+  assert.equal(pf.dayStartEquity, equity(pf, { 'KRW-BTC': 60_000_000 }));
+  assert.notEqual(pf.dayStartEquity, pf.startEquity);
 });
