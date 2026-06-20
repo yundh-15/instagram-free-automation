@@ -10,8 +10,10 @@ export function decide(signals, pf, { symbol = 'KRW-BTC', policy } = {}) {
   const pos = getPosition(pf, symbol);
   const eq = equity(pf, { [symbol]: price });
 
-  // 외부 점수(-1~1) 보정: 없으면 0
-  const bias = (signals.sentiment?.score ?? 0) * 0.3 + (signals.research?.score ?? 0) * 0.3;
+  // 리서치 애널리스트의 통합 정성 점수(-1~1)를 기술 신뢰도에 가중 반영.
+  const researchScore = signals.research?.score ?? 0;
+  const alert = Boolean(signals.sentiment?.alert);
+  const bias = researchScore * 0.3;
   const effectiveConf = Math.max(0, Math.min(1, tech.confidence + bias));
 
   let action = 'hold';
@@ -37,7 +39,14 @@ export function decide(signals, pf, { symbol = 'KRW-BTC', policy } = {}) {
     size = pos.size; // 보유분 청산
   }
 
-  if (signals.sentiment?.alert) dissent.push('시장심리 급변 경보');
+  // 시장심리 급변 경보(규제·해킹 등) → 리스크 오프: 신규 진입 보류(매도/청산은 허용)
+  if (alert && action === 'buy') {
+    action = 'hold';
+    size = 0;
+    dissent.push('시장심리 급변 경보로 신규 진입 보류');
+  } else if (alert) {
+    dissent.push('시장심리 급변 경보');
+  }
 
   return {
     action,

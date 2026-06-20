@@ -16,7 +16,8 @@ coin/
 ├── lib/
 │   ├── indicators.mjs      # SMA/EMA/RSI/MACD
 │   ├── portfolio.mjs       # 포지션·현금·실현손익 상태
-│   └── feed.mjs            # 합성 데이터 + Upbit 실데이터 어댑터
+│   ├── feed.mjs            # 합성 데이터 + Upbit 실데이터 어댑터
+│   └── research-feed.mjs   # 리서치 신호 브리지(LLM 출력 파일 → 루프)
 └── agents/
     ├── technical-analyst.mjs  # 지표 → 시그널
     ├── cio.mjs                # 시그널 종합 → 결정안
@@ -49,8 +50,23 @@ npm test
 - **승인 게이트**: 트레이딩 데스크는 리스크 승인(`approve`/`reduce`) 없이는 절대 체결하지 않음.
 - **기본 페이퍼 모드**: `live` 는 별도 Upbit 주문 어댑터 연결 전까지 차단.
 
-## 알려진 한계 (정직성)
-- **LLM 서브에이전트(`.claude/agents/`)는 이 자동 루프에 아직 연결되지 않았다.** 현재 루프는 코드의 기술분석만 사용하며, 리서치/심리 점수(`extraSignals`)는 비어 있어 의사결정에 영향이 없다. 리서치 애널리스트를 루프에 반영하려면 별도 연동이 필요하다.
+## 리서치 LLM ↔ 코드 루프 연동 (브리지 패턴)
+리서치 애널리스트(LLM)는 자기 분석을 **`data/coin-signals/research-<SYMBOL>.json`** 에 기록하고,
+매매 루프는 `research-feed.mjs` 로 그 파일을 읽어 **CIO 의사결정에 반영**한다.
+
+- `score`(-1~1) → 기술 신뢰도에 0.3 가중 (양수면 포지션 확대, 음수면 축소)
+- `sentiment.alert=true` → CIO 가 신규 진입 보류(리스크 오프), 청산은 허용
+- **페일세이프**: 파일이 없거나 TTL 초과면 중립(score 0) → 리서치 없이도 안전하게 동작
+- 끄려면 `--no-research`. 스키마는 [`data/coin-signals/README.md`](../data/coin-signals/README.md).
+
+```bash
+# 리서치 신호 반영 vs 미반영 비교
+node coin/paper-trade.mjs --cycles 200 --seed 7            # 리서치 ON
+node coin/paper-trade.mjs --cycles 200 --seed 7 --no-research
+```
+
+> LLM과 루프는 **파일 브리지로 비동기 연결**된다(루프가 매 사이클 LLM을 호출하지 않음).
+> 느린 리서치(시간/일)와 빠른 매매 루프를 분리하면서 실제 영향을 주는 표준 방식이다.
 
 ## Upbit 실데이터 연결 체크리스트
 1. `scripts/setup-upbit-mcp.sh` 로 MCP 서버 설치(`npm run coin:setup-upbit-mcp`).

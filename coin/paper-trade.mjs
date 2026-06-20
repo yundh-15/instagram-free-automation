@@ -10,16 +10,18 @@
 import { DEFAULT_CONFIG } from './config.mjs';
 import { createPortfolio, equity, rolloverDay } from './lib/portfolio.mjs';
 import { generateSyntheticCloses, fetchUpbitCloses } from './lib/feed.mjs';
+import { loadResearchSignal } from './lib/research-feed.mjs';
 import { runCycle } from './orchestrator.mjs';
 
 function parseArgs(argv) {
-  const args = { source: 'synthetic', cycles: 150, seed: 42, symbol: DEFAULT_CONFIG.symbol };
+  const args = { source: 'synthetic', cycles: 150, seed: 42, symbol: DEFAULT_CONFIG.symbol, research: true };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--source') args.source = argv[++i];
     else if (a === '--cycles') args.cycles = Number(argv[++i]);
     else if (a === '--seed') args.seed = Number(argv[++i]);
     else if (a === '--symbol') args.symbol = argv[++i];
+    else if (a === '--no-research') args.research = false;
   }
   return args;
 }
@@ -44,9 +46,21 @@ async function main() {
   let protectiveExits = 0;
   const cyclesPerDay = policy.cyclesPerDay ?? 24;
 
+  // 리서치 애널리스트(LLM)가 써둔 신호를 브리지 파일에서 읽어 의사결정에 반영.
+  // 합성 시뮬레이션은 실시간 캘린더가 없으므로 TTL 검증을 끄고 전체 구간에 적용한다.
+  let extraSignals = {};
+  if (args.research) {
+    const sig = loadResearchSignal(symbol, { enforceTtl: false });
+    extraSignals = { research: sig.research, sentiment: sig.sentiment };
+    const src = sig._source === 'file'
+      ? `적용(score=${sig.research.score}, alert=${sig.sentiment.alert})`
+      : `없음/무시(${sig._source}) → 중립`;
+    console.log(`리서치 신호 : ${src}\n`);
+  }
+
   for (let i = warmup; i < closes.length; i++) {
     const window = closes.slice(0, i + 1);
-    const { order, riskReview, execution, protective } = runCycle(window, pf, { symbol, policy, mode: 'paper', ts: i });
+    const { order, riskReview, execution, protective } = runCycle(window, pf, { symbol, policy, mode: 'paper', ts: i, extraSignals });
     if (execution.status === 'filled' || execution.status === 'partial') {
       trades++;
       if (protective) protectiveExits++;

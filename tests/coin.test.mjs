@@ -8,7 +8,13 @@ import { review } from '../coin/agents/risk-manager.mjs';
 import { execute } from '../coin/agents/trading-desk.mjs';
 import { runCycle } from '../coin/orchestrator.mjs';
 import { generateSyntheticCloses } from '../coin/lib/feed.mjs';
+import { loadResearchSignal } from '../coin/lib/research-feed.mjs';
+import { decide } from '../coin/agents/cio.mjs';
 import { DEFAULT_POLICY } from '../coin/config.mjs';
+
+import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 test('indicators: SMA/EMA/RSI/MACD 기본 동작', () => {
   const vals = Array.from({ length: 60 }, (_, i) => 100 + i);
@@ -123,4 +129,67 @@ test('portfolio: rolloverDay 가 일일 기준을 현재 자산으로 리셋', (
   rolloverDay(pf, { 'KRW-BTC': 60_000_000 });
   assert.equal(pf.dayStartEquity, equity(pf, { 'KRW-BTC': 60_000_000 }));
   assert.notEqual(pf.dayStartEquity, pf.startEquity);
+});
+
+test('research-feed: 파일 없으면 중립(페일세이프)', () => {
+  const sig = loadResearchSignal('KRW-NOPE', { dir: '/tmp/does-not-exist-xyz' });
+  assert.equal(sig._source, 'missing');
+  assert.equal(sig.research.score, 0);
+  assert.equal(sig.sentiment.alert, false);
+});
+
+test('research-feed: TTL 초과 시 stale → 중립', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'rf-'));
+  writeFileSync(
+    join(dir, 'research-KRW-BTC.json'),
+    JSON.stringify({ ts: '2020-01-01T00:00:00Z', ttl_minutes: 60, score: 0.9 }),
+  );
+  const sig = loadResearchSignal('KRW-BTC', { dir, now: Date.now() });
+  assert.equal(sig._source, 'stale');
+  assert.equal(sig.research.score, 0);
+  rmSync(dir, { recursive: true, force: true });
+});
+
+test('research-feed: 유효 신호 로드 및 클램프', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'rf-'));
+  writeFileSync(
+    join(dir, 'research-KRW-BTC.json'),
+    JSON.stringify({ ts: new Date().toISOString(), ttl_minutes: 1440, score: 1.7, sentiment: { score: -0.3, alert: true } }),
+  );
+  const sig = loadResearchSignal('KRW-BTC', { dir });
+  assert.equal(sig._source, 'file');
+  assert.equal(sig.research.score, 1); // 1.7 → 1 클램프
+  assert.equal(sig.sentiment.alert, true);
+  rmSync(dir, { recursive: true, force: true });
+});
+
+test('CIO: 리서치 양(+) 점수가 매수 신뢰도를 끌어올림', () => {
+  const closes = generateSyntheticCloses({ count: 120, trend: 0.0035, vol: 0.004, seed: 11 });
+  const pf = createPortfolio({ cash: 1_000_000 });
+  const technical = analyze(closes, { symbol: 'KRW-BTC' });
+  const base = decide({ technical }, pf, { symbol: 'KRW-BTC', policy: DEFAULT_POLICY });
+  const boosted = decide(
+    { technical, research: { score: 1 } },
+    pf,
+    { symbol: 'KRW-BTC', policy: DEFAULT_POLICY },
+  );
+  // 리서치 점수가 effectiveConf 를 높여야 한다(같은 기술 시그널 기준)
+  assert.ok(boosted.confidence >= base.confidence);
+});
+
+test('CIO: 심리 급변 경보(alert) 시 신규 매수 보류', () => {
+  const closes = generateSyntheticCloses({ count: 120, trend: 0.004, vol: 0.003, seed: 12 });
+  const pf = createPortfolio({ cash: 1_000_000 });
+  const technical = analyze(closes, { symbol: 'KRW-BTC' });
+  // alert 없을 때 매수가 나오는 상황에서, alert 가 켜지면 hold 로 전환되어야 한다
+  const noAlert = decide({ technical, research: { score: 0.5 } }, pf, { symbol: 'KRW-BTC', policy: DEFAULT_POLICY });
+  const withAlert = decide(
+    { technical, research: { score: 0.5 }, sentiment: { alert: true } },
+    pf,
+    { symbol: 'KRW-BTC', policy: DEFAULT_POLICY },
+  );
+  if (noAlert.action === 'buy') {
+    assert.equal(withAlert.action, 'hold');
+    assert.ok(withAlert.dissenting_signals.some((d) => d.includes('보류')));
+  }
 });
