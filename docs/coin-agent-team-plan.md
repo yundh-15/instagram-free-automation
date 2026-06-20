@@ -17,58 +17,58 @@
 
 ## 2. 팀 구성 개요 (총 8 에이전트)
 
-| # | 에이전트 | 핵심 책임 | 추천 모델 | 사고 수준 | 호출 빈도 |
+| # | 에이전트 (한국어 이름) | 핵심 책임 | 추천 모델 | 사고 수준 | 호출 빈도 |
 |---|----------|-----------|-----------|-----------|-----------|
-| 1 | **Orchestrator (PM)** | 전체 흐름 조율, 의견 종합, 최종 의사결정 라우팅 | Claude Opus 4.8 | High | 사이클마다 |
-| 2 | **Market Data Collector** | 시세·거래량·오더북·온체인 raw 데이터 수집/정규화 | Claude Haiku 4.5 | Minimal | 고빈도(분 단위) |
-| 3 | **Technical Analyst** | 차트·지표(RSI, MACD, 추세) 기반 기술적 분석 | Claude Sonnet 4.6 | Medium | 사이클마다 |
-| 4 | **Fundamental / On-chain Analyst** | 프로젝트 펀더멘털, 온체인 지표, 토크노믹스 | Claude Sonnet 4.6 | Medium~High | 시간/일 단위 |
-| 5 | **Sentiment & News Analyst** | 뉴스·소셜·공포탐욕지수 등 시장 심리 | Claude Haiku 4.5 → 요약은 Sonnet | Low~Medium | 고빈도 |
-| 6 | **Risk Manager** | 포지션 사이징, 손절/익절, 노출 한도, VaR 검증 | Claude Opus 4.8 | High | 모든 주문 전 |
-| 7 | **Strategy / Quant Researcher** | 전략 백테스트, 파라미터 튜닝, 가설 검증 | Claude Opus 4.8 | High | 비동기/배치 |
-| 8 | **Trade Executor** | 거래소 API 주문 실행, 체결 확인, 슬리피지 관리 | Claude Haiku 4.5 | Minimal | 주문 발생 시 |
+| 1 | **단장 (총괄 매니저)** | 전체 흐름 조율, 의견 종합, 최종 의사결정 라우팅 | Claude Opus 4.8 | High | 사이클마다 |
+| 2 | **수집가 (데이터 수집)** | 시세·거래량·오더북·온체인 raw 데이터 수집/정규화 | Claude Haiku 4.5 | Minimal | 고빈도(분 단위) |
+| 3 | **차트가 (기술적 분석)** | 차트·지표(RSI, MACD, 추세) 기반 기술적 분석 | Claude Sonnet 4.6 | Medium | 사이클마다 |
+| 4 | **탐구가 (펀더멘털·온체인 분석)** | 프로젝트 펀더멘털, 온체인 지표, 토크노믹스 | Claude Sonnet 4.6 | Medium~High | 시간/일 단위 |
+| 5 | **여론가 (심리·뉴스 분석)** | 뉴스·소셜·공포탐욕지수 등 시장 심리 | Claude Haiku 4.5 → 요약은 Sonnet | Low~Medium | 고빈도 |
+| 6 | **파수꾼 (리스크 관리)** | 포지션 사이징, 손절/익절, 노출 한도, VaR 검증 | Claude Opus 4.8 | High | 모든 주문 전 |
+| 7 | **연구원 (전략·퀀트 연구)** | 전략 백테스트, 파라미터 튜닝, 가설 검증 | Claude Opus 4.8 | High | 비동기/배치 |
+| 8 | **집행가 (주문 실행)** | 거래소 API 주문 실행, 체결 확인, 슬리피지 관리 | Claude Haiku 4.5 | Minimal | 주문 발생 시 |
 
-> **최소 운영 구성(MVP, 4 에이전트)**: Orchestrator + Technical Analyst + Risk Manager + Trade Executor.
+> **최소 운영 구성(MVP, 4 에이전트)**: 단장 + 차트가 + 파수꾼 + 집행가.
 > 나머지는 단계적으로 추가한다.
 
 ---
 
 ## 3. 역할별 상세 정의
 
-### 3.1 Orchestrator (Portfolio Manager)
-- **책임**: 각 분석가 의견을 수집해 가중 종합 → 매수/매도/보류 결정안 생성 → Risk Manager 검증 통과 시 Executor에 전달.
+### 3.1 단장 (총괄 매니저 / Orchestrator)
+- **책임**: 각 분석가 의견을 수집해 가중 종합 → 매수/매도/보류 결정안 생성 → 파수꾼 검증 통과 시 집행가에 전달.
 - **모델/사고**: Opus 4.8 / High thinking. 여러 상충 신호를 종합하는 핵심 추론이라 가장 강력한 모델 배정.
 - **입력**: 모든 분석가 출력 + 현재 포트폴리오 상태.
 - **출력**: 구조화된 결정안(JSON): `{action, symbol, size, confidence, rationale, stop_loss, take_profit}`.
 
-### 3.2 Market Data Collector
+### 3.2 수집가 (데이터 수집 / Data Collector)
 - **책임**: 거래소·온체인 데이터를 주기적으로 수집·정규화하여 공용 상태(state)에 적재. 판단은 하지 않음.
 - **모델/사고**: Haiku / Minimal. 대부분 도구 호출(API) 위주라 추론 불필요.
 - **주의**: 가능하면 코드/스크립트로 처리하고 LLM은 이상치 라벨링 정도만.
 
-### 3.3 Technical Analyst
+### 3.3 차트가 (기술적 분석 / Technical Analyst)
 - **책임**: 지표·패턴 기반 단기 시그널 생성, 진입/청산 후보가 산출.
 - **모델/사고**: Sonnet 4.6 / Medium. 규칙적이되 맥락 해석이 필요.
 
-### 3.4 Fundamental / On-chain Analyst
+### 3.4 탐구가 (펀더멘털·온체인 분석 / Fundamental·On-chain Analyst)
 - **책임**: 중장기 관점의 코인 내재가치, 네트워크 활동, 고래 움직임, 언락 일정.
 - **모델/사고**: Sonnet 4.6 / Medium~High. 일/주 단위 저빈도라 사고 수준을 높여도 비용 부담 적음.
 
-### 3.5 Sentiment & News Analyst
+### 3.5 여론가 (심리·뉴스 분석 / Sentiment & News Analyst)
 - **책임**: 뉴스·트위터/X·레딧·공포탐욕지수 모니터링, 급변 이벤트 알림.
 - **모델/사고**: 수집·분류는 Haiku/Minimal, 종합 요약만 Sonnet/Low.
 - **주의**: 외부 텍스트는 신뢰 불가 입력으로 취급(프롬프트 인젝션 방어).
 
-### 3.6 Risk Manager (거부권 보유)
+### 3.6 파수꾼 (리스크 관리 / Risk Manager, 거부권 보유)
 - **책임**: 모든 주문에 대한 **사전 검증 게이트**. 포지션 한도, 최대 손실, 상관관계 집중도, 레버리지 점검. 위반 시 **거부**.
 - **모델/사고**: Opus 4.8 / High. 자금 보호의 마지막 방어선이라 최고 사양.
-- **권한**: Orchestrator 결정도 거부 가능(veto).
+- **권한**: 단장의 결정도 거부 가능(veto).
 
-### 3.7 Strategy / Quant Researcher
+### 3.7 연구원 (전략·퀀트 연구 / Strategy Researcher)
 - **책임**: 신규 전략 가설, 백테스트, 파라미터 최적화. 실시간 루프 밖에서 비동기로 동작.
 - **모델/사고**: Opus 4.8 / High. 배치성이라 비용보다 품질 우선.
 
-### 3.8 Trade Executor
+### 3.8 집행가 (주문 실행 / Trade Executor)
 - **책임**: 검증 통과 주문을 거래소 API로 실행, 부분체결·재시도·슬리피지 처리, 결과 회신.
 - **모델/사고**: Haiku / Minimal. 결정론적 실행이 핵심이라 코드 위주 + 최소 추론.
 
@@ -78,14 +78,14 @@
 
 | 모델 | 용도 | 배정 에이전트 |
 |------|------|----------------|
-| **Claude Opus 4.8** | 고난도 종합·리스크·연구 | Orchestrator, Risk Manager, Strategy Researcher |
-| **Claude Sonnet 4.6** | 균형형 분석 | Technical Analyst, Fundamental/On-chain Analyst |
-| **Claude Haiku 4.5** | 고빈도·저지연·도구 호출 | Data Collector, Sentiment(수집), Trade Executor |
+| **Claude Opus 4.8** | 고난도 종합·리스크·연구 | 단장, 파수꾼, 연구원 |
+| **Claude Sonnet 4.6** | 균형형 분석 | 차트가, 탐구가 |
+| **Claude Haiku 4.5** | 고빈도·저지연·도구 호출 | 수집가, 여론가(수집), 집행가 |
 
 **사고 수준(thinking budget) 가이드**
 - **Minimal**: 도구 호출·실행 위주(Collector, Executor) — 지연·비용 최소화.
-- **Low~Medium**: 정형 분석(Technical, Sentiment 요약).
-- **High**: 다중 신호 종합·리스크·전략(Orchestrator, Risk, Strategy).
+- **Low~Medium**: 정형 분석(차트가, 여론가 요약).
+- **High**: 다중 신호 종합·리스크·전략(단장, 파수꾼, 연구원).
 
 > 원칙: *호출 빈도가 높을수록 모델·사고 수준을 낮추고, 의사결정 영향이 클수록 높인다.*
 
@@ -94,19 +94,19 @@
 ## 5. 워크플로우 (1 의사결정 사이클)
 
 ```
-[Data Collector] ──raw data──┐
-[Sentiment]      ──signals───┤
-[Technical]      ──signals───┼──▶ [Orchestrator] ──draft order──▶ [Risk Manager]
-[Fundamental]    ──signals───┘                                         │
-                                                                  승인 │ 거부
-                                                                       ▼
-                                                              [Trade Executor] ──▶ 거래소
-                                                                       │
-                                                                  체결 결과
-                                                                       ▼
-                                                              상태 갱신 / 감사 로그
+[수집가] ──raw data──┐
+[여론가] ──signals───┤
+[차트가] ──signals───┼──▶ [단장] ──draft order──▶ [파수꾼]
+[탐구가] ──signals───┘                                 │
+                                                  승인 │ 거부
+                                                       ▼
+                                              [집행가] ──▶ 거래소
+                                                       │
+                                                  체결 결과
+                                                       ▼
+                                              상태 갱신 / 감사 로그
 
-[Strategy Researcher] ── 비동기 백테스트 ──▶ 전략/파라미터 업데이트 제안
+[연구원] ── 비동기 백테스트 ──▶ 전략/파라미터 업데이트 제안
 ```
 
 ---
@@ -114,14 +114,14 @@
 ## 6. 인원수(에이전트 수) 결정 근거
 
 - **풀 구성 8개**: 분석 도메인 분리(기술/펀더멘털/심리) + 결정/리스크/실행/연구 + 데이터 수집.
-- **MVP 4개**로 시작 권장: Orchestrator, Technical Analyst, Risk Manager, Trade Executor.
+- **MVP 4개**로 시작 권장: 단장, 차트가, 파수꾼, 집행가.
 - 에이전트 수를 늘릴수록 신호 다양성↑ 이지만 **지연·비용·조율 복잡도↑**. 도메인이 겹치면 합치고, 병목이 생기면 분리하는 식으로 운영하며 조정.
 
 ---
 
 ## 7. 리스크 & 가드레일
 
-- **자금 보호**: Risk Manager veto, 일일 최대 손실(킬 스위치), 단일 종목 노출 한도.
+- **자금 보호**: 파수꾼 거부권(veto), 일일 최대 손실(킬 스위치), 단일 종목 노출 한도.
 - **모의→실거래 단계화**: 페이퍼 트레이딩으로 N주 검증 후 소액 실거래.
 - **프롬프트 인젝션 방어**: 뉴스/소셜 등 외부 텍스트는 신뢰 불가 입력으로 격리.
 - **휴먼 승인**: 일정 금액 이상 주문은 사람 승인 필수.
