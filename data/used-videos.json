@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-20T12:05:06.461Z",
+  "updatedAt": "2026-06-21T05:10:21.771Z",
   "used": [
     {
       "source": "Pexels",
@@ -732,6 +732,18 @@
       "creator": "Miriam Alonso",
       "creatorUrl": "https://www.pexels.com/@miriam-alonso",
       "videoUrl": "https://www.pexels.com/video/a-woman-doing-yoga-7589744/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "31797385",
+      "usedAt": "2026-06-21T05:10:21.771Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Татьяна Рогова",
+      "creatorUrl": "https://www.pexels.com/@2151685010",
+      "videoUrl": "https://www.pexels.com/video/relaxing-spa-facial-treatment-session-31797385/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
