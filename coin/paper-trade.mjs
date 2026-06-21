@@ -11,6 +11,8 @@ import { DEFAULT_CONFIG } from './config.mjs';
 import { createPortfolio, equity, rolloverDay } from './lib/portfolio.mjs';
 import { generateSyntheticCloses, fetchUpbitCloses } from './lib/feed.mjs';
 import { loadResearchSignal } from './lib/research-feed.mjs';
+import { writeFileSync, mkdirSync } from 'node:fs';
+import { dirname } from 'node:path';
 import { runCycle } from './orchestrator.mjs';
 
 function parseArgs(argv) {
@@ -22,6 +24,7 @@ function parseArgs(argv) {
     else if (a === '--seed') args.seed = Number(argv[++i]);
     else if (a === '--symbol') args.symbol = argv[++i];
     else if (a === '--no-research') args.research = false;
+    else if (a === '--out') args.out = argv[++i];
   }
   return args;
 }
@@ -92,6 +95,27 @@ async function main() {
   console.log(`실현손익   : ${Math.round(pf.realizedPnl).toLocaleString()} KRW`);
   console.log(`수익률     : ${ret}%`);
   console.log('\n* 모의 결과이며 미래 수익을 보장하지 않습니다.');
+
+  // 자동화용 JSON 요약 기록(--out <path>)
+  if (args.out) {
+    const summary = {
+      ts: new Date().toISOString(),
+      source: args.source,
+      symbol,
+      mode: 'paper',
+      cycles: closes.length - warmup,
+      trades,
+      protectiveExits,
+      startEquity: pf.startEquity,
+      finalEquity: Math.round(finalEq),
+      realizedPnl: Math.round(pf.realizedPnl),
+      returnPct: Number(ret),
+      research: args.research ? extraSignals.research?.score ?? 0 : null,
+    };
+    mkdirSync(dirname(args.out), { recursive: true });
+    writeFileSync(args.out, JSON.stringify(summary, null, 2) + '\n');
+    console.log(`\n요약 기록   : ${args.out}`);
+  }
 }
 
 main().catch((err) => {

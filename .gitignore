@@ -20,3 +20,6 @@ scripts/monitor-instagram-slot-and-shutdown.ps1
 
 # Upbit MCP server (cloned locally, ephemeral)
 vendor/
+
+# 코인 런타임 산출물(요약/상태) — 레포에 누적 금지
+data/coin-runs/

@@ -12,7 +12,9 @@ import { loadResearchSignal } from '../coin/lib/research-feed.mjs';
 import { decide } from '../coin/agents/cio.mjs';
 import { DEFAULT_POLICY } from '../coin/config.mjs';
 
-import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { loadState, saveState, appendRunLog } from '../coin/lib/state-store.mjs';
+
+import { mkdtempSync, writeFileSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -129,6 +131,32 @@ test('portfolio: rolloverDay 가 일일 기준을 현재 자산으로 리셋', (
   rolloverDay(pf, { 'KRW-BTC': 60_000_000 });
   assert.equal(pf.dayStartEquity, equity(pf, { 'KRW-BTC': 60_000_000 }));
   assert.notEqual(pf.dayStartEquity, pf.startEquity);
+});
+
+test('state-store: 저장 후 로드하면 포지션·현금이 보존된다', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'st-'));
+  const path = join(dir, 'state.json');
+  const { portfolio } = loadState(path, { startCash: 500_000 }); // 신규 생성
+  assert.equal(portfolio.cash, 500_000);
+  applyFill(portfolio, { symbol: 'KRW-BTC', side: 'bid', size: 0.001, price: 50_000_000 });
+  saveState(path, portfolio, { cycles: 3 });
+
+  const reloaded = loadState(path);
+  assert.equal(reloaded.portfolio.cash, 450_000);
+  assert.equal(getPosition(reloaded.portfolio, 'KRW-BTC').size, 0.001);
+  assert.equal(reloaded.meta.cycles, 3);
+  rmSync(dir, { recursive: true, force: true });
+});
+
+test('state-store: appendRunLog 는 JSONL 로 누적된다', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'st-'));
+  const path = join(dir, 'log.jsonl');
+  appendRunLog(path, { action: 'hold' });
+  appendRunLog(path, { action: 'buy' });
+  const lines = readFileSync(path, 'utf8').trim().split('\n');
+  assert.equal(lines.length, 2);
+  assert.equal(JSON.parse(lines[1]).action, 'buy');
+  rmSync(dir, { recursive: true, force: true });
 });
 
 test('research-feed: 파일 없으면 중립(페일세이프)', () => {
