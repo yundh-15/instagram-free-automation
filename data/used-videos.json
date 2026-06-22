@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-21T05:10:21.771Z",
+  "updatedAt": "2026-06-22T02:12:25.389Z",
   "used": [
     {
       "source": "Pexels",
@@ -744,6 +744,18 @@
       "creator": "Татьяна Рогова",
       "creatorUrl": "https://www.pexels.com/@2151685010",
       "videoUrl": "https://www.pexels.com/video/relaxing-spa-facial-treatment-session-31797385/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8313077",
+      "usedAt": "2026-06-22T02:12:25.383Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "RDNE Stock project",
+      "creatorUrl": "https://www.pexels.com/@rdne",
+      "videoUrl": "https://www.pexels.com/video/female-doctor-massaging-a-patient-s-back-8313077/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
