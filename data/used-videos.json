@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-22T02:12:25.389Z",
+  "updatedAt": "2026-06-22T11:09:29.054Z",
   "used": [
     {
       "source": "Pexels",
@@ -756,6 +756,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/female-doctor-massaging-a-patient-s-back-8313077/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6799874",
+      "usedAt": "2026-06-22T11:09:29.053Z",
+      "category": "posture",
+      "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/a-man-showing-a-yoga-pose-6799874/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

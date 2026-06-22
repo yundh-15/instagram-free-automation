@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-22T02:12:11.030Z",
+  "updatedAt": "2026-06-22T11:09:14.358Z",
   "used": [
     {
       "category": "posture",
@@ -356,6 +356,11 @@
       "category": "massage",
       "topic": "숙면을 돕는 저녁 마사지 체크리스트",
       "usedAt": "2026-06-22T02:12:11.030Z"
+    },
+    {
+      "category": "posture",
+      "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
+      "usedAt": "2026-06-22T11:09:14.358Z"
     }
   ]
 }
