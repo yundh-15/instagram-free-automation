@@ -19,8 +19,6 @@
     "meta:exchange-token": "node scripts/exchange-meta-token.mjs",
     "check:instagram-slot": "node scripts/check-instagram-slot.mjs",
     "run:instagram-slot": "node scripts/run-instagram-slot.mjs",
-    "coin:paper": "node coin/paper-trade.mjs",
-    "coin:setup-upbit-mcp": "bash scripts/setup-upbit-mcp.sh",
     "test": "node --test tests/*.test.mjs"
   },
   "keywords": [],
