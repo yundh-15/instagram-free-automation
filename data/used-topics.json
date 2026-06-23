@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-22T11:09:14.358Z",
+  "updatedAt": "2026-06-23T07:58:59.641Z",
   "used": [
     {
       "category": "posture",
@@ -361,6 +361,11 @@
       "category": "posture",
       "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
       "usedAt": "2026-06-22T11:09:14.358Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "usedAt": "2026-06-23T07:58:59.641Z"
     }
   ]
 }
