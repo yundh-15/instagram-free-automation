@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-22T11:09:29.054Z",
+  "updatedAt": "2026-06-23T12:42:31.418Z",
   "used": [
     {
       "source": "Pexels",
@@ -768,6 +768,18 @@
       "creator": "cottonbro studio",
       "creatorUrl": "https://www.pexels.com/@cottonbro",
       "videoUrl": "https://www.pexels.com/video/a-man-showing-a-yoga-pose-6799874/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8477509",
+      "usedAt": "2026-06-23T12:42:31.417Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Sasha  Kim",
+      "creatorUrl": "https://www.pexels.com/@sasha-kim",
+      "videoUrl": "https://www.pexels.com/video/women-wearing-a-sportswear-8477509/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
