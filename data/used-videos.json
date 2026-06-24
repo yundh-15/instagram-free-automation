@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-24T01:34:08.165Z",
+  "updatedAt": "2026-06-24T04:19:00.130Z",
   "used": [
     {
       "source": "Pexels",
@@ -792,6 +792,18 @@
       "creator": "Ivan S",
       "creatorUrl": "https://www.pexels.com/@ivan-s",
       "videoUrl": "https://www.pexels.com/video/a-woman-getting-a-face-massage-5659246/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "9335795",
+      "usedAt": "2026-06-24T04:19:00.129Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "olia danilevich",
+      "creatorUrl": "https://www.pexels.com/@olia-danilevich",
+      "videoUrl": "https://www.pexels.com/video/a-person-massaging-a-woman-s-face-9335795/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
