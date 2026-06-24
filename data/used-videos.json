@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-24T04:19:00.130Z",
+  "updatedAt": "2026-06-24T12:25:34.297Z",
   "used": [
     {
       "source": "Pexels",
@@ -804,6 +804,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/a-person-massaging-a-woman-s-face-9335795/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6808078",
+      "usedAt": "2026-06-24T12:25:34.296Z",
+      "category": "posture",
+      "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Michelle Leman",
+      "creatorUrl": "https://www.pexels.com/@michelle-leman",
+      "videoUrl": "https://www.pexels.com/video/a-person-stretching-on-a-balcony-6808078/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
