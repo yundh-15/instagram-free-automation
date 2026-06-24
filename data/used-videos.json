@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23T12:42:31.418Z",
+  "updatedAt": "2026-06-24T01:34:08.165Z",
   "used": [
     {
       "source": "Pexels",
@@ -780,6 +780,18 @@
       "creator": "Sasha  Kim",
       "creatorUrl": "https://www.pexels.com/@sasha-kim",
       "videoUrl": "https://www.pexels.com/video/women-wearing-a-sportswear-8477509/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5659246",
+      "usedAt": "2026-06-24T01:34:08.163Z",
+      "category": "massage",
+      "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Ivan S",
+      "creatorUrl": "https://www.pexels.com/@ivan-s",
+      "videoUrl": "https://www.pexels.com/video/a-woman-getting-a-face-massage-5659246/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
