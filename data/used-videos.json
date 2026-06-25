@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-24T12:25:34.297Z",
+  "updatedAt": "2026-06-25T01:52:05.116Z",
   "used": [
     {
       "source": "Pexels",
@@ -816,6 +816,18 @@
       "creator": "Michelle Leman",
       "creatorUrl": "https://www.pexels.com/@michelle-leman",
       "videoUrl": "https://www.pexels.com/video/a-person-stretching-on-a-balcony-6808078/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "9155281",
+      "usedAt": "2026-06-25T01:52:05.116Z",
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Ron Lach",
+      "creatorUrl": "https://www.pexels.com/@ron-lach",
+      "videoUrl": "https://www.pexels.com/video/women-showering-together-9155281/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
