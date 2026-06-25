@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T04:18:32.111Z",
+  "updatedAt": "2026-06-25T12:29:41.408Z",
   "used": [
     {
       "category": "posture",
@@ -396,6 +396,11 @@
       "category": "skincare",
       "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
       "usedAt": "2026-06-25T04:18:32.111Z"
+    },
+    {
+      "category": "posture",
+      "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
+      "usedAt": "2026-06-25T12:29:41.408Z"
     }
   ]
 }
