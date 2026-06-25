@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T01:52:05.116Z",
+  "updatedAt": "2026-06-25T04:18:47.907Z",
   "used": [
     {
       "source": "Pexels",
@@ -828,6 +828,18 @@
       "creator": "Ron Lach",
       "creatorUrl": "https://www.pexels.com/@ron-lach",
       "videoUrl": "https://www.pexels.com/video/women-showering-together-9155281/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5116679",
+      "usedAt": "2026-06-25T04:18:47.906Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Alle Alonso",
+      "creatorUrl": "https://www.pexels.com/@alle-alonso-3429039",
+      "videoUrl": "https://www.pexels.com/video/a-woman-having-a-facial-treatment-5116679/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
