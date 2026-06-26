@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T12:30:00.080Z",
+  "updatedAt": "2026-06-26T04:25:17.404Z",
   "used": [
     {
       "source": "Pexels",
@@ -852,6 +852,18 @@
       "creator": "Yaroslav Shuraev",
       "creatorUrl": "https://www.pexels.com/@yaroslav-shuraev",
       "videoUrl": "https://www.pexels.com/video/a-woman-holding-a-lavender-plant-8514988/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "31797386",
+      "usedAt": "2026-06-26T04:25:17.403Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Татьяна Рогова",
+      "creatorUrl": "https://www.pexels.com/@2151685010",
+      "videoUrl": "https://www.pexels.com/video/relaxing-spa-facial-treatment-at-wellness-center-31797386/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

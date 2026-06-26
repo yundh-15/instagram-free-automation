@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T12:29:41.408Z",
+  "updatedAt": "2026-06-26T04:25:01.899Z",
   "used": [
     {
       "category": "posture",
@@ -401,6 +401,11 @@
       "category": "posture",
       "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
       "usedAt": "2026-06-25T12:29:41.408Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "usedAt": "2026-06-26T04:25:01.899Z"
     }
   ]
 }
