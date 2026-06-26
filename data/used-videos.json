@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26T04:25:17.404Z",
+  "updatedAt": "2026-06-26T12:21:21.932Z",
   "used": [
     {
       "source": "Pexels",
@@ -864,6 +864,18 @@
       "creator": "Татьяна Рогова",
       "creatorUrl": "https://www.pexels.com/@2151685010",
       "videoUrl": "https://www.pexels.com/video/relaxing-spa-facial-treatment-at-wellness-center-31797386/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6798423",
+      "usedAt": "2026-06-26T12:21:21.931Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/man-doing-yoga-pose-6798423/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
