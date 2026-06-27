@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-27T07:27:11.937Z",
+  "updatedAt": "2026-06-27T11:42:46.736Z",
   "used": [
     {
       "category": "posture",
@@ -421,6 +421,11 @@
       "category": "skincare",
       "topic": "피부관리 받기 전 확인하면 좋은 5가지",
       "usedAt": "2026-06-27T07:27:11.937Z"
+    },
+    {
+      "category": "posture",
+      "topic": "라운드숄더가 고민일 때 체형관리 체크포인트",
+      "usedAt": "2026-06-27T11:42:46.736Z"
     }
   ]
 }
