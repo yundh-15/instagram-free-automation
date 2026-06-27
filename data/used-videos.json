@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26T12:21:21.932Z",
+  "updatedAt": "2026-06-27T01:47:08.152Z",
   "used": [
     {
       "source": "Pexels",
@@ -876,6 +876,18 @@
       "creator": "cottonbro studio",
       "creatorUrl": "https://www.pexels.com/@cottonbro",
       "videoUrl": "https://www.pexels.com/video/man-doing-yoga-pose-6798423/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6187886",
+      "usedAt": "2026-06-27T01:47:08.151Z",
+      "category": "massage",
+      "topic": "마사지 압 조절을 요청할 때 알아두면 좋은 기준",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Tima Miroshnichenko",
+      "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "videoUrl": "https://www.pexels.com/video/crop-masseuse-giving-arms-massage-6187886/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
