@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-28T04:45:10.946Z",
+  "updatedAt": "2026-06-28T11:54:16.826Z",
   "used": [
     {
       "source": "Pexels",
@@ -924,6 +924,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-woman-applying-face-cream-on-her-face-12322743/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8347418",
+      "usedAt": "2026-06-28T11:54:16.825Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "ROMAN ODINTSOV",
+      "creatorUrl": "https://www.pexels.com/@roman-odintsov",
+      "videoUrl": "https://www.pexels.com/video/a-young-woman-meditating-8347418/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
