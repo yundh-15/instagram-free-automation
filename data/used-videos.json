@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-28T11:54:16.826Z",
+  "updatedAt": "2026-06-29T01:57:37.617Z",
   "used": [
     {
       "source": "Pexels",
@@ -936,6 +936,18 @@
       "creator": "ROMAN ODINTSOV",
       "creatorUrl": "https://www.pexels.com/@roman-odintsov",
       "videoUrl": "https://www.pexels.com/video/a-young-woman-meditating-8347418/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6628320",
+      "usedAt": "2026-06-29T01:57:37.616Z",
+      "category": "massage",
+      "topic": "오래 앉아 있는 사람을 위한 등 관리 포인트",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "KoolShooters",
+      "creatorUrl": "https://www.pexels.com/@koolshooters",
+      "videoUrl": "https://www.pexels.com/video/masseuse-giving-a-foot-massage-6628320/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
