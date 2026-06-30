@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-30T04:20:05.348Z",
+  "updatedAt": "2026-06-30T12:19:22.607Z",
   "used": [
     {
       "source": "Pexels",
@@ -996,6 +996,18 @@
       "creator": "Miriam Alonso",
       "creatorUrl": "https://www.pexels.com/@miriam-alonso",
       "videoUrl": "https://www.pexels.com/video/a-woman-with-clay-mask-reading-a-book-7597230/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8347420",
+      "usedAt": "2026-06-30T12:19:22.606Z",
+      "category": "posture",
+      "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "ROMAN ODINTSOV",
+      "creatorUrl": "https://www.pexels.com/@roman-odintsov",
+      "videoUrl": "https://www.pexels.com/video/a-woman-holding-a-dried-palm-leaf-8347420/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
