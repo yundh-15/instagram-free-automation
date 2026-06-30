@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T14:15:07.920Z",
+  "updatedAt": "2026-06-30T01:52:31.395Z",
   "used": [
     {
       "source": "Pexels",
@@ -972,6 +972,18 @@
       "creator": "Mikhail Nilov",
       "creatorUrl": "https://www.pexels.com/@mikhail-nilov",
       "videoUrl": "https://www.pexels.com/video/a-woman-holding-a-crystal-6944265/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "9335860",
+      "usedAt": "2026-06-30T01:52:31.394Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "olia danilevich",
+      "creatorUrl": "https://www.pexels.com/@olia-danilevich",
+      "videoUrl": "https://www.pexels.com/video/a-therapist-using-a-rolling-pin-in-massaging-a-client-s-shoulder-9335860/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
