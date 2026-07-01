@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-01T04:47:52.004Z",
+  "updatedAt": "2026-07-01T12:41:16.801Z",
   "used": [
     {
       "category": "posture",
@@ -481,6 +481,11 @@
       "category": "skincare",
       "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
       "usedAt": "2026-07-01T04:47:52.004Z"
+    },
+    {
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "usedAt": "2026-07-01T12:41:16.801Z"
     }
   ]
 }
