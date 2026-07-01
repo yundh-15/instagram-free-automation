@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-01T01:58:24.759Z",
+  "updatedAt": "2026-07-01T04:48:09.063Z",
   "used": [
     {
       "source": "Pexels",
@@ -1020,6 +1020,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/massage-therapist-massaging-a-woman-s-back-9335891/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7581440",
+      "usedAt": "2026-07-01T04:48:09.062Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/a-woman-having-a-facial-massage-7581440/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
