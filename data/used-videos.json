@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-02T04:15:21.320Z",
+  "updatedAt": "2026-07-02T12:17:28.203Z",
   "used": [
     {
       "source": "Pexels",
@@ -1068,6 +1068,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/close-up-of-a-young-woman-applying-cream-on-her-face-12322665/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4536539",
+      "usedAt": "2026-07-02T12:17:28.202Z",
+      "category": "posture",
+      "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Vlada Karpovich",
+      "creatorUrl": "https://www.pexels.com/@vlada-karpovich",
+      "videoUrl": "https://www.pexels.com/video/woman-doing-yoga-4536539/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
