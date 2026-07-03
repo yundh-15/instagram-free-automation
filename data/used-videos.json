@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-03T04:01:58.062Z",
+  "updatedAt": "2026-07-03T12:16:45.696Z",
   "used": [
     {
       "source": "Pexels",
@@ -1104,6 +1104,18 @@
       "creator": "Mike Murray",
       "creatorUrl": "https://www.pexels.com/@content-prod-co",
       "videoUrl": "https://www.pexels.com/video/a-young-woman-putting-facial-cream-on-her-face-6925813/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7590463",
+      "usedAt": "2026-07-03T12:16:45.695Z",
+      "category": "posture",
+      "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Miriam Alonso",
+      "creatorUrl": "https://www.pexels.com/@miriam-alonso",
+      "videoUrl": "https://www.pexels.com/video/a-person-stretching-their-legs-7590463/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
