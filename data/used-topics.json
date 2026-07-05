@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T07:37:32.396Z",
+  "updatedAt": "2026-07-05T11:42:31.416Z",
   "used": [
     {
       "category": "posture",
@@ -541,6 +541,11 @@
       "category": "skincare",
       "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
       "usedAt": "2026-07-05T07:37:32.396Z"
+    },
+    {
+      "category": "posture",
+      "topic": "라운드숄더가 고민일 때 체형관리 체크포인트",
+      "usedAt": "2026-07-05T11:42:31.416Z"
     }
   ]
 }
