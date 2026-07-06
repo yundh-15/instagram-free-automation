@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-06T04:22:19.139Z",
+  "updatedAt": "2026-07-06T13:56:21.388Z",
   "used": [
     {
       "source": "Pexels",
@@ -6661,6 +6661,66 @@
       "photoUrl": "https://www.pexels.com/photo/woman-enjoying-face-mask-in-spa-12940809/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Asian wellness spa person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "38383523",
+      "usedAt": "2026-07-06T13:56:21.384Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "photographer": "taichi Wubin wu",
+      "photographerUrl": "https://www.pexels.com/@taichi-wubin-wu-2162659871",
+      "photoUrl": "https://www.pexels.com/photo/man-practicing-tai-chi-in-white-outfit-38383523/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6933040",
+      "usedAt": "2026-07-06T13:56:21.384Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "photographer": "Mikhail Nilov",
+      "photographerUrl": "https://www.pexels.com/@mikhail-nilov",
+      "photoUrl": "https://www.pexels.com/photo/photo-of-a-man-in-a-black-tank-top-doing-yoga-6933040/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6188119",
+      "usedAt": "2026-07-06T13:56:21.384Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "photoUrl": "https://www.pexels.com/photo/a-person-doing-a-massage-to-a-man-s-leg-6188119/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6809472",
+      "usedAt": "2026-07-06T13:56:21.384Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/man-in-white-tank-top-6809472/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "10116611",
+      "usedAt": "2026-07-06T13:56:21.384Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "photographer": "Victoria Strelka_ph",
+      "photographerUrl": "https://www.pexels.com/@victoria-strelka_ph-128225472",
+      "photoUrl": "https://www.pexels.com/photo/woman-in-lingerie-bending-down-10116611/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
     }
   ]
 }
