@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-06T01:27:08.889Z",
+  "updatedAt": "2026-07-06T04:22:32.167Z",
   "used": [
     {
       "source": "Pexels",
@@ -1188,6 +1188,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/woman-getting-a-back-massage-9335824/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "9474156",
+      "usedAt": "2026-07-06T04:22:32.167Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Greta Hoffman",
+      "creatorUrl": "https://www.pexels.com/@greta-hoffman",
+      "videoUrl": "https://www.pexels.com/video/woman-wearing-bathrobe-sitting-on-bed-9474156/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
