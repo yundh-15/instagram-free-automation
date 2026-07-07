@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-07T01:26:48.050Z",
+  "updatedAt": "2026-07-07T04:11:47.958Z",
   "used": [
     {
       "source": "Pexels",
@@ -1224,6 +1224,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-man-having-face-massage-8313349/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6975312",
+      "usedAt": "2026-07-07T04:11:47.957Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Monstera Production",
+      "creatorUrl": "https://www.pexels.com/@gabby-k",
+      "videoUrl": "https://www.pexels.com/video/a-woman-applying-facial-cream-6975312/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
