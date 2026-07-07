@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-06T13:56:37.690Z",
+  "updatedAt": "2026-07-07T01:26:48.050Z",
   "used": [
     {
       "source": "Pexels",
@@ -1212,6 +1212,18 @@
       "creator": "Anna Pou",
       "creatorUrl": "https://www.pexels.com/@anna-pou",
       "videoUrl": "https://www.pexels.com/video/a-woman-sitting-on-a-bed-8298066/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8313349",
+      "usedAt": "2026-07-07T01:26:48.050Z",
+      "category": "massage",
+      "topic": "오래 앉아 있는 사람을 위한 등 관리 포인트",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "RDNE Stock project",
+      "creatorUrl": "https://www.pexels.com/@rdne",
+      "videoUrl": "https://www.pexels.com/video/a-man-having-face-massage-8313349/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
