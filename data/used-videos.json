@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-08T00:16:36.351Z",
+  "updatedAt": "2026-07-08T06:36:02.800Z",
   "used": [
     {
       "source": "Pexels",
@@ -1260,6 +1260,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/young-woman-being-given-neck-massage-6187892/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7593977",
+      "usedAt": "2026-07-08T06:36:02.799Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Miriam Alonso",
+      "creatorUrl": "https://www.pexels.com/@miriam-alonso",
+      "videoUrl": "https://www.pexels.com/video/a-woman-wearing-a-facial-mask-7593977/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
