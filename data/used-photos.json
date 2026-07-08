@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-07T12:33:47.604Z",
+  "updatedAt": "2026-07-08T00:16:16.292Z",
   "used": [
     {
       "source": "Pexels",
@@ -6901,6 +6901,66 @@
       "photoUrl": "https://www.pexels.com/photo/a-man-relaxing-at-a-sauna-9144538/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "7235061",
+      "usedAt": "2026-07-08T00:16:16.288Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-with-blonde-hair-having-a-back-massage-7235061/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "6628596",
+      "usedAt": "2026-07-08T00:16:16.288Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "photographer": "KoolShooters",
+      "photographerUrl": "https://www.pexels.com/@koolshooters",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-having-a-massage-6628596/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "6186757",
+      "usedAt": "2026-07-08T00:16:16.288Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "photoUrl": "https://www.pexels.com/photo/a-masseuse-massaging-a-woman-6186757/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "6188131",
+      "usedAt": "2026-07-08T00:16:16.288Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "photoUrl": "https://www.pexels.com/photo/woman-in-shirt-stretching-man-s-hand-6188131/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "6187845",
+      "usedAt": "2026-07-08T00:16:16.288Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "photoUrl": "https://www.pexels.com/photo/a-massage-therapist-massaging-the-woman-6187845/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }
