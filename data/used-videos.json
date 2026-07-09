@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-09T04:06:14.322Z",
+  "updatedAt": "2026-07-09T15:45:38.665Z",
   "used": [
     {
       "source": "Pexels",
@@ -1308,6 +1308,18 @@
       "creator": "Sora Shimazaki",
       "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
       "videoUrl": "https://www.pexels.com/video/woman-using-lotion-5937426/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4608978",
+      "usedAt": "2026-07-09T15:45:38.664Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Vlada Karpovich",
+      "creatorUrl": "https://www.pexels.com/@vlada-karpovich",
+      "videoUrl": "https://www.pexels.com/video/woman-practicing-yoga-4608978/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
