@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-09T01:20:18.083Z",
+  "updatedAt": "2026-07-09T04:06:14.322Z",
   "used": [
     {
       "source": "Pexels",
@@ -1296,6 +1296,18 @@
       "creator": "Ron Lach",
       "creatorUrl": "https://www.pexels.com/@ron-lach",
       "videoUrl": "https://www.pexels.com/video/a-person-dipping-the-pink-grapefruit-on-a-plate-with-salt-9154362/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5937426",
+      "usedAt": "2026-07-09T04:06:14.321Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Sora Shimazaki",
+      "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
+      "videoUrl": "https://www.pexels.com/video/woman-using-lotion-5937426/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
