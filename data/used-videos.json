@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-08T11:52:35.201Z",
+  "updatedAt": "2026-07-09T01:20:18.083Z",
   "used": [
     {
       "source": "Pexels",
@@ -1284,6 +1284,18 @@
       "creator": "Miriam Alonso",
       "creatorUrl": "https://www.pexels.com/@miriam-alonso",
       "videoUrl": "https://www.pexels.com/video/a-woman-doing-yoga-7590405/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "9154362",
+      "usedAt": "2026-07-09T01:20:18.080Z",
+      "category": "massage",
+      "topic": "손목과 팔이 자주 피로할 때 관리 전 확인할 점",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Ron Lach",
+      "creatorUrl": "https://www.pexels.com/@ron-lach",
+      "videoUrl": "https://www.pexels.com/video/a-person-dipping-the-pink-grapefruit-on-a-plate-with-salt-9154362/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
