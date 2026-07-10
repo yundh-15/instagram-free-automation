@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-10T04:05:54.878Z",
+  "updatedAt": "2026-07-10T12:31:48.496Z",
   "used": [
     {
       "category": "posture",
@@ -616,6 +616,11 @@
       "category": "skincare",
       "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
       "usedAt": "2026-07-10T04:05:54.878Z"
+    },
+    {
+      "category": "posture",
+      "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
+      "usedAt": "2026-07-10T12:31:48.496Z"
     }
   ]
 }
