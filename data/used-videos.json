@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-11T06:22:48.374Z",
+  "updatedAt": "2026-07-11T11:13:41.230Z",
   "used": [
     {
       "source": "Pexels",
@@ -1380,6 +1380,18 @@
       "creator": "Luisa Steffens",
       "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
       "videoUrl": "https://www.pexels.com/video/laser-skin-treatment-in-modern-clinic-30978288/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6800186",
+      "usedAt": "2026-07-11T11:13:41.229Z",
+      "category": "posture",
+      "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/young-man-doing-yoga-pose-6800186/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
