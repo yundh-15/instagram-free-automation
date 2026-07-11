@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-11T00:14:33.949Z",
+  "updatedAt": "2026-07-11T06:22:48.374Z",
   "used": [
     {
       "source": "Pexels",
@@ -1368,6 +1368,18 @@
       "creator": "KoolShooters",
       "creatorUrl": "https://www.pexels.com/@koolshooters",
       "videoUrl": "https://www.pexels.com/video/woman-doing-a-back-massage-6628322/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "30978288",
+      "usedAt": "2026-07-11T06:22:48.373Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Luisa Steffens",
+      "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
+      "videoUrl": "https://www.pexels.com/video/laser-skin-treatment-in-modern-clinic-30978288/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
