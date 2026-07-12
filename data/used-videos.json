@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-12T00:13:31.125Z",
+  "updatedAt": "2026-07-12T06:42:36.404Z",
   "used": [
     {
       "source": "Pexels",
@@ -1404,6 +1404,18 @@
       "creator": "Ivan S",
       "creatorUrl": "https://www.pexels.com/@ivan-s",
       "videoUrl": "https://www.pexels.com/video/woman-getting-a-face-massage-5659235/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4772529",
+      "usedAt": "2026-07-12T06:42:36.403Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Anna Shvets",
+      "creatorUrl": "https://www.pexels.com/@shvetsa",
+      "videoUrl": "https://www.pexels.com/video/hands-hand-women-dry-4772529/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
