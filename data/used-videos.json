@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-11T11:13:41.230Z",
+  "updatedAt": "2026-07-12T00:13:31.125Z",
   "used": [
     {
       "source": "Pexels",
@@ -1392,6 +1392,18 @@
       "creator": "cottonbro studio",
       "creatorUrl": "https://www.pexels.com/@cottonbro",
       "videoUrl": "https://www.pexels.com/video/young-man-doing-yoga-pose-6800186/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5659235",
+      "usedAt": "2026-07-12T00:13:31.124Z",
+      "category": "massage",
+      "topic": "허리가 답답한 날 상담 전에 적어둘 질문",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Ivan S",
+      "creatorUrl": "https://www.pexels.com/@ivan-s",
+      "videoUrl": "https://www.pexels.com/video/woman-getting-a-face-massage-5659235/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
