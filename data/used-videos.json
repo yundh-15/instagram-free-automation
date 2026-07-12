@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-12T06:42:36.404Z",
+  "updatedAt": "2026-07-12T11:18:59.951Z",
   "used": [
     {
       "source": "Pexels",
@@ -1416,6 +1416,18 @@
       "creator": "Anna Shvets",
       "creatorUrl": "https://www.pexels.com/@shvetsa",
       "videoUrl": "https://www.pexels.com/video/hands-hand-women-dry-4772529/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4325508",
+      "usedAt": "2026-07-12T11:18:59.950Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/a-woman-doing-yoga-on-a-mat-4325508/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
