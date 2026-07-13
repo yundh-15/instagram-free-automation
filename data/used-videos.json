@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-13T00:13:47.367Z",
+  "updatedAt": "2026-07-13T12:37:50.692Z",
   "used": [
     {
       "source": "Pexels",
@@ -1440,6 +1440,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/a-client-getting-a-back-massage-9335880/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5429699",
+      "usedAt": "2026-07-13T12:37:50.691Z",
+      "category": "posture",
+      "topic": "라운드숄더가 고민일 때 체형관리 체크포인트",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Werner Pfennig",
+      "creatorUrl": "https://www.pexels.com/@werner-pfennig",
+      "videoUrl": "https://www.pexels.com/video/a-man-doing-a-handstand-5429699/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
