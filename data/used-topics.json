@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-12T11:18:43.671Z",
+  "updatedAt": "2026-07-13T00:13:31.827Z",
   "used": [
     {
       "category": "posture",
@@ -651,6 +651,11 @@
       "category": "posture",
       "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
       "usedAt": "2026-07-12T11:18:43.671Z"
+    },
+    {
+      "category": "massage",
+      "topic": "마사지 압 조절을 요청할 때 알아두면 좋은 기준",
+      "usedAt": "2026-07-13T00:13:31.827Z"
     }
   ]
 }
