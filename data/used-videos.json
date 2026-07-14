@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-13T12:37:50.692Z",
+  "updatedAt": "2026-07-14T00:11:22.800Z",
   "used": [
     {
       "source": "Pexels",
@@ -1452,6 +1452,18 @@
       "creator": "Werner Pfennig",
       "creatorUrl": "https://www.pexels.com/@werner-pfennig",
       "videoUrl": "https://www.pexels.com/video/a-man-doing-a-handstand-5429699/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8313498",
+      "usedAt": "2026-07-14T00:11:22.799Z",
+      "category": "massage",
+      "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "RDNE Stock project",
+      "creatorUrl": "https://www.pexels.com/@rdne",
+      "videoUrl": "https://www.pexels.com/video/a-woman-receiving-cupping-therapy-8313498/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
