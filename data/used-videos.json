@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-14T06:20:26.166Z",
+  "updatedAt": "2026-07-14T11:39:22.089Z",
   "used": [
     {
       "source": "Pexels",
@@ -1476,6 +1476,18 @@
       "creator": "Mikhail Nilov",
       "creatorUrl": "https://www.pexels.com/@mikhail-nilov",
       "videoUrl": "https://www.pexels.com/video/woman-using-under-eye-mask-while-browsing-on-laptop-6612980/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6014112",
+      "usedAt": "2026-07-14T11:39:22.088Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Anastasia  Shuraeva",
+      "creatorUrl": "https://www.pexels.com/@anastasia-shuraeva",
+      "videoUrl": "https://www.pexels.com/video/woman-standing-closed-eyes-6014112/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
