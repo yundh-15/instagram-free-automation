@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-14T00:11:22.800Z",
+  "updatedAt": "2026-07-14T06:20:26.166Z",
   "used": [
     {
       "source": "Pexels",
@@ -1464,6 +1464,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-woman-receiving-cupping-therapy-8313498/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6612980",
+      "usedAt": "2026-07-14T06:20:26.165Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Mikhail Nilov",
+      "creatorUrl": "https://www.pexels.com/@mikhail-nilov",
+      "videoUrl": "https://www.pexels.com/video/woman-using-under-eye-mask-while-browsing-on-laptop-6612980/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
