@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-16T03:28:10.796Z",
+  "updatedAt": "2026-07-16T06:27:09.501Z",
   "used": [
     {
       "category": "posture",
@@ -696,6 +696,11 @@
       "category": "massage",
       "topic": "숙면을 돕는 저녁 마사지 체크리스트",
       "usedAt": "2026-07-16T03:28:10.795Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "usedAt": "2026-07-16T06:27:09.501Z"
     }
   ]
 }

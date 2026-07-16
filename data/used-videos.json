@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-15T11:43:00.532Z",
+  "updatedAt": "2026-07-16T06:27:20.892Z",
   "used": [
     {
       "source": "Pexels",
@@ -1524,6 +1524,18 @@
       "creator": "Polina ⠀",
       "creatorUrl": "https://www.pexels.com/@polina-kovaleva",
       "videoUrl": "https://www.pexels.com/video/young-woman-practicing-yoga-at-home-6019954/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "30978195",
+      "usedAt": "2026-07-16T06:27:20.891Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Luisa Steffens",
+      "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
+      "videoUrl": "https://www.pexels.com/video/professional-facial-treatment-in-modern-clinic-30978195/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
