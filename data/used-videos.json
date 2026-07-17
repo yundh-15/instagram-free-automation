@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-16T11:48:20.394Z",
+  "updatedAt": "2026-07-17T00:14:51.178Z",
   "used": [
     {
       "source": "Pexels",
@@ -1548,6 +1548,18 @@
       "creator": "Michelle Leman",
       "creatorUrl": "https://www.pexels.com/@michelle-leman",
       "videoUrl": "https://www.pexels.com/video/a-woman-stretching-at-the-balcony-6799021/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6186721",
+      "usedAt": "2026-07-17T00:14:51.177Z",
+      "category": "massage",
+      "topic": "손목과 팔이 자주 피로할 때 관리 전 확인할 점",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Tima Miroshnichenko",
+      "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "videoUrl": "https://www.pexels.com/video/man-having-a-massage-6186721/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
