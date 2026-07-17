@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-17T06:24:33.447Z",
+  "updatedAt": "2026-07-17T11:35:01.260Z",
   "used": [
     {
       "source": "Pexels",
@@ -8581,6 +8581,66 @@
       "photoUrl": "https://www.pexels.com/photo/relaxing-spa-treatment-with-cucumber-mask-37229316/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Asian wellness spa person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6454054",
+      "usedAt": "2026-07-17T11:35:01.250Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "photographer": "Marta Wave",
+      "photographerUrl": "https://www.pexels.com/@marta-wave",
+      "photoUrl": "https://www.pexels.com/photo/crop-woman-stretching-raised-leg-during-workout-6454054/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "8853906",
+      "usedAt": "2026-07-17T11:35:01.250Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "photographer": "Los Muertos Crew",
+      "photographerUrl": "https://www.pexels.com/@cristian-rojas",
+      "photoUrl": "https://www.pexels.com/photo/man-in-white-tank-top-rehearsing-ballet-8853906/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "4327140",
+      "usedAt": "2026-07-17T11:35:01.250Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/topless-man-in-black-pants-standing-on-brown-wooden-floor-4327140/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "4662435",
+      "usedAt": "2026-07-17T11:35:01.250Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "photographer": "Elina Fairytale",
+      "photographerUrl": "https://www.pexels.com/@elly-fairytale",
+      "photoUrl": "https://www.pexels.com/photo/topless-man-doing-stretching-4662435/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6221471",
+      "usedAt": "2026-07-17T11:35:01.250Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/man-with-naked-torso-dancing-near-concrete-wall-6221471/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
     }
   ]
 }
