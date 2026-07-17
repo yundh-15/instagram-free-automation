@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-17T00:14:51.178Z",
+  "updatedAt": "2026-07-17T06:24:55.176Z",
   "used": [
     {
       "source": "Pexels",
@@ -1560,6 +1560,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/man-having-a-massage-6186721/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8075158",
+      "usedAt": "2026-07-17T06:24:55.175Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "MART  PRODUCTION",
+      "creatorUrl": "https://www.pexels.com/@mart-production",
+      "videoUrl": "https://www.pexels.com/video/woman-putting-mask-on-her-face-8075158/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
