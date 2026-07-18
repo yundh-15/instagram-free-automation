@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-18T06:13:10.191Z",
+  "updatedAt": "2026-07-18T11:13:04.788Z",
   "used": [
     {
       "source": "Pexels",
@@ -1608,6 +1608,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/woman-putting-skin-care-9335937/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7505760",
+      "usedAt": "2026-07-18T11:13:04.787Z",
+      "category": "posture",
+      "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Artem Podrez",
+      "creatorUrl": "https://www.pexels.com/@artempodrez",
+      "videoUrl": "https://www.pexels.com/video/woman-waking-up-on-bed-7505760/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
