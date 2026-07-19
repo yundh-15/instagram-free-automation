@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-19T00:12:53.951Z",
+  "updatedAt": "2026-07-19T06:39:28.895Z",
   "used": [
     {
       "source": "Pexels",
@@ -1632,6 +1632,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/woman-having-a-massage-on-back-6187075/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "19709189",
+      "usedAt": "2026-07-19T06:39:28.894Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Alícia Domènech",
+      "creatorUrl": "https://www.pexels.com/@alicia-domenech-706099276",
+      "videoUrl": "https://www.pexels.com/video/mask-magnetic-tissue-19709189/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
