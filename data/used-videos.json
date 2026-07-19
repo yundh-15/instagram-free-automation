@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-19T06:39:28.895Z",
+  "updatedAt": "2026-07-19T11:16:58.001Z",
   "used": [
     {
       "source": "Pexels",
@@ -1644,6 +1644,18 @@
       "creator": "Alícia Domènech",
       "creatorUrl": "https://www.pexels.com/@alicia-domenech-706099276",
       "videoUrl": "https://www.pexels.com/video/mask-magnetic-tissue-19709189/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8477471",
+      "usedAt": "2026-07-19T11:16:57.996Z",
+      "category": "posture",
+      "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Sasha  Kim",
+      "creatorUrl": "https://www.pexels.com/@sasha-kim",
+      "videoUrl": "https://www.pexels.com/video/a-close-up-of-a-woman-with-closed-eyes-8477471/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
