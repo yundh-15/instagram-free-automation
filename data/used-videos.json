@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-18T11:13:04.788Z",
+  "updatedAt": "2026-07-19T00:12:53.951Z",
   "used": [
     {
       "source": "Pexels",
@@ -1620,6 +1620,18 @@
       "creator": "Artem Podrez",
       "creatorUrl": "https://www.pexels.com/@artempodrez",
       "videoUrl": "https://www.pexels.com/video/woman-waking-up-on-bed-7505760/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6187075",
+      "usedAt": "2026-07-19T00:12:53.950Z",
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Tima Miroshnichenko",
+      "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "videoUrl": "https://www.pexels.com/video/woman-having-a-massage-on-back-6187075/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

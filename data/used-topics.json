@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-18T11:12:49.076Z",
+  "updatedAt": "2026-07-19T00:12:40.381Z",
   "used": [
     {
       "category": "posture",
@@ -736,6 +736,11 @@
       "category": "posture",
       "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
       "usedAt": "2026-07-18T11:12:49.076Z"
+    },
+    {
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "usedAt": "2026-07-19T00:12:40.381Z"
     }
   ]
 }
