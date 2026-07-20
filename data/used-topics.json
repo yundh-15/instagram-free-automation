@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-19T11:16:45.921Z",
+  "updatedAt": "2026-07-20T00:15:41.205Z",
   "used": [
     {
       "category": "posture",
@@ -751,6 +751,11 @@
       "category": "posture",
       "topic": "체형관리 선택 전 무리하지 않을 기준 정하기",
       "usedAt": "2026-07-19T11:16:45.921Z"
+    },
+    {
+      "category": "massage",
+      "topic": "허리가 답답한 날 상담 전에 적어둘 질문",
+      "usedAt": "2026-07-20T00:15:41.205Z"
     }
   ]
 }

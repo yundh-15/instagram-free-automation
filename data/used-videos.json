@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-19T11:16:58.001Z",
+  "updatedAt": "2026-07-20T00:15:54.815Z",
   "used": [
     {
       "source": "Pexels",
@@ -1656,6 +1656,18 @@
       "creator": "Sasha  Kim",
       "creatorUrl": "https://www.pexels.com/@sasha-kim",
       "videoUrl": "https://www.pexels.com/video/a-close-up-of-a-woman-with-closed-eyes-8477471/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6446147",
+      "usedAt": "2026-07-20T00:15:54.814Z",
+      "category": "massage",
+      "topic": "허리가 답답한 날 상담 전에 적어둘 질문",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Pavel Danilyuk",
+      "creatorUrl": "https://www.pexels.com/@pavel-danilyuk",
+      "videoUrl": "https://www.pexels.com/video/a-woman-relaxing-with-towel-on-her-head-6446147/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
