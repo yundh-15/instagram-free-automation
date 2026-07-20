@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-20T06:56:42.133Z",
+  "updatedAt": "2026-07-20T12:23:36.117Z",
   "used": [
     {
       "source": "Pexels",
@@ -1680,6 +1680,18 @@
       "creator": "KATRIN  BOLOVTSOVA",
       "creatorUrl": "https://www.pexels.com/@ekaterina-bolovtsova",
       "videoUrl": "https://www.pexels.com/video/woman-applying-facial-cream-4665156/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "10628915",
+      "usedAt": "2026-07-20T12:23:36.116Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/ballet-dancer-during-ballet-class-10628915/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

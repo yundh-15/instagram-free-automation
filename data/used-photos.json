@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-20T06:56:29.196Z",
+  "updatedAt": "2026-07-20T12:23:22.544Z",
   "used": [
     {
       "source": "Pexels",
@@ -9121,6 +9121,66 @@
       "photoUrl": "https://www.pexels.com/photo/a-person-applying-facial-mask-on-a-womans-face-6663365/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Asian wellness spa person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "8062934",
+      "usedAt": "2026-07-20T12:23:22.540Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Thirdman",
+      "photographerUrl": "https://www.pexels.com/@thirdman",
+      "photoUrl": "https://www.pexels.com/photo/woman-in-a-beige-turtleneck-posing-with-her-hands-above-her-head-8062934/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "8416411",
+      "usedAt": "2026-07-20T12:23:22.540Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "SHVETS production",
+      "photographerUrl": "https://www.pexels.com/@shvets-production",
+      "photoUrl": "https://www.pexels.com/photo/female-looking-at-the-back-8416411/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "32466303",
+      "usedAt": "2026-07-20T12:23:22.540Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "YI REN",
+      "photographerUrl": "https://www.pexels.com/@yi-ren-57040649",
+      "photoUrl": "https://www.pexels.com/photo/artistic-portrait-of-a-woman-in-black-dress-32466303/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "11565630",
+      "usedAt": "2026-07-20T12:23:22.540Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Rada Aslanova",
+      "photographerUrl": "https://www.pexels.com/@rada-aslanova-150604297",
+      "photoUrl": "https://www.pexels.com/photo/young-ballerina-sitting-on-ground-with-straightened-back-hugging-her-knees-11565630/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6958058",
+      "usedAt": "2026-07-20T12:23:22.540Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Thirdman",
+      "photographerUrl": "https://www.pexels.com/@thirdman",
+      "photoUrl": "https://www.pexels.com/photo/woman-in-black-crop-top-and-leggings-stretching-on-yoga-mat-6958058/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Korean East Asian person calm stretching posture wellness studio soft light"
     }
   ]
 }
