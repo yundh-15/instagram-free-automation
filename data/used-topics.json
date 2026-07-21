@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-21T01:12:08.731Z",
+  "updatedAt": "2026-07-21T06:37:18.380Z",
   "used": [
     {
       "category": "posture",
@@ -771,6 +771,11 @@
       "category": "massage",
       "topic": "마사지 압 조절을 요청할 때 알아두면 좋은 기준",
       "usedAt": "2026-07-21T01:12:08.731Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "usedAt": "2026-07-21T06:37:18.380Z"
     }
   ]
 }

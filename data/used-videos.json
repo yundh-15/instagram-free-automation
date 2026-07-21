@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-21T01:12:19.756Z",
+  "updatedAt": "2026-07-21T06:37:38.961Z",
   "used": [
     {
       "source": "Pexels",
@@ -1704,6 +1704,18 @@
       "creator": "23  Audiovisual",
       "creatorUrl": "https://www.pexels.com/@23audiovisual",
       "videoUrl": "https://www.pexels.com/video/masaje-en-hombros-de-mujer-17593940/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "30978315",
+      "usedAt": "2026-07-21T06:37:38.960Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Luisa Steffens",
+      "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
+      "videoUrl": "https://www.pexels.com/video/facial-treatment-with-advanced-laser-device-30978315/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
