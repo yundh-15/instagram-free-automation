@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-22T06:38:58.826Z",
+  "updatedAt": "2026-07-22T13:40:30.663Z",
   "used": [
     {
       "source": "Pexels",
@@ -1752,6 +1752,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/a-woman-relaxing-by-having-her-face-massaged-9335797/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7590817",
+      "usedAt": "2026-07-22T13:40:30.662Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Miriam Alonso",
+      "creatorUrl": "https://www.pexels.com/@miriam-alonso",
+      "videoUrl": "https://www.pexels.com/video/woman-doing-yoga-in-the-kitchen-7590817/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

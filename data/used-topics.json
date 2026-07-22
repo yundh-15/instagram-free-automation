@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-22T06:38:44.981Z",
+  "updatedAt": "2026-07-22T13:40:13.268Z",
   "used": [
     {
       "category": "posture",
@@ -791,6 +791,11 @@
       "category": "skincare",
       "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
       "usedAt": "2026-07-22T06:38:44.981Z"
+    },
+    {
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "usedAt": "2026-07-22T13:40:13.268Z"
     }
   ]
 }
