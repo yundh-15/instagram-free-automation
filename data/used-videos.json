@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-22T13:40:30.663Z",
+  "updatedAt": "2026-07-23T06:37:19.257Z",
   "used": [
     {
       "source": "Pexels",
@@ -1764,6 +1764,18 @@
       "creator": "Miriam Alonso",
       "creatorUrl": "https://www.pexels.com/@miriam-alonso",
       "videoUrl": "https://www.pexels.com/video/woman-doing-yoga-in-the-kitchen-7590817/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8183544",
+      "usedAt": "2026-07-23T06:37:19.256Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "RDNE Stock project",
+      "creatorUrl": "https://www.pexels.com/@rdne",
+      "videoUrl": "https://www.pexels.com/video/a-woman-using-jade-roller-8183544/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
