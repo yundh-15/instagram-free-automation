@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-23T06:37:19.257Z",
+  "updatedAt": "2026-07-23T11:57:25.800Z",
   "used": [
     {
       "source": "Pexels",
@@ -1776,6 +1776,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-woman-using-jade-roller-8183544/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4535133",
+      "usedAt": "2026-07-23T11:57:25.799Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Vlada Karpovich",
+      "creatorUrl": "https://www.pexels.com/@vlada-karpovich",
+      "videoUrl": "https://www.pexels.com/video/woman-doing-yoga-4535133/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
