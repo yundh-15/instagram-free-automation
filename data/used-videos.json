@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-24T00:14:35.950Z",
+  "updatedAt": "2026-07-24T06:35:24.980Z",
   "used": [
     {
       "source": "Pexels",
@@ -1800,6 +1800,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/person-massaging-the-face-of-a-woman-9335800/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5937425",
+      "usedAt": "2026-07-24T06:35:24.979Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Sora Shimazaki",
+      "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
+      "videoUrl": "https://www.pexels.com/video/woman-using-cosmetics-5937425/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
