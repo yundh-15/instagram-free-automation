@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-25T01:13:19.046Z",
+  "updatedAt": "2026-07-25T06:25:52.095Z",
   "used": [
     {
       "source": "Pexels",
@@ -9961,6 +9961,66 @@
       "photoUrl": "https://www.pexels.com/photo/a-man-massaging-a-person-6127264/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "6560314",
+      "usedAt": "2026-07-25T06:25:52.090Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "photographer": "Anna Tarazevich",
+      "photographerUrl": "https://www.pexels.com/@anntarazevich",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-with-towel-on-head-applying-facial-cream-6560314/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6690251",
+      "usedAt": "2026-07-25T06:25:52.090Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "photographer": "Tara Winstead",
+      "photographerUrl": "https://www.pexels.com/@tara-winstead",
+      "photoUrl": "https://www.pexels.com/photo/moisturizing-cream-on-a-container-6690251/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6732398",
+      "usedAt": "2026-07-25T06:25:52.090Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/hand-putting-mud-on-the-woman-s-face-6732398/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "37229300",
+      "usedAt": "2026-07-25T06:25:52.090Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "photographer": "DΛVΞ GΛRCIΛ",
+      "photographerUrl": "https://www.pexels.com/@davegarcia",
+      "photoUrl": "https://www.pexels.com/photo/relaxing-spa-facial-treatment-moment-37229300/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "37229293",
+      "usedAt": "2026-07-25T06:25:52.090Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "photographer": "DΛVΞ GΛRCIΛ",
+      "photographerUrl": "https://www.pexels.com/@davegarcia",
+      "photoUrl": "https://www.pexels.com/photo/relaxing-spa-facial-treatment-session-37229293/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }
