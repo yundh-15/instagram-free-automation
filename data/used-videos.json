@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-24T06:35:24.980Z",
+  "updatedAt": "2026-07-25T01:13:31.143Z",
   "used": [
     {
       "source": "Pexels",
@@ -1812,6 +1812,18 @@
       "creator": "Sora Shimazaki",
       "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
       "videoUrl": "https://www.pexels.com/video/woman-using-cosmetics-5937425/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7589773",
+      "usedAt": "2026-07-25T01:13:31.142Z",
+      "category": "massage",
+      "topic": "손목과 팔이 자주 피로할 때 관리 전 확인할 점",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Miriam Alonso",
+      "creatorUrl": "https://www.pexels.com/@miriam-alonso",
+      "videoUrl": "https://www.pexels.com/video/a-woman-massaging-a-man-on-the-bed-7589773/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
