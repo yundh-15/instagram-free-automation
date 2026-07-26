@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-26T01:01:56.554Z",
+  "updatedAt": "2026-07-26T06:44:23.962Z",
   "used": [
     {
       "source": "Pexels",
@@ -10141,6 +10141,66 @@
       "photoUrl": "https://www.pexels.com/photo/woman-lying-on-a-massage-table-10976271/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "5659019",
+      "usedAt": "2026-07-26T06:44:23.956Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Ivan S",
+      "photographerUrl": "https://www.pexels.com/@ivan-s",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-eyes-closed-having-a-head-massage-5659019/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "5927937",
+      "usedAt": "2026-07-26T06:44:23.956Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Polina ⠀",
+      "photographerUrl": "https://www.pexels.com/@polina-kovaleva",
+      "photoUrl": "https://www.pexels.com/photo/close-up-shot-of-a-woman-using-a-face-roller-5927937/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "14526303",
+      "usedAt": "2026-07-26T06:44:23.956Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Pexels User",
+      "photographerUrl": "https://www.pexels.com/@pexels-user-373678481",
+      "photoUrl": "https://www.pexels.com/photo/woman-lying-down-for-treatment-14526303/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "9898720",
+      "usedAt": "2026-07-26T06:44:23.956Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Ekaterina Mitkina",
+      "photographerUrl": "https://www.pexels.com/@ekaterinamitkina",
+      "photoUrl": "https://www.pexels.com/photo/close-up-view-of-woman-with-cream-on-face-holding-leaves-9898720/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "8015871",
+      "usedAt": "2026-07-26T06:44:23.956Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Cup of  Couple",
+      "photographerUrl": "https://www.pexels.com/@cup-of-couple",
+      "photoUrl": "https://www.pexels.com/photo/skin-care-tools-set-photo-8015871/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }
