@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-27T00:16:18.622Z",
+  "updatedAt": "2026-07-27T07:42:02.056Z",
   "used": [
     {
       "category": "posture",
@@ -861,6 +861,11 @@
       "category": "massage",
       "topic": "주말 회복을 위한 가벼운 바디케어 준비",
       "usedAt": "2026-07-27T00:16:18.622Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "usedAt": "2026-07-27T07:42:02.056Z"
     }
   ]
 }
