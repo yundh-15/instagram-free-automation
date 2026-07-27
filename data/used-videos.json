@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-26T11:25:52.475Z",
+  "updatedAt": "2026-07-27T00:16:31.910Z",
   "used": [
     {
       "source": "Pexels",
@@ -1884,6 +1884,18 @@
       "creator": "Yaroslav Shuraev",
       "creatorUrl": "https://www.pexels.com/@yaroslav-shuraev",
       "videoUrl": "https://www.pexels.com/video/5979946/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6187890",
+      "usedAt": "2026-07-27T00:16:31.909Z",
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Tima Miroshnichenko",
+      "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "videoUrl": "https://www.pexels.com/video/a-masseuse-stretching-a-woman-6187890/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
