@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-28T01:08:13.600Z",
+  "updatedAt": "2026-07-28T06:35:32.062Z",
   "used": [
     {
       "source": "Pexels",
@@ -1932,6 +1932,18 @@
       "creator": "cottonbro studio",
       "creatorUrl": "https://www.pexels.com/@cottonbro",
       "videoUrl": "https://www.pexels.com/video/man-hands-relaxation-luxury-3998342/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6193386",
+      "usedAt": "2026-07-28T06:35:32.061Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Thirdman",
+      "creatorUrl": "https://www.pexels.com/@thirdman",
+      "videoUrl": "https://www.pexels.com/video/female-patient-being-treated-with-acupuncture-6193386/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
