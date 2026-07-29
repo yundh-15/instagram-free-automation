@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-28T12:04:54.824Z",
+  "updatedAt": "2026-07-29T06:40:55.941Z",
   "used": [
     {
       "source": "Pexels",
@@ -1956,6 +1956,18 @@
       "creator": "Gustavo Fring",
       "creatorUrl": "https://www.pexels.com/@gustavo-fring",
       "videoUrl": "https://www.pexels.com/video/woman-doing-a-headstand-7424167/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8343788",
+      "usedAt": "2026-07-29T06:40:55.939Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Mikhail Nilov",
+      "creatorUrl": "https://www.pexels.com/@mikhail-nilov",
+      "videoUrl": "https://www.pexels.com/video/a-woman-putting-facial-mask-on-her-face-8343788/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
