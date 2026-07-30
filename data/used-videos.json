@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-29T06:40:55.941Z",
+  "updatedAt": "2026-07-30T00:15:49.854Z",
   "used": [
     {
       "source": "Pexels",
@@ -1968,6 +1968,18 @@
       "creator": "Mikhail Nilov",
       "creatorUrl": "https://www.pexels.com/@mikhail-nilov",
       "videoUrl": "https://www.pexels.com/video/a-woman-putting-facial-mask-on-her-face-8343788/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4608533",
+      "usedAt": "2026-07-30T00:15:49.853Z",
+      "category": "massage",
+      "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "AI25.Studio  Studio",
+      "creatorUrl": "https://www.pexels.com/@ai25studioai",
+      "videoUrl": "https://www.pexels.com/video/a-healthcare-professional-doing-massage-on-the-arm-of-a-client-4608533/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
