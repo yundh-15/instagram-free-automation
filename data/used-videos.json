@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-30T00:15:49.854Z",
+  "updatedAt": "2026-07-30T06:36:07.619Z",
   "used": [
     {
       "source": "Pexels",
@@ -1980,6 +1980,18 @@
       "creator": "AI25.Studio  Studio",
       "creatorUrl": "https://www.pexels.com/@ai25studioai",
       "videoUrl": "https://www.pexels.com/video/a-healthcare-professional-doing-massage-on-the-arm-of-a-client-4608533/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "15731126",
+      "usedAt": "2026-07-30T06:36:07.613Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "ash  iraq",
+      "creatorUrl": "https://www.pexels.com/@superash93",
+      "videoUrl": "https://www.pexels.com/video/a-doctor-applying-botox-injections-on-a-patient-15731126/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
