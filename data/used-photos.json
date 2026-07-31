@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-31T06:51:23.528Z",
+  "updatedAt": "2026-07-31T14:33:59.692Z",
   "used": [
     {
       "source": "Pexels",
@@ -11101,6 +11101,66 @@
       "photoUrl": "https://www.pexels.com/photo/a-woman-with-her-eyes-closed-6730058/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6417972",
+      "usedAt": "2026-07-31T14:33:59.686Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "photographer": "Pavel Danilyuk",
+      "photographerUrl": "https://www.pexels.com/@pavel-danilyuk",
+      "photoUrl": "https://www.pexels.com/photo/person-woman-relaxing-smiling-6417972/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6303449",
+      "usedAt": "2026-07-31T14:33:59.686Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "photographer": "Klaus Nielsen",
+      "photographerUrl": "https://www.pexels.com/@klaus-nielsen",
+      "photoUrl": "https://www.pexels.com/photo/flexible-black-woman-performing-stretching-exercise-6303449/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "11775735",
+      "usedAt": "2026-07-31T14:33:59.686Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "photographer": "ph.galtri",
+      "photographerUrl": "https://www.pexels.com/@ph-galtri-122917742",
+      "photoUrl": "https://www.pexels.com/photo/woman-doing-a-back-bend-exercise-11775735/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "11897289",
+      "usedAt": "2026-07-31T14:33:59.686Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "photographer": "Tatiana Sozutova",
+      "photographerUrl": "https://www.pexels.com/@sozutova",
+      "photoUrl": "https://www.pexels.com/photo/photo-of-a-woman-doing-yoga-on-a-black-yoga-mat-11897289/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "5742294",
+      "usedAt": "2026-07-31T14:33:59.686Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/woman-in-white-tank-top-lying-on-brown-wooden-table-5742294/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
     }
   ]
 }
