@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-30T11:58:43.088Z",
+  "updatedAt": "2026-07-31T06:51:36.394Z",
   "used": [
     {
       "source": "Pexels",
@@ -2004,6 +2004,18 @@
       "creator": "Miriam Alonso",
       "creatorUrl": "https://www.pexels.com/@miriam-alonso",
       "videoUrl": "https://www.pexels.com/video/a-person-helping-a-woman-do-a-headstand-by-the-wall-7590468/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "30365548",
+      "usedAt": "2026-07-31T06:51:36.393Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Luisa Steffens",
+      "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
+      "videoUrl": "https://www.pexels.com/video/professional-facial-treatment-in-spa-setting-30365548/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
