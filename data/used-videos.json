@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-31T06:51:36.394Z",
+  "updatedAt": "2026-08-01T00:15:27.481Z",
   "used": [
     {
       "source": "Pexels",
@@ -2016,6 +2016,18 @@
       "creator": "Luisa Steffens",
       "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
       "videoUrl": "https://www.pexels.com/video/professional-facial-treatment-in-spa-setting-30365548/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8313524",
+      "usedAt": "2026-08-01T00:15:27.480Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "RDNE Stock project",
+      "creatorUrl": "https://www.pexels.com/@rdne",
+      "videoUrl": "https://www.pexels.com/video/needles-sticking-on-a-person-s-back-8313524/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
