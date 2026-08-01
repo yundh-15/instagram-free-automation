@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-01T00:15:17.020Z",
+  "updatedAt": "2026-08-01T06:37:27.591Z",
   "used": [
     {
       "source": "Pexels",
@@ -11221,6 +11221,66 @@
       "photoUrl": "https://www.pexels.com/photo/a-woman-having-a-massage-6628586/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "38167589",
+      "usedAt": "2026-08-01T06:37:27.586Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "photographer": "Fernando Capetillo",
+      "photographerUrl": "https://www.pexels.com/@fernando-capetillo-94107723",
+      "photoUrl": "https://www.pexels.com/photo/professional-male-grooming-in-a-barbershop-38167589/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "35029555",
+      "usedAt": "2026-08-01T06:37:27.586Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "photographer": "Kevin Barillas",
+      "photographerUrl": "https://www.pexels.com/@kevin-barillas-2157892848",
+      "photoUrl": "https://www.pexels.com/photo/soothing-facial-spa-treatment-with-steam-35029555/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "5927732",
+      "usedAt": "2026-08-01T06:37:27.586Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "photographer": "Polina ⠀",
+      "photographerUrl": "https://www.pexels.com/@polina-kovaleva",
+      "photoUrl": "https://www.pexels.com/photo/woman-using-a-white-jade-facial-roller-5927732/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "33146083",
+      "usedAt": "2026-08-01T06:37:27.586Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "photographer": "Grinevich Frames",
+      "photographerUrl": "https://www.pexels.com/@grinevich-frames-2149892958",
+      "photoUrl": "https://www.pexels.com/photo/peaceful-relaxation-with-chamomile-flowers-on-skin-33146083/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "33637539",
+      "usedAt": "2026-08-01T06:37:27.586Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "photographer": "Louix Hunter",
+      "photographerUrl": "https://www.pexels.com/@louix-hunter-2155276294",
+      "photoUrl": "https://www.pexels.com/photo/professional-facial-treatment-in-spa-setting-33637539/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }
