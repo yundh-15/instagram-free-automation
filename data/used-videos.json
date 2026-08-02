@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-02T06:40:42.822Z",
+  "updatedAt": "2026-08-02T11:23:27.531Z",
   "used": [
     {
       "source": "Pexels",
@@ -2076,6 +2076,18 @@
       "creator": "Angela Roma",
       "creatorUrl": "https://www.pexels.com/@angela-roma",
       "videoUrl": "https://www.pexels.com/video/woman-with-facial-mask-on-her-face-7477490/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8347430",
+      "usedAt": "2026-08-02T11:23:27.529Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "ROMAN ODINTSOV",
+      "creatorUrl": "https://www.pexels.com/@roman-odintsov",
+      "videoUrl": "https://www.pexels.com/video/video-of-a-woman-eyes-closed-8347430/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
