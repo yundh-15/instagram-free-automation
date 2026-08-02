@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-02T00:17:28.218Z",
+  "updatedAt": "2026-08-02T06:40:42.822Z",
   "used": [
     {
       "source": "Pexels",
@@ -2064,6 +2064,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/masseuse-giving-face-massage-6187088/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7477490",
+      "usedAt": "2026-08-02T06:40:42.821Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Angela Roma",
+      "creatorUrl": "https://www.pexels.com/@angela-roma",
+      "videoUrl": "https://www.pexels.com/video/woman-with-facial-mask-on-her-face-7477490/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
