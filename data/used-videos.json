@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-01T11:24:43.973Z",
+  "updatedAt": "2026-08-02T00:17:28.218Z",
   "used": [
     {
       "source": "Pexels",
@@ -2052,6 +2052,18 @@
       "creator": "Thirdman",
       "creatorUrl": "https://www.pexels.com/@thirdman",
       "videoUrl": "https://www.pexels.com/video/a-person-hanging-on-aerial-yoga-hammock-6955611/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6187088",
+      "usedAt": "2026-08-02T00:17:28.217Z",
+      "category": "massage",
+      "topic": "손목과 팔이 자주 피로할 때 관리 전 확인할 점",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Tima Miroshnichenko",
+      "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "videoUrl": "https://www.pexels.com/video/masseuse-giving-face-massage-6187088/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
