@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-02T11:23:27.531Z",
+  "updatedAt": "2026-08-03T00:16:46.746Z",
   "used": [
     {
       "source": "Pexels",
@@ -2088,6 +2088,18 @@
       "creator": "ROMAN ODINTSOV",
       "creatorUrl": "https://www.pexels.com/@roman-odintsov",
       "videoUrl": "https://www.pexels.com/video/video-of-a-woman-eyes-closed-8347430/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4608551",
+      "usedAt": "2026-08-03T00:16:46.745Z",
+      "category": "massage",
+      "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "AI25.Studio  Studio",
+      "creatorUrl": "https://www.pexels.com/@ai25studioai",
+      "videoUrl": "https://www.pexels.com/video/woman-massaging-the-foot-of-her-client-4608551/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
