@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-03T13:15:35.829Z",
+  "updatedAt": "2026-08-04T03:29:08.573Z",
   "used": [
     {
       "source": "Pexels",
@@ -11701,6 +11701,30 @@
       "photoUrl": "https://www.pexels.com/photo/woman-wearing-yellow-bodysuit-9154931/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "9335971",
+      "usedAt": "2026-08-04T03:29:08.567Z",
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "photographer": "olia danilevich",
+      "photographerUrl": "https://www.pexels.com/@olia-danilevich",
+      "photoUrl": "https://www.pexels.com/photo/a-masseuse-massaging-a-client-9335971/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "36837604",
+      "usedAt": "2026-08-04T03:29:08.567Z",
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "photographer": "aiseleer",
+      "photographerUrl": "https://www.pexels.com/@aiseleer-566178897",
+      "photoUrl": "https://www.pexels.com/photo/cozy-spa-room-interior-design-with-soft-lighting-36837604/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }
