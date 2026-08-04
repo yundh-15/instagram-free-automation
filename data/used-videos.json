@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-03T13:15:52.680Z",
+  "updatedAt": "2026-08-04T06:36:25.863Z",
   "used": [
     {
       "source": "Pexels",
@@ -2124,6 +2124,18 @@
       "creator": "Gustavo Fring",
       "creatorUrl": "https://www.pexels.com/@gustavo-fring",
       "videoUrl": "https://www.pexels.com/video/a-woman-wearing-beige-sportswear-7424169/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8406618",
+      "usedAt": "2026-08-04T06:36:25.862Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Los Muertos Crew",
+      "creatorUrl": "https://www.pexels.com/@cristian-rojas",
+      "videoUrl": "https://www.pexels.com/video/a-woman-applying-facial-cream-while-looking-at-the-mirror-8406618/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
