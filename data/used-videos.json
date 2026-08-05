@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-05T01:08:51.499Z",
+  "updatedAt": "2026-08-05T06:37:08.972Z",
   "used": [
     {
       "source": "Pexels",
@@ -2160,6 +2160,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/person-lying-on-bed-while-having-a-massage-6186730/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "30978307",
+      "usedAt": "2026-08-05T06:37:08.971Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Luisa Steffens",
+      "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
+      "videoUrl": "https://www.pexels.com/video/professional-laser-facial-treatment-procedure-30978307/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
