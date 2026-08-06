@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-05T12:06:21.131Z",
+  "updatedAt": "2026-08-06T01:08:02.707Z",
   "used": [
     {
       "source": "Pexels",
@@ -11953,6 +11953,42 @@
       "photoUrl": "https://www.pexels.com/photo/woman-in-black-tank-top-and-leggings-stretching-her-foot-5890689/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "27596264",
+      "usedAt": "2026-08-06T01:08:02.700Z",
+      "category": "massage",
+      "topic": "마사지 압 조절을 요청할 때 알아두면 좋은 기준",
+      "photographer": "Nicolle Kreisch",
+      "photographerUrl": "https://www.pexels.com/@nicolle-kreisch-1366888",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-getting-a-massage-on-her-back-27596264/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "3865800",
+      "usedAt": "2026-08-06T01:08:02.700Z",
+      "category": "massage",
+      "topic": "마사지 압 조절을 요청할 때 알아두면 좋은 기준",
+      "photographer": "Elina Fairytale",
+      "photographerUrl": "https://www.pexels.com/@elly-fairytale",
+      "photoUrl": "https://www.pexels.com/photo/woman-in-gray-t-shirt-and-black-pants-massaging-topless-woman-lying-on-bed-3865800/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "13534889",
+      "usedAt": "2026-08-06T01:08:02.700Z",
+      "category": "massage",
+      "topic": "마사지 압 조절을 요청할 때 알아두면 좋은 기준",
+      "photographer": "olga Volkovitskaia",
+      "photographerUrl": "https://www.pexels.com/@olga-volkovitskaia-131638009",
+      "photoUrl": "https://www.pexels.com/photo/person-during-aromatherapy-13534889/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }
