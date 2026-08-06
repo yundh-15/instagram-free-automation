@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-06T01:08:02.707Z",
+  "updatedAt": "2026-08-06T06:40:08.844Z",
   "used": [
     {
       "source": "Pexels",
@@ -11989,6 +11989,66 @@
       "photoUrl": "https://www.pexels.com/photo/person-during-aromatherapy-13534889/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "6560311",
+      "usedAt": "2026-08-06T06:40:08.838Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "Anna Tarazevich",
+      "photographerUrl": "https://www.pexels.com/@anntarazevich",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-applying-facial-mask-6560311/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6724538",
+      "usedAt": "2026-08-06T06:40:08.838Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "RDNE Stock project",
+      "photographerUrl": "https://www.pexels.com/@rdne",
+      "photoUrl": "https://www.pexels.com/photo/a-person-holding-a-white-dropper-bottle-6724538/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "30229021",
+      "usedAt": "2026-08-06T06:40:08.838Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "Ani Coloca",
+      "photographerUrl": "https://www.pexels.com/@ani-coloca-1105433412",
+      "photoUrl": "https://www.pexels.com/photo/minimalist-skincare-product-dropper-on-stone-30229021/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "12008270",
+      "usedAt": "2026-08-06T06:40:08.838Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "Irina Kaminskaya",
+      "photographerUrl": "https://www.pexels.com/@ira-kamish",
+      "photoUrl": "https://www.pexels.com/photo/woman-putting-cream-on-face-12008270/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "4342383",
+      "usedAt": "2026-08-06T06:40:08.838Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "Andrew McMurtrie",
+      "photographerUrl": "https://www.pexels.com/@andrew-mcmurtrie-2303639",
+      "photoUrl": "https://www.pexels.com/photo/person-with-white-facial-face-pack-4342383/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }

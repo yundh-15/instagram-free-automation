@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-06T01:08:23.304Z",
+  "updatedAt": "2026-08-06T06:40:23.652Z",
   "used": [
     {
       "source": "Pexels",
@@ -2196,6 +2196,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/woman-having-basalt-hot-stone-massage-6187091/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4772530",
+      "usedAt": "2026-08-06T06:40:23.651Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Anna Shvets",
+      "creatorUrl": "https://www.pexels.com/@shvetsa",
+      "videoUrl": "https://www.pexels.com/video/woman-hand-clinic-doctor-4772530/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
