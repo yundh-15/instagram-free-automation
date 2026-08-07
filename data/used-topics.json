@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-06T12:08:52.884Z",
+  "updatedAt": "2026-08-07T00:18:17.548Z",
   "used": [
     {
       "category": "posture",
@@ -1021,6 +1021,11 @@
       "category": "posture",
       "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
       "usedAt": "2026-08-06T12:08:52.884Z"
+    },
+    {
+      "category": "massage",
+      "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
+      "usedAt": "2026-08-07T00:18:17.548Z"
     }
   ]
 }
