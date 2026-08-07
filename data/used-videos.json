@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-07T00:18:34.185Z",
+  "updatedAt": "2026-08-07T11:01:43.095Z",
   "used": [
     {
       "source": "Pexels",
@@ -2232,6 +2232,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/oriental-back-massage-6187326/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6019962",
+      "usedAt": "2026-08-07T11:01:43.093Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Polina ⠀",
+      "creatorUrl": "https://www.pexels.com/@polina-kovaleva",
+      "videoUrl": "https://www.pexels.com/video/side-view-of-a-woman-stretching-while-sitting-6019962/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
