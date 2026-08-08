@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-07T11:01:43.095Z",
+  "updatedAt": "2026-08-08T02:10:03.620Z",
   "used": [
     {
       "source": "Pexels",
@@ -2244,6 +2244,18 @@
       "creator": "Polina ⠀",
       "creatorUrl": "https://www.pexels.com/@polina-kovaleva",
       "videoUrl": "https://www.pexels.com/video/side-view-of-a-woman-stretching-while-sitting-6019962/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5659274",
+      "usedAt": "2026-08-08T02:10:03.619Z",
+      "category": "massage",
+      "topic": "오래 앉아 있는 사람을 위한 등 관리 포인트",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Ivan S",
+      "creatorUrl": "https://www.pexels.com/@ivan-s",
+      "videoUrl": "https://www.pexels.com/video/a-woman-getting-a-face-massage-5659274/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
