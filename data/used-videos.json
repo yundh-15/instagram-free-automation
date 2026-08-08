@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-08T02:10:03.620Z",
+  "updatedAt": "2026-08-08T05:06:14.504Z",
   "used": [
     {
       "source": "Pexels",
@@ -2256,6 +2256,18 @@
       "creator": "Ivan S",
       "creatorUrl": "https://www.pexels.com/@ivan-s",
       "videoUrl": "https://www.pexels.com/video/a-woman-getting-a-face-massage-5659274/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6633544",
+      "usedAt": "2026-08-08T05:06:14.503Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Cup of  Couple",
+      "creatorUrl": "https://www.pexels.com/@cup-of-couple",
+      "videoUrl": "https://www.pexels.com/video/a-man-using-beauty-product-while-sitting-on-the-bed-6633544/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
