@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-08T10:42:43.734Z",
+  "updatedAt": "2026-08-09T02:22:05.760Z",
   "used": [
     {
       "source": "Pexels",
@@ -12469,6 +12469,30 @@
       "photoUrl": "https://www.pexels.com/photo/man-model-posing-and-leaning-against-window-topless-20380584/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "9898741",
+      "usedAt": "2026-08-09T02:22:05.753Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "photographer": "Ekaterina Mitkina",
+      "photographerUrl": "https://www.pexels.com/@ekaterinamitkina",
+      "photoUrl": "https://www.pexels.com/photo/close-up-view-of-cosmetic-bottles-in-bowl-and-candles-9898741/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "9335974",
+      "usedAt": "2026-08-09T02:22:05.754Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "photographer": "olia danilevich",
+      "photographerUrl": "https://www.pexels.com/@olia-danilevich",
+      "photoUrl": "https://www.pexels.com/photo/a-masseuse-massaging-a-client-9335974/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }
