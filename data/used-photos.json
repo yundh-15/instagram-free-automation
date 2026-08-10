@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-10T04:11:48.704Z",
+  "updatedAt": "2026-08-10T11:15:43.407Z",
   "used": [
     {
       "source": "Pexels",
@@ -12565,6 +12565,18 @@
       "photoUrl": "https://www.pexels.com/photo/woman-with-white-facial-cream-6663383/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "4325468",
+      "usedAt": "2026-08-10T11:15:43.401Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/topless-man-holding-brown-textile-4325468/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
     }
   ]
 }

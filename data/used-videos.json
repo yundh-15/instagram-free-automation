@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-10T04:12:02.397Z",
+  "updatedAt": "2026-08-10T11:15:59.968Z",
   "used": [
     {
       "source": "Pexels",
@@ -2328,6 +2328,18 @@
       "creator": "Luisa Steffens",
       "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
       "videoUrl": "https://www.pexels.com/video/laser-skin-treatment-procedure-in-beauty-clinic-30978292/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6446274",
+      "usedAt": "2026-08-10T11:15:59.964Z",
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Pavel Danilyuk",
+      "creatorUrl": "https://www.pexels.com/@pavel-danilyuk",
+      "videoUrl": "https://www.pexels.com/video/woman-doing-exercise-6446274/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
