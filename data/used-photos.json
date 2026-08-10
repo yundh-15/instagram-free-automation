@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-09T10:44:29.129Z",
+  "updatedAt": "2026-08-10T04:11:48.704Z",
   "used": [
     {
       "source": "Pexels",
@@ -12553,6 +12553,18 @@
       "photoUrl": "https://www.pexels.com/photo/woman-in-knitted-sweater-posing-with-hands-on-head-11008010/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6663383",
+      "usedAt": "2026-08-10T04:11:48.697Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "photographer": "Arina Krasnikova",
+      "photographerUrl": "https://www.pexels.com/@arina-krasnikova",
+      "photoUrl": "https://www.pexels.com/photo/woman-with-white-facial-cream-6663383/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }

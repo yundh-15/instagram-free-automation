@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-10T02:27:01.262Z",
+  "updatedAt": "2026-08-10T04:11:48.718Z",
   "used": [
     {
       "category": "posture",
@@ -1071,6 +1071,11 @@
       "category": "massage",
       "topic": "손목과 팔이 자주 피로할 때 관리 전 확인할 점",
       "usedAt": "2026-08-10T02:27:01.262Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "usedAt": "2026-08-10T04:11:48.718Z"
     }
   ]
 }

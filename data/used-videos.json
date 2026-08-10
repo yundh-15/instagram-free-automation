@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-10T02:27:14.124Z",
+  "updatedAt": "2026-08-10T04:12:02.397Z",
   "used": [
     {
       "source": "Pexels",
@@ -2316,6 +2316,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-woman-massaging-a-person-s-back-8313312/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "30978292",
+      "usedAt": "2026-08-10T04:12:02.395Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Luisa Steffens",
+      "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
+      "videoUrl": "https://www.pexels.com/video/laser-skin-treatment-procedure-in-beauty-clinic-30978292/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
