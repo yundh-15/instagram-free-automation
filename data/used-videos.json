@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-10T11:15:59.968Z",
+  "updatedAt": "2026-08-11T02:20:36.254Z",
   "used": [
     {
       "source": "Pexels",
@@ -2340,6 +2340,18 @@
       "creator": "Pavel Danilyuk",
       "creatorUrl": "https://www.pexels.com/@pavel-danilyuk",
       "videoUrl": "https://www.pexels.com/video/woman-doing-exercise-6446274/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6629663",
+      "usedAt": "2026-08-11T02:20:36.253Z",
+      "category": "massage",
+      "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "https://kaboompics.com/",
+      "creatorUrl": "https://www.pexels.com/@karola-g",
+      "videoUrl": "https://www.pexels.com/video/person-pouring-candle-wax-6629663/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-10T11:15:43.407Z",
+  "updatedAt": "2026-08-11T02:20:22.727Z",
   "used": [
     {
       "source": "Pexels",
@@ -12577,6 +12577,30 @@
       "photoUrl": "https://www.pexels.com/photo/topless-man-holding-brown-textile-4325468/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "3998001",
+      "usedAt": "2026-08-11T02:20:22.721Z",
+      "category": "massage",
+      "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/topless-man-lying-on-bed-3998001/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "6628473",
+      "usedAt": "2026-08-11T02:20:22.721Z",
+      "category": "massage",
+      "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
+      "photographer": "KoolShooters",
+      "photographerUrl": "https://www.pexels.com/@koolshooters",
+      "photoUrl": "https://www.pexels.com/photo/massage-table-in-the-room-6628473/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }

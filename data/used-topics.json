@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-10T11:15:43.421Z",
+  "updatedAt": "2026-08-11T02:20:22.742Z",
   "used": [
     {
       "category": "posture",
@@ -1081,6 +1081,11 @@
       "category": "posture",
       "topic": "목과 등 자세 상담 전 준비할 체크리스트",
       "usedAt": "2026-08-10T11:15:43.421Z"
+    },
+    {
+      "category": "massage",
+      "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
+      "usedAt": "2026-08-11T02:20:22.742Z"
     }
   ]
 }
