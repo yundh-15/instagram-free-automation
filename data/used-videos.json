@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-11T02:20:36.254Z",
+  "updatedAt": "2026-08-11T05:16:25.773Z",
   "used": [
     {
       "source": "Pexels",
@@ -2352,6 +2352,18 @@
       "creator": "https://kaboompics.com/",
       "creatorUrl": "https://www.pexels.com/@karola-g",
       "videoUrl": "https://www.pexels.com/video/person-pouring-candle-wax-6629663/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7423552",
+      "usedAt": "2026-08-11T05:16:25.772Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Gustavo Fring",
+      "creatorUrl": "https://www.pexels.com/@gustavo-fring",
+      "videoUrl": "https://www.pexels.com/video/a-woman-wearing-medical-gloves-7423552/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

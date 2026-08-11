@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-11T02:20:22.727Z",
+  "updatedAt": "2026-08-11T05:16:12.208Z",
   "used": [
     {
       "source": "Pexels",
@@ -12601,6 +12601,66 @@
       "photoUrl": "https://www.pexels.com/photo/massage-table-in-the-room-6628473/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "31797384",
+      "usedAt": "2026-08-11T05:16:12.204Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Татьяна Рогова",
+      "photographerUrl": "https://www.pexels.com/@2151685010",
+      "photoUrl": "https://www.pexels.com/photo/relaxing-spa-facial-treatment-session-31797384/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "15866050",
+      "usedAt": "2026-08-11T05:16:12.204Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Kerim Eveyik",
+      "photographerUrl": "https://www.pexels.com/@kerimeveyik",
+      "photoUrl": "https://www.pexels.com/photo/woman-at-beautician-15866050/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6560320",
+      "usedAt": "2026-08-11T05:16:12.204Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Anna Tarazevich",
+      "photographerUrl": "https://www.pexels.com/@anntarazevich",
+      "photoUrl": "https://www.pexels.com/photo/a-pouting-woman-with-cream-on-face-6560320/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "4959870",
+      "usedAt": "2026-08-11T05:16:12.204Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "https://kaboompics.com/",
+      "photographerUrl": "https://www.pexels.com/@karola-g",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-in-black-long-sleeve-shirt-4959870/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6963136",
+      "usedAt": "2026-08-11T05:16:12.204Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Cup of  Couple",
+      "photographerUrl": "https://www.pexels.com/@cup-of-couple",
+      "photoUrl": "https://www.pexels.com/photo/face-roller-and-cream-on-marble-6963136/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }
