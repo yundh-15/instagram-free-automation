@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-11T05:16:25.773Z",
+  "updatedAt": "2026-08-11T10:58:51.129Z",
   "used": [
     {
       "source": "Pexels",
@@ -2364,6 +2364,18 @@
       "creator": "Gustavo Fring",
       "creatorUrl": "https://www.pexels.com/@gustavo-fring",
       "videoUrl": "https://www.pexels.com/video/a-woman-wearing-medical-gloves-7423552/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7590458",
+      "usedAt": "2026-08-11T10:58:51.128Z",
+      "category": "posture",
+      "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Miriam Alonso",
+      "creatorUrl": "https://www.pexels.com/@miriam-alonso",
+      "videoUrl": "https://www.pexels.com/video/a-woman-exercising-indoors-7590458/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
