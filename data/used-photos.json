@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-11T10:58:36.922Z",
+  "updatedAt": "2026-08-12T00:02:43.969Z",
   "used": [
     {
       "source": "Pexels",
@@ -12721,6 +12721,30 @@
       "photoUrl": "https://www.pexels.com/photo/a-woman-in-white-long-sleeve-shirt-and-black-panty-6995755/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "19641833",
+      "usedAt": "2026-08-12T00:02:43.963Z",
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "photographer": "Jonathan Borba",
+      "photographerUrl": "https://www.pexels.com/@jonathanborba",
+      "photoUrl": "https://www.pexels.com/photo/woman-relaxing-during-massage-19641833/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "19695972",
+      "usedAt": "2026-08-12T00:02:43.963Z",
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "photographer": "Jonathan Borba",
+      "photographerUrl": "https://www.pexels.com/@jonathanborba",
+      "photoUrl": "https://www.pexels.com/photo/smiling-woman-during-massage-19695972/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }
