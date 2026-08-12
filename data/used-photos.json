@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-12T00:02:43.969Z",
+  "updatedAt": "2026-08-12T04:25:07.150Z",
   "used": [
     {
       "source": "Pexels",
@@ -12745,6 +12745,66 @@
       "photoUrl": "https://www.pexels.com/photo/smiling-woman-during-massage-19695972/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "7019489",
+      "usedAt": "2026-08-12T04:25:07.145Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "Yan Krukau",
+      "photographerUrl": "https://www.pexels.com/@yankrukov",
+      "photoUrl": "https://www.pexels.com/photo/beautiful-woman-using-jade-roller-7019489/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6774985",
+      "usedAt": "2026-08-12T04:25:07.145Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "Michelle Leman",
+      "photographerUrl": "https://www.pexels.com/@michelle-leman",
+      "photoUrl": "https://www.pexels.com/photo/peaceful-woman-with-petals-on-face-6774985/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "3212164",
+      "usedAt": "2026-08-12T04:25:07.145Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "John (Giannis) Tekeridis",
+      "photographerUrl": "https://www.pexels.com/@john-giannis-tekeridis-21837",
+      "photoUrl": "https://www.pexels.com/photo/woman-in-white-towel-3212164/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "12115041",
+      "usedAt": "2026-08-12T04:25:07.145Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "Denys Mikhalevych",
+      "photographerUrl": "https://www.pexels.com/@denys",
+      "photoUrl": "https://www.pexels.com/photo/beautician-removing-clay-cosmetic-mask-from-woman-face-12115041/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6560336",
+      "usedAt": "2026-08-12T04:25:07.145Z",
+      "category": "skincare",
+      "topic": "관리 후 피부 반응을 기록하는 간단한 방법",
+      "photographer": "Anna Tarazevich",
+      "photographerUrl": "https://www.pexels.com/@anntarazevich",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-with-facial-mask-wrapped-in-towel-6560336/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }
