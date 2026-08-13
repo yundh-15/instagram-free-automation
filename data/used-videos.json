@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-13T04:28:10.597Z",
+  "updatedAt": "2026-08-13T11:06:40.249Z",
   "used": [
     {
       "source": "Pexels",
@@ -2436,6 +2436,18 @@
       "creator": "ArtHouse Studio",
       "creatorUrl": "https://www.pexels.com/@arthousestudio",
       "videoUrl": "https://www.pexels.com/video/a-woman-using-a-gua-sha-stone-7663678/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "8477476",
+      "usedAt": "2026-08-13T11:06:40.248Z",
+      "category": "posture",
+      "topic": "라운드숄더가 고민일 때 체형관리 체크포인트",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Sasha  Kim",
+      "creatorUrl": "https://www.pexels.com/@sasha-kim",
+      "videoUrl": "https://www.pexels.com/video/women-wearing-sports-bra-8477476/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
