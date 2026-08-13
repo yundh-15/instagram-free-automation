@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-13T00:01:07.070Z",
+  "updatedAt": "2026-08-13T04:28:10.597Z",
   "used": [
     {
       "source": "Pexels",
@@ -2424,6 +2424,18 @@
       "creator": "Sora Shimazaki",
       "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
       "videoUrl": "https://www.pexels.com/video/woman-putting-skin-care-products-on-her-leg-5937417/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7663678",
+      "usedAt": "2026-08-13T04:28:10.596Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "ArtHouse Studio",
+      "creatorUrl": "https://www.pexels.com/@arthousestudio",
+      "videoUrl": "https://www.pexels.com/video/a-woman-using-a-gua-sha-stone-7663678/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
