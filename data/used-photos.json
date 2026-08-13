@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-12T11:06:26.686Z",
+  "updatedAt": "2026-08-13T00:00:53.288Z",
   "used": [
     {
       "source": "Pexels",
@@ -12865,6 +12865,30 @@
       "photoUrl": "https://www.pexels.com/photo/a-woman-in-black-sexy-clothes-sitting-on-a-black-surface-7570169/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6186774",
+      "usedAt": "2026-08-13T00:00:53.282Z",
+      "category": "massage",
+      "topic": "허리가 답답한 날 상담 전에 적어둘 질문",
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "photoUrl": "https://www.pexels.com/photo/a-masseuse-massaging-a-woman-6186774/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "19695945",
+      "usedAt": "2026-08-13T00:00:53.282Z",
+      "category": "massage",
+      "topic": "허리가 답답한 날 상담 전에 적어둘 질문",
+      "photographer": "Jonathan Borba",
+      "photographerUrl": "https://www.pexels.com/@jonathanborba",
+      "photoUrl": "https://www.pexels.com/photo/a-man-having-a-shoulders-massage-19695945/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }
