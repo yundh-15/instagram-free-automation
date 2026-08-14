@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-14T04:25:13.446Z",
+  "updatedAt": "2026-08-14T11:04:07.303Z",
   "used": [
     {
       "source": "Pexels",
@@ -2472,6 +2472,18 @@
       "creator": "Sora Shimazaki",
       "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
       "videoUrl": "https://www.pexels.com/video/woman-using-skin-care-products-5937890/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7424172",
+      "usedAt": "2026-08-14T11:04:07.301Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Gustavo Fring",
+      "creatorUrl": "https://www.pexels.com/@gustavo-fring",
+      "videoUrl": "https://www.pexels.com/video/a-woman-dancing-in-the-room-7424172/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
