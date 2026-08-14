@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-14T00:01:56.226Z",
+  "updatedAt": "2026-08-14T04:25:13.446Z",
   "used": [
     {
       "source": "Pexels",
@@ -2460,6 +2460,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/woman-relaxation-young-portrait-6763102/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5937890",
+      "usedAt": "2026-08-14T04:25:13.444Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Sora Shimazaki",
+      "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
+      "videoUrl": "https://www.pexels.com/video/woman-using-skin-care-products-5937890/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
