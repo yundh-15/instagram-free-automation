@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-14T11:04:07.303Z",
+  "updatedAt": "2026-08-15T04:40:12.748Z",
   "used": [
     {
       "source": "Pexels",
@@ -2484,6 +2484,18 @@
       "creator": "Gustavo Fring",
       "creatorUrl": "https://www.pexels.com/@gustavo-fring",
       "videoUrl": "https://www.pexels.com/video/a-woman-dancing-in-the-room-7424172/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "30491953",
+      "usedAt": "2026-08-15T04:40:12.747Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Luisa Steffens",
+      "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
+      "videoUrl": "https://www.pexels.com/video/innovative-laser-skin-treatment-procedure-30491953/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
