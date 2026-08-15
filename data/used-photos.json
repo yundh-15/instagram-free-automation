@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-14T11:03:52.244Z",
+  "updatedAt": "2026-08-15T10:31:20.659Z",
   "used": [
     {
       "source": "Pexels",
@@ -13069,6 +13069,18 @@
       "photoUrl": "https://www.pexels.com/photo/woman-thinking-with-closed-eyes-7273342/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Korean East Asian person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "30783689",
+      "usedAt": "2026-08-15T10:31:20.653Z",
+      "category": "posture",
+      "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
+      "photographer": "Anh Nguyen",
+      "photographerUrl": "https://www.pexels.com/@anh-nguyen-517648218",
+      "photoUrl": "https://www.pexels.com/photo/backlit-yoga-pose-in-sunlit-room-30783689/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
     }
   ]
 }
