@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-15T10:31:20.659Z",
+  "updatedAt": "2026-08-16T05:07:50.508Z",
   "used": [
     {
       "source": "Pexels",
@@ -13081,6 +13081,54 @@
       "photoUrl": "https://www.pexels.com/photo/backlit-yoga-pose-in-sunlit-room-30783689/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "5927809",
+      "usedAt": "2026-08-16T05:07:50.502Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "photographer": "Polina ⠀",
+      "photographerUrl": "https://www.pexels.com/@polina-kovaleva",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-applying-facial-cream-on-face-5927809/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "13569067",
+      "usedAt": "2026-08-16T05:07:50.502Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "photographer": "olga Volkovitskaia",
+      "photographerUrl": "https://www.pexels.com/@olga-volkovitskaia-131638009",
+      "photoUrl": "https://www.pexels.com/photo/woman-holding-a-white-plastic-bottle-13569067/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "27574799",
+      "usedAt": "2026-08-16T05:07:50.502Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "photographer": "Kandy Giselle Luxembourg",
+      "photographerUrl": "https://www.pexels.com/@kandy-giselle-luxembourg-1032293472",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-laying-down-in-a-spa-with-a-facial-mask-27574799/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6663373",
+      "usedAt": "2026-08-16T05:07:50.502Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "photographer": "Arina Krasnikova",
+      "photographerUrl": "https://www.pexels.com/@arina-krasnikova",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-having-a-facial-treatment-6663373/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }
