@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-16T05:07:50.508Z",
+  "updatedAt": "2026-08-16T10:51:54.173Z",
   "used": [
     {
       "source": "Pexels",
@@ -13129,6 +13129,42 @@
       "photoUrl": "https://www.pexels.com/photo/a-woman-having-a-facial-treatment-6663373/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "5012081",
+      "usedAt": "2026-08-16T10:51:54.167Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "photographer": "Anna Shvets",
+      "photographerUrl": "https://www.pexels.com/@shvetsa",
+      "photoUrl": "https://www.pexels.com/photo/slim-woman-in-bridge-pose-in-studio-5012081/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6739081",
+      "usedAt": "2026-08-16T10:51:54.167Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "photographer": "Polina Tankilevitch",
+      "photographerUrl": "https://www.pexels.com/@polina-tankilevitch",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-doing-a-yoga-pose-6739081/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "5770139",
+      "usedAt": "2026-08-16T10:51:54.167Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/a-masculine-man-stretching-his-arm-5770139/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
     }
   ]
 }
