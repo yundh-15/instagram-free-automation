@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-15T10:31:20.674Z",
+  "updatedAt": "2026-08-16T01:51:30.066Z",
   "used": [
     {
       "category": "posture",
@@ -1156,6 +1156,11 @@
       "category": "posture",
       "topic": "목이 앞으로 나오는 자세를 줄이는 관리 습관",
       "usedAt": "2026-08-15T10:31:20.674Z"
+    },
+    {
+      "category": "massage",
+      "topic": "오래 앉아 있는 사람을 위한 등 관리 포인트",
+      "usedAt": "2026-08-16T01:51:30.066Z"
     }
   ]
 }
