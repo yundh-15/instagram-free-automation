@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-17T01:49:24.396Z",
+  "updatedAt": "2026-08-17T04:52:53.211Z",
   "used": [
     {
       "source": "Pexels",
@@ -2532,6 +2532,18 @@
       "creator": "olia danilevich",
       "creatorUrl": "https://www.pexels.com/@olia-danilevich",
       "videoUrl": "https://www.pexels.com/video/a-person-massaging-a-hand-9335822/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6975299",
+      "usedAt": "2026-08-17T04:52:53.206Z",
+      "category": "skincare",
+      "topic": "수분관리 상담 전에 정리할 피부 반응",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Monstera Production",
+      "creatorUrl": "https://www.pexels.com/@gabby-k",
+      "videoUrl": "https://www.pexels.com/video/a-woman-wearing-under-eye-mask-6975299/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
