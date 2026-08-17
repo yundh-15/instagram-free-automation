@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-16T01:51:42.901Z",
+  "updatedAt": "2026-08-17T01:49:24.396Z",
   "used": [
     {
       "source": "Pexels",
@@ -2520,6 +2520,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/woman-giving-a-foot-massage-6187321/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "9335822",
+      "usedAt": "2026-08-17T01:49:24.395Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "olia danilevich",
+      "creatorUrl": "https://www.pexels.com/@olia-danilevich",
+      "videoUrl": "https://www.pexels.com/video/a-person-massaging-a-hand-9335822/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-16T10:51:54.173Z",
+  "updatedAt": "2026-08-17T01:49:09.005Z",
   "used": [
     {
       "source": "Pexels",
@@ -13165,6 +13165,18 @@
       "photoUrl": "https://www.pexels.com/photo/a-masculine-man-stretching-his-arm-5770139/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "17568067",
+      "usedAt": "2026-08-17T01:49:08.994Z",
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "photographer": "Andrea Mosti",
+      "photographerUrl": "https://www.pexels.com/@andreamostiphotography",
+      "photoUrl": "https://www.pexels.com/photo/stones-on-naked-woman-back-17568067/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }

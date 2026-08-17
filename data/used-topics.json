@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-16T10:51:54.187Z",
+  "updatedAt": "2026-08-17T01:49:09.019Z",
   "used": [
     {
       "category": "posture",
@@ -1171,6 +1171,11 @@
       "category": "posture",
       "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
       "usedAt": "2026-08-16T10:51:54.187Z"
+    },
+    {
+      "category": "massage",
+      "topic": "숙면을 돕는 저녁 마사지 체크리스트",
+      "usedAt": "2026-08-17T01:49:09.019Z"
     }
   ]
 }
