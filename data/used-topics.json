@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-17T04:52:40.090Z",
+  "updatedAt": "2026-08-17T10:40:11.595Z",
   "used": [
     {
       "category": "posture",
@@ -1181,6 +1181,11 @@
       "category": "skincare",
       "topic": "수분관리 상담 전에 정리할 피부 반응",
       "usedAt": "2026-08-17T04:52:40.090Z"
+    },
+    {
+      "category": "posture",
+      "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
+      "usedAt": "2026-08-17T10:40:11.595Z"
     }
   ]
 }
