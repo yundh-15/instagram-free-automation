@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-18T00:01:11.871Z",
+  "updatedAt": "2026-08-18T04:44:22.607Z",
   "used": [
     {
       "source": "Pexels",
@@ -2568,6 +2568,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-female-doctor-massaging-a-patient-s-back-8313074/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5937378",
+      "usedAt": "2026-08-18T04:44:22.604Z",
+      "category": "skincare",
+      "topic": "첫 에스테틱 방문 전 위생과 상담 체크",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Sora Shimazaki",
+      "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
+      "videoUrl": "https://www.pexels.com/video/a-woman-massaging-her-face-with-a-face-mask-on-5937378/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
