@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-19T00:00:49.652Z",
+  "updatedAt": "2026-08-19T04:45:58.263Z",
   "used": [
     {
       "category": "posture",
@@ -1206,6 +1206,11 @@
       "category": "massage",
       "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
       "usedAt": "2026-08-19T00:00:49.652Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "usedAt": "2026-08-19T04:45:58.263Z"
     }
   ]
 }
