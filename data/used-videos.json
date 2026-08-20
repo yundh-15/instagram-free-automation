@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-19T00:01:05.738Z",
+  "updatedAt": "2026-08-20T00:01:52.090Z",
   "used": [
     {
       "source": "Pexels",
@@ -2592,6 +2592,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-woman-massaging-the-ear-of-a-man-8313347/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6187884",
+      "usedAt": "2026-08-20T00:01:52.089Z",
+      "category": "massage",
+      "topic": "주말 회복을 위한 가벼운 바디케어 준비",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Tima Miroshnichenko",
+      "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "videoUrl": "https://www.pexels.com/video/a-person-getting-hand-massage-6187884/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
