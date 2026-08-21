@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-21T00:02:48.446Z",
+  "updatedAt": "2026-08-21T04:49:05.978Z",
   "used": [
     {
       "source": "Pexels",
@@ -2640,6 +2640,18 @@
       "creator": "https://kaboompics.com/",
       "creatorUrl": "https://www.pexels.com/@karola-g",
       "videoUrl": "https://www.pexels.com/video/pouring-massage-oil-onto-the-back-6629661/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "5534662",
+      "usedAt": "2026-08-21T04:49:05.972Z",
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Anna Shvets",
+      "creatorUrl": "https://www.pexels.com/@shvetsa",
+      "videoUrl": "https://www.pexels.com/video/a-specialist-doing-ultrasonic-facial-to-a-woman-5534662/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

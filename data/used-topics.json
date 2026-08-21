@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-21T00:02:30.487Z",
+  "updatedAt": "2026-08-21T04:48:51.786Z",
   "used": [
     {
       "category": "posture",
@@ -1236,6 +1236,11 @@
       "category": "massage",
       "topic": "허리가 답답한 날 상담 전에 적어둘 질문",
       "usedAt": "2026-08-21T00:02:30.487Z"
+    },
+    {
+      "category": "skincare",
+      "topic": "피부관리 받기 전 확인하면 좋은 5가지",
+      "usedAt": "2026-08-21T04:48:51.786Z"
     }
   ]
 }
