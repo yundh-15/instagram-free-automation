@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-22T00:01:42.216Z",
+  "updatedAt": "2026-08-22T04:41:26.125Z",
   "used": [
     {
       "source": "Pexels",
@@ -13585,6 +13585,66 @@
       "photoUrl": "https://www.pexels.com/photo/woman-lying-on-couch-at-spa-salon-5240735/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "6417963",
+      "usedAt": "2026-08-22T04:41:26.119Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "Pavel Danilyuk",
+      "photographerUrl": "https://www.pexels.com/@pavel-danilyuk",
+      "photoUrl": "https://www.pexels.com/photo/person-woman-hairstyle-clean-6417963/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6560257",
+      "usedAt": "2026-08-22T04:41:26.119Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "Anna Tarazevich",
+      "photographerUrl": "https://www.pexels.com/@anntarazevich",
+      "photoUrl": "https://www.pexels.com/photo/hands-relaxation-health-elegance-6560257/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "7608357",
+      "usedAt": "2026-08-22T04:41:26.119Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "Tima Miroshnichenko",
+      "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+      "photoUrl": "https://www.pexels.com/photo/fashion-man-person-people-7608357/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "8740310",
+      "usedAt": "2026-08-22T04:41:26.119Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "Amar  Preciado",
+      "photographerUrl": "https://www.pexels.com/@amar",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-massaging-her-face-8740310/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "7622597",
+      "usedAt": "2026-08-22T04:41:26.119Z",
+      "category": "skincare",
+      "topic": "건조한 피부를 위한 관리 순서",
+      "photographer": "Miriam Alonso",
+      "photographerUrl": "https://www.pexels.com/@miriam-alonso",
+      "photoUrl": "https://www.pexels.com/photo/woman-sitting-in-facial-mask-with-tea-7622597/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }
