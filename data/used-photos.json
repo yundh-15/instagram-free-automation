@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-22T04:41:26.125Z",
+  "updatedAt": "2026-08-22T10:32:25.079Z",
   "used": [
     {
       "source": "Pexels",
@@ -13645,6 +13645,66 @@
       "photoUrl": "https://www.pexels.com/photo/woman-sitting-in-facial-mask-with-tea-7622597/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6926023",
+      "usedAt": "2026-08-22T10:32:25.073Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Pavel Danilyuk",
+      "photographerUrl": "https://www.pexels.com/@pavel-danilyuk",
+      "photoUrl": "https://www.pexels.com/photo/a-man-and-a-woman-doing-stretches-on-the-floor-6926023/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "3965396",
+      "usedAt": "2026-08-22T10:32:25.073Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Andrea Piacquadio",
+      "photographerUrl": "https://www.pexels.com/@olly",
+      "photoUrl": "https://www.pexels.com/photo/topless-man-doing-yoga-3965396/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6453972",
+      "usedAt": "2026-08-22T10:32:25.073Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Marta Wave",
+      "photographerUrl": "https://www.pexels.com/@marta-wave",
+      "photoUrl": "https://www.pexels.com/photo/fit-blond-woman-practicing-yoga-in-ardha-kapotasana-pose-6453972/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "8097231",
+      "usedAt": "2026-08-22T10:32:25.073Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "RDNE Stock project",
+      "photographerUrl": "https://www.pexels.com/@rdne",
+      "photoUrl": "https://www.pexels.com/photo/woman-in-black-leggings-doing-yoga-8097231/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6303438",
+      "usedAt": "2026-08-22T10:32:25.073Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "photographer": "Klaus Nielsen",
+      "photographerUrl": "https://www.pexels.com/@klaus-nielsen",
+      "photoUrl": "https://www.pexels.com/photo/focused-black-woman-in-easy-sit-posture-6303438/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm stretching posture wellness studio soft light"
     }
   ]
 }

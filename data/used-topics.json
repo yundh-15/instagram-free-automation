@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-22T04:41:26.139Z",
+  "updatedAt": "2026-08-22T10:32:25.094Z",
   "used": [
     {
       "category": "posture",
@@ -1256,6 +1256,11 @@
       "category": "skincare",
       "topic": "건조한 피부를 위한 관리 순서",
       "usedAt": "2026-08-22T04:41:26.139Z"
+    },
+    {
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "usedAt": "2026-08-22T10:32:25.094Z"
     }
   ]
 }

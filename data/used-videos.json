@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-22T04:41:38.205Z",
+  "updatedAt": "2026-08-22T10:32:36.772Z",
   "used": [
     {
       "source": "Pexels",
@@ -2688,6 +2688,18 @@
       "creator": "Sora Shimazaki",
       "creatorUrl": "https://www.pexels.com/@sora-shimazaki",
       "videoUrl": "https://www.pexels.com/video/woman-holding-flowers-5936527/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4536117",
+      "usedAt": "2026-08-22T10:32:36.771Z",
+      "category": "posture",
+      "topic": "골반 균형을 볼 때 놓치기 쉬운 신호",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Vlada Karpovich",
+      "creatorUrl": "https://www.pexels.com/@vlada-karpovich",
+      "videoUrl": "https://www.pexels.com/video/woman-doing-yoga-4536117/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
