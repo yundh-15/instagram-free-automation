@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-21T11:02:49.345Z",
+  "updatedAt": "2026-08-22T00:01:42.324Z",
   "used": [
     {
       "category": "posture",
@@ -1246,6 +1246,11 @@
       "category": "posture",
       "topic": "라운드숄더가 고민일 때 체형관리 체크포인트",
       "usedAt": "2026-08-21T11:02:49.345Z"
+    },
+    {
+      "category": "massage",
+      "topic": "마사지 압 조절을 요청할 때 알아두면 좋은 기준",
+      "usedAt": "2026-08-22T00:01:42.324Z"
     }
   ]
 }
