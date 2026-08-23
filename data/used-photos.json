@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-23T01:53:38.628Z",
+  "updatedAt": "2026-08-23T04:46:22.889Z",
   "used": [
     {
       "source": "Pexels",
@@ -13729,6 +13729,66 @@
       "photoUrl": "https://www.pexels.com/photo/woman-lying-on-blue-bed-3998011/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Asian wellness spa person calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "6417988",
+      "usedAt": "2026-08-23T04:46:22.883Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "photographer": "Pavel Danilyuk",
+      "photographerUrl": "https://www.pexels.com/@pavel-danilyuk",
+      "photoUrl": "https://www.pexels.com/photo/hands-relaxing-clean-beauty-6417988/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "22589552",
+      "usedAt": "2026-08-23T04:46:22.883Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "photographer": "Kerim Eveyik",
+      "photographerUrl": "https://www.pexels.com/@kerimeveyik",
+      "photoUrl": "https://www.pexels.com/photo/massager-spreading-face-cream-across-womans-face-22589552/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6663443",
+      "usedAt": "2026-08-23T04:46:22.883Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "photographer": "Arina Krasnikova",
+      "photographerUrl": "https://www.pexels.com/@arina-krasnikova",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-with-a-white-facial-mask-6663443/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6663597",
+      "usedAt": "2026-08-23T04:46:22.883Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "photographer": "Arina Krasnikova",
+      "photographerUrl": "https://www.pexels.com/@arina-krasnikova",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-using-a-gua-sha-facial-stone-6663597/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "4612139",
+      "usedAt": "2026-08-23T04:46:22.883Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/woman-with-white-face-mask-4612139/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }

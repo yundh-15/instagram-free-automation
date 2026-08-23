@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-23T01:53:53.114Z",
+  "updatedAt": "2026-08-23T04:46:36.930Z",
   "used": [
     {
       "source": "Pexels",
@@ -2712,6 +2712,18 @@
       "creator": "Antoni Shkraba",
       "creatorUrl": "https://www.pexels.com/@shkrabaanthony",
       "videoUrl": "https://www.pexels.com/video/a-man-having-a-body-massage-4608540/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7597224",
+      "usedAt": "2026-08-23T04:46:36.928Z",
+      "category": "skincare",
+      "topic": "민감 피부가 관리실에서 물어봐야 할 질문",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Miriam Alonso",
+      "creatorUrl": "https://www.pexels.com/@miriam-alonso",
+      "videoUrl": "https://www.pexels.com/video/a-woman-applying-face-mask-on-her-face-7597224/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
