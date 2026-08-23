@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-22T10:32:36.772Z",
+  "updatedAt": "2026-08-23T01:53:53.114Z",
   "used": [
     {
       "source": "Pexels",
@@ -2700,6 +2700,18 @@
       "creator": "Vlada Karpovich",
       "creatorUrl": "https://www.pexels.com/@vlada-karpovich",
       "videoUrl": "https://www.pexels.com/video/woman-doing-yoga-4536117/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "4608540",
+      "usedAt": "2026-08-23T01:53:53.113Z",
+      "category": "massage",
+      "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Antoni Shkraba",
+      "creatorUrl": "https://www.pexels.com/@shkrabaanthony",
+      "videoUrl": "https://www.pexels.com/video/a-man-having-a-body-massage-4608540/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

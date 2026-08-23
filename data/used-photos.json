@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-22T10:32:25.079Z",
+  "updatedAt": "2026-08-23T01:53:38.628Z",
   "used": [
     {
       "source": "Pexels",
@@ -13705,6 +13705,30 @@
       "photoUrl": "https://www.pexels.com/photo/focused-black-woman-in-easy-sit-posture-6303438/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "37109075",
+      "usedAt": "2026-08-23T01:53:38.621Z",
+      "category": "massage",
+      "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
+      "photographer": "iram shehzad",
+      "photographerUrl": "https://www.pexels.com/@iram-shehzad-45081404",
+      "photoUrl": "https://www.pexels.com/photo/relaxing-hot-stone-massage-in-islamabad-spa-37109075/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "3998011",
+      "usedAt": "2026-08-23T01:53:38.621Z",
+      "category": "massage",
+      "topic": "목과 어깨가 뻐근할 때 받기 좋은 마사지 루틴",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/woman-lying-on-blue-bed-3998011/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "Asian wellness spa person calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }
