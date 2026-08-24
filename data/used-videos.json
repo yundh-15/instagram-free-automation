@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-23T10:32:46.501Z",
+  "updatedAt": "2026-08-24T01:51:18.854Z",
   "used": [
     {
       "source": "Pexels",
@@ -2736,6 +2736,18 @@
       "creator": "Mikhail Nilov",
       "creatorUrl": "https://www.pexels.com/@mikhail-nilov",
       "videoUrl": "https://www.pexels.com/video/a-woman-lying-on-the-floor-6944842/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7495056",
+      "usedAt": "2026-08-24T01:51:18.848Z",
+      "category": "massage",
+      "topic": "오래 앉아 있는 사람을 위한 등 관리 포인트",
+      "query": "Korean East Asian person spa massage shoulders back therapy warm light relaxing wellness",
+      "creator": "Artem Podrez",
+      "creatorUrl": "https://www.pexels.com/@artempodrez",
+      "videoUrl": "https://www.pexels.com/video/kids-sitting-on-the-bed-7495056/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
