@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-24T01:51:18.854Z",
+  "updatedAt": "2026-08-24T04:55:23.943Z",
   "used": [
     {
       "source": "Pexels",
@@ -2748,6 +2748,18 @@
       "creator": "Artem Podrez",
       "creatorUrl": "https://www.pexels.com/@artempodrez",
       "videoUrl": "https://www.pexels.com/video/kids-sitting-on-the-bed-7495056/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6750878",
+      "usedAt": "2026-08-24T04:55:23.941Z",
+      "category": "skincare",
+      "topic": "환절기 피부관리 전 체크할 생활 습관",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "Anna Tarazevich",
+      "creatorUrl": "https://www.pexels.com/@anntarazevich",
+      "videoUrl": "https://www.pexels.com/video/woman-moisturizing-the-face-6750878/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
