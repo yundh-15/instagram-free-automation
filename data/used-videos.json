@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-24T04:55:23.943Z",
+  "updatedAt": "2026-08-24T10:46:10.318Z",
   "used": [
     {
       "source": "Pexels",
@@ -2760,6 +2760,18 @@
       "creator": "Anna Tarazevich",
       "creatorUrl": "https://www.pexels.com/@anntarazevich",
       "videoUrl": "https://www.pexels.com/video/woman-moisturizing-the-face-6750878/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "7000740",
+      "usedAt": "2026-08-24T10:46:10.316Z",
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "cottonbro studio",
+      "creatorUrl": "https://www.pexels.com/@cottonbro",
+      "videoUrl": "https://www.pexels.com/video/woman-wearing-a-face-mask-7000740/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

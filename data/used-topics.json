@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-24T04:55:09.428Z",
+  "updatedAt": "2026-08-24T10:45:50.903Z",
   "used": [
     {
       "category": "posture",
@@ -1286,6 +1286,11 @@
       "category": "skincare",
       "topic": "환절기 피부관리 전 체크할 생활 습관",
       "usedAt": "2026-08-24T04:55:09.428Z"
+    },
+    {
+      "category": "posture",
+      "topic": "오래 앉은 날 골반과 허리 상태 확인하기",
+      "usedAt": "2026-08-24T10:45:50.903Z"
     }
   ]
 }
