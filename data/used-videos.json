@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-25T04:48:21.076Z",
+  "updatedAt": "2026-08-25T10:41:18.426Z",
   "used": [
     {
       "source": "Pexels",
@@ -2796,6 +2796,18 @@
       "creator": "Luisa Steffens",
       "creatorUrl": "https://www.pexels.com/@luisa-steffens-2148599643",
       "videoUrl": "https://www.pexels.com/video/facial-injection-procedure-in-beauty-clinic-30978202/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6446263",
+      "usedAt": "2026-08-25T10:41:18.424Z",
+      "category": "posture",
+      "topic": "한쪽 어깨가 불편할 때 기록할 자세 습관",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Pavel Danilyuk",
+      "creatorUrl": "https://www.pexels.com/@pavel-danilyuk",
+      "videoUrl": "https://www.pexels.com/video/back-view-of-woman-stretching-back-and-arms-6446263/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
