@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-26T00:01:38.811Z",
+  "updatedAt": "2026-08-26T10:43:38.531Z",
   "used": [
     {
       "category": "posture",
@@ -1311,6 +1311,11 @@
       "category": "massage",
       "topic": "손목과 팔이 자주 피로할 때 관리 전 확인할 점",
       "usedAt": "2026-08-26T00:01:38.811Z"
+    },
+    {
+      "category": "posture",
+      "topic": "목과 등 자세 상담 전 준비할 체크리스트",
+      "usedAt": "2026-08-26T10:43:38.531Z"
     }
   ]
 }
