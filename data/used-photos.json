@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-24T10:45:50.888Z",
+  "updatedAt": "2026-08-27T03:21:51.046Z",
   "used": [
     {
       "source": "Pexels",
@@ -13909,6 +13909,18 @@
       "photoUrl": "https://www.pexels.com/photo/person-lying-with-crossed-arms-while-practicing-yoga-6842361/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "Asian wellness spa person calm stretching posture wellness studio soft light"
+    },
+    {
+      "source": "Pexels",
+      "id": "9146377",
+      "usedAt": "2026-08-27T03:21:51.039Z",
+      "category": "massage",
+      "topic": "하루 종일 서 있었던 날 종아리 관리 체크",
+      "photographer": "Ron Lach",
+      "photographerUrl": "https://www.pexels.com/@ron-lach",
+      "photoUrl": "https://www.pexels.com/photo/close-up-shot-of-a-person-doing-a-massage-9146377/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm spa massage therapy warm light peaceful wellness"
     }
   ]
 }
