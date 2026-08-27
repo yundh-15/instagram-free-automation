@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-27T03:22:05.453Z",
+  "updatedAt": "2026-08-27T09:25:32.480Z",
   "used": [
     {
       "source": "Pexels",
@@ -2844,6 +2844,18 @@
       "creator": "Tima Miroshnichenko",
       "creatorUrl": "https://www.pexels.com/@tima-miroshnichenko",
       "videoUrl": "https://www.pexels.com/video/woman-having-a-message-on-back-6187087/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "12322659",
+      "usedAt": "2026-08-27T09:25:32.478Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "query": "Korean East Asian person facial skincare spa treatment relaxing beauty clinic soft light",
+      "creator": "RDNE Stock project",
+      "creatorUrl": "https://www.pexels.com/@rdne",
+      "videoUrl": "https://www.pexels.com/video/a-woman-applying-a-cosmetic-product-around-her-eyes-12322659/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]

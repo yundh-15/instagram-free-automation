@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-27T03:21:51.046Z",
+  "updatedAt": "2026-08-27T09:25:19.441Z",
   "used": [
     {
       "source": "Pexels",
@@ -13921,6 +13921,66 @@
       "photoUrl": "https://www.pexels.com/photo/close-up-shot-of-a-person-doing-a-massage-9146377/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
       "query": "calm spa massage therapy warm light peaceful wellness"
+    },
+    {
+      "source": "Pexels",
+      "id": "7581076",
+      "usedAt": "2026-08-27T09:25:19.435Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "cottonbro studio",
+      "photographerUrl": "https://www.pexels.com/@cottonbro",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-having-facial-care-7581076/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "11707459",
+      "usedAt": "2026-08-27T09:25:19.435Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Kay Ogudoro",
+      "photographerUrl": "https://www.pexels.com/@kay-ogudoro-172631995",
+      "photoUrl": "https://www.pexels.com/photo/woman-with-pink-facial-mask-11707459/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "6663449",
+      "usedAt": "2026-08-27T09:25:19.435Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Arina Krasnikova",
+      "photographerUrl": "https://www.pexels.com/@arina-krasnikova",
+      "photoUrl": "https://www.pexels.com/photo/a-woman-holding-a-teacup-6663449/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "22589363",
+      "usedAt": "2026-08-27T09:25:19.435Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Kerim Eveyik",
+      "photographerUrl": "https://www.pexels.com/@kerimeveyik",
+      "photoUrl": "https://www.pexels.com/photo/brush-applying-cream-to-womans-face-22589363/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
+    },
+    {
+      "source": "Pexels",
+      "id": "19666209",
+      "usedAt": "2026-08-27T09:25:19.435Z",
+      "category": "skincare",
+      "topic": "피부가 예민한 날 관리를 미루어야 할 신호",
+      "photographer": "Jonathan Borba",
+      "photographerUrl": "https://www.pexels.com/@jonathanborba",
+      "photoUrl": "https://www.pexels.com/photo/happy-woman-posing-with-cucumber-slices-on-eyes-19666209/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Review current Pexels terms before posting.",
+      "query": "calm facial skincare spa treatment soft natural light"
     }
   ]
 }
