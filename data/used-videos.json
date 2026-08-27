@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-27T09:25:32.480Z",
+  "updatedAt": "2026-08-27T20:18:17.543Z",
   "used": [
     {
       "source": "Pexels",
@@ -2856,6 +2856,18 @@
       "creator": "RDNE Stock project",
       "creatorUrl": "https://www.pexels.com/@rdne",
       "videoUrl": "https://www.pexels.com/video/a-woman-applying-a-cosmetic-product-around-her-eyes-12322659/",
+      "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
+    },
+    {
+      "source": "Pexels",
+      "id": "6799016",
+      "usedAt": "2026-08-27T20:18:17.542Z",
+      "category": "posture",
+      "topic": "걷고 난 뒤 좌우 균형을 살펴보는 방법",
+      "query": "Korean East Asian person stretching posture wellness studio calm body care soft light",
+      "creator": "Michelle Leman",
+      "creatorUrl": "https://www.pexels.com/@michelle-leman",
+      "videoUrl": "https://www.pexels.com/video/a-back-view-of-a-person-stretching-6799016/",
       "license": "Pexels License: free personal and commercial use; attribution not required. Do not imply model, brand, or creator endorsement."
     }
   ]
